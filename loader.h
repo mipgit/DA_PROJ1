@@ -7,6 +7,7 @@
 #include <vector>
 #include "Location.h"
 #include "Distance.h"
+#include "data_structures/Graph.h"
 using namespace std;
 
 

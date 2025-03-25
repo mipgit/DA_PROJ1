@@ -7,7 +7,7 @@
 #include "Location.h"
 #include "Distance.h"
 #include "loader.h"
-#include "cityMap.h"
+#include "data_structures/Graph.h"
 using namespace std;
 
 
@@ -97,7 +97,35 @@ void loadDistances(const string &filename)
 }
 
 
-// MISSPLACED DISPLAYS
+
+// ===== GRAPH FUNCTIONS =====
+
+
+void initializeGraph() {
+
+    cityMap = Graph<Location> (); //limpa 
+
+    //add locations as vertices
+    for (auto &l : locations) {
+        cityMap.addVertex(l.second);
+    }
+
+    for (auto &d : distances) {
+        Location l1 = d.getSource(); 
+        Location l2 = d.getDestination();
+        int driv = d.getDriving();
+        double walk = d.getWalking();
+        cityMap.addBidirectionalEdge(l1, l2, driv, walk);
+    }
+
+}
+
+
+
+
+
+
+// MISSPLACED DISPLAYS -> TESTERS
 
 // Show Locations
 void displayLocations()
@@ -144,71 +172,41 @@ void displayDistances()
 }
 
 
-
-
-// ===== GRAPH FUNCTIONS =====
-
-
-void initializeGraph() {
-
-    cityMap = Graph<Location> (); //limpa 
-
-    //add locations as vertices
-    for (auto &l : locations) {
-        cityMap.addVertex(l.second);
-    }
-
-    for (auto &d : distances) {
-        Location l1 = d.getSource(); 
-        Location l2 = d.getDestination();
-        int driv = d.getDriving();
-        double walk = d.getWalking();
-        cityMap.addBidirectionalEdge(l1, l2, driv, walk);
-    }
-
-}
-
-
-
-// graph testers
+// Show Vertices
 void displayVertices() {
-
-    for (auto v : cityMap.getVertexSet()) {
-        auto a = v->getInfo();
-        cout << a.getLocation() << '\n';
+    for (auto vertex : cityMap.getVertexSet()) {
+        auto loc = vertex->getInfo();
+        cout << loc.getLocation() << '\n';
     }
+}
 
+// Show Edges
+void displayEdges() {
+    for (auto vertex : cityMap.getVertexSet()) {
+        auto loc = vertex->getInfo();
+        cout << "Vertex " << loc.getLocation() << " -> \n";
+        for (auto edge : vertex->getAdj()) {
+            auto loc2 = edge->getDest()->getInfo();
+            cout << "(" << loc2.getLocation() << ", Driving: " << edge->getDriving()
+                      << ", Walking: " << edge->getWalking() << ") \n";
+        }
+        cout << '\n';
+    }
 }
 
 
-void testG() {
-    cout << "Vertices:\n";
-    initializeGraph();
-    displayVertices();
-}
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-// TESTES
 int main() {
     
     loadLocations("data_sets/Locations.csv");
     loadDistances("data_sets/Distances.csv");
 
-    testG();
+    initializeGraph();
+    displayEdges();
 
     return 0;
 }
