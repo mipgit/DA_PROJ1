@@ -11,14 +11,14 @@
 using namespace std;
 
 
+// criei este novo porque não estava a funcionar com o outro
+#define infinite std::numeric_limits<int>::max()
+
 
 map<string, Location> locations;
 vector<Distance> distances;
 
-
-//Graph<Location> cityMap;
-
-
+// Graph<Location> cityMap;
 
 // ===== LOADING FUNCTIONS =====
 
@@ -77,6 +77,7 @@ void loadDistances(const string &filename)
     {
         stringstream ss(line);
         string loc1, loc2, driv, walk;
+        int d_num, w_num;
 
         getline(ss, loc1, ',');
         getline(ss, loc2, ',');
@@ -86,9 +87,32 @@ void loadDistances(const string &filename)
         Location l1 = locations[loc1];
         Location l2 = locations[loc2];
 
-        if (driv == "X") driv = "-1";
-        if (walk == "X") walk = "-1"; 
-        Distance dist(l1, l2, stoi(driv), stoi(walk));
+        // if driv or walk = "X"
+        try
+        {
+            d_num = stoi(driv);
+        }
+        catch (const invalid_argument &e)
+        {
+            d_num = infinite;
+        }
+        /*
+        catch (const out_of_range &e)
+        {
+            cerr << "Error: Out of range - " << e.what() << endl;
+        }
+        */
+
+        try
+        {
+            w_num = stoi(driv);
+        }
+        catch (const invalid_argument &e)
+        {
+            w_num = infinite;
+        }
+
+        Distance dist(l1, l2, d_num, w_num);
         distances.push_back(dist);
     }
 
@@ -96,22 +120,22 @@ void loadDistances(const string &filename)
     cout << "\nLoaded " << distances.size() << " distances successfully.\n\n";
 }
 
-
-
 // ===== GRAPH FUNCTIONS =====
 
-
-Graph<Location>* initializeGraph() {
+Graph<Location> *initializeGraph()
+{
 
     Graph<Location> *cityMap = new Graph<Location>();
 
-    //add locations as vertices
-    for (auto &l : locations) {
+    // add locations as vertices
+    for (auto &l : locations)
+    {
         cityMap->addVertex(l.second);
     }
 
-    for (auto &d : distances) {
-        Location l1 = d.getSource(); 
+    for (auto &d : distances)
+    {
+        Location l1 = d.getSource();
         Location l2 = d.getDestination();
         int driv = d.getDriving();
         double walk = d.getWalking();
@@ -120,9 +144,6 @@ Graph<Location>* initializeGraph() {
 
     return cityMap;
 }
-
-
-
 
 /*
 

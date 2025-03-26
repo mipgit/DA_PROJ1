@@ -102,7 +102,7 @@ void IndRoute::calculateAltRoute() {
     
     Graph<Location>* copy = copyGraph(cityMap);
 
-    for (int i = 1; i < bestRoute.size()-2; i++) {
+    for (int i = 1; i < bestRoute.size()-1; i++) {
         int id = bestRoute[i];
         Vertex<Location>* loc = copy->findLocationId(id);
 
@@ -122,6 +122,6 @@ void IndRoute::calculateAltRoute() {
 
 void IndRoute::processRoute(ostream &outFile) {
     calculateBestRoute();
-    //calculateAltRoute();
+    calculateAltRoute();
     writeToFile(outFile);    
 }
