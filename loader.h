@@ -15,8 +15,8 @@ using namespace std;
 extern map<string, Location> locations;
 extern vector<Distance> distances;
 
-//graph
-extern Graph<Location> cityMap;
+// graph
+//extern Graph<Location> cityMap;
 
 
 // Load Locations.csv
@@ -26,14 +26,15 @@ void loadLocations(const string &filename);
 void loadDistances(const string &filename);
 
 
-// initialization
-void initializeGraph();
+// Initialization of main Graph
+Graph<Location>* initializeGraph();
 
 
 //testers
 void displayLocations();
 void displayDistances();
 void displayVertices();
+void displayEdges();
 
 
 #endif 

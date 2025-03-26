@@ -16,7 +16,7 @@ map<string, Location> locations;
 vector<Distance> distances;
 
 
-Graph<Location> cityMap;
+//Graph<Location> cityMap;
 
 
 
@@ -93,7 +93,7 @@ void loadDistances(const string &filename)
     }
 
     file.close();
-    cout << "\nLoaded " << distances.size() << " distances successfully.\n";
+    cout << "\nLoaded " << distances.size() << " distances successfully.\n\n";
 }
 
 
@@ -101,13 +101,13 @@ void loadDistances(const string &filename)
 // ===== GRAPH FUNCTIONS =====
 
 
-void initializeGraph() {
+Graph<Location>* initializeGraph() {
 
-    cityMap = Graph<Location> (); //limpa 
+    Graph<Location> *cityMap = new Graph<Location>();
 
     //add locations as vertices
     for (auto &l : locations) {
-        cityMap.addVertex(l.second);
+        cityMap->addVertex(l.second);
     }
 
     for (auto &d : distances) {
@@ -115,15 +115,16 @@ void initializeGraph() {
         Location l2 = d.getDestination();
         int driv = d.getDriving();
         double walk = d.getWalking();
-        cityMap.addBidirectionalEdge(l1, l2, driv, walk);
+        cityMap->addBidirectionalEdge(l1, l2, driv, walk);
     }
 
+    return cityMap;
 }
 
 
 
 
-
+/*
 
 // MISSPLACED DISPLAYS -> TESTERS
 
@@ -174,7 +175,7 @@ void displayDistances()
 
 // Show Vertices
 void displayVertices() {
-    for (auto vertex : cityMap.getVertexSet()) {
+    for (auto vertex : cityMap->getVertexSet()) {
         auto loc = vertex->getInfo();
         cout << loc.getLocation() << '\n';
     }
@@ -182,7 +183,7 @@ void displayVertices() {
 
 // Show Edges
 void displayEdges() {
-    for (auto vertex : cityMap.getVertexSet()) {
+    for (auto vertex : cityMap->getVertexSet()) {
         auto loc = vertex->getInfo();
         cout << "Vertex " << loc.getLocation() << " -> \n";
         for (auto edge : vertex->getAdj()) {
@@ -196,17 +197,4 @@ void displayEdges() {
 
 
 
-
-
-
-
-int main() {
-    
-    loadLocations("data_sets/Locations.csv");
-    loadDistances("data_sets/Distances.csv");
-
-    initializeGraph();
-    displayEdges();
-
-    return 0;
-}
+*/

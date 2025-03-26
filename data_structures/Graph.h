@@ -9,6 +9,7 @@
 #include <queue>
 #include <limits>
 #include <algorithm>
+#include "MutablePriorityQueue.h"
 
 template <class T>
 class Edge;
@@ -48,7 +49,7 @@ public:
     bool removeEdge(T in);
     void removeOutgoingEdges();
 
-    //friend class MutablePriorityQueue<Vertex>;
+    friend class MutablePriorityQueue<Vertex>;
 protected:
     T info;                // info node
     std::vector<Edge<T> *> adj;  // outgoing edges
@@ -116,6 +117,10 @@ public:
     * Auxiliary function to find a vertex with a given the content.
     */
     Vertex<T> *findVertex(const T &in) const;
+
+    // find Vertex by id
+    Vertex<T> *findLocationId(const int &id);
+
     /*
      *  Adds a vertex with a given content or info (in) to a graph (this).
      *  Returns true if successful, and false if a vertex with that content already exists.
@@ -156,6 +161,8 @@ protected:
 void deleteMatrix(int **m, int n);
 void deleteMatrix(double **m, int n);
 
+template <class T>
+Graph<T>* copyGraph(Graph<T> *g);
 
 /************************* Vertex  **************************/
 
@@ -421,6 +428,18 @@ Vertex<T> * Graph<T>::findVertex(const T &in) const {
     return nullptr;
 }
 
+
+// find Location given an id
+template <class T>
+Vertex<T> * Graph<T>::findLocationId(const int &id) {
+    for (auto v : vertexSet) {
+        auto t = v->getInfo();
+        if (t.getId() == id) return v;
+    }
+    return nullptr;
+}
+
+
 /*
  * Finds the index of the vertex with a given content.
  */
@@ -530,5 +549,26 @@ Graph<T>::~Graph() {
     deleteMatrix(distMatrix, vertexSet.size());
     deleteMatrix(pathMatrix, vertexSet.size());
 }
+
+
+template <class T>
+Graph<T>* copyGraph(Graph<T>* g) {
+    Graph<T>* gT = new Graph<T>();
+
+    //adicionamos os vertices
+    for (auto v : g->getVertexSet()) {
+        gT->addVertex(v->getInfo());
+    }
+
+    //formamos as edges
+    for (auto v : g->getVertexSet()) {
+        for (auto e : v->getAdj()) {
+            gT->addBidirectionalEdge(v->getInfo(), e->getDest()->getInfo(), e->getDriving(), e->getWalking());
+        }
+    }
+
+    return gT;
+}
+
 
 #endif /* DA_TP_CLASSES_GRAPH */
