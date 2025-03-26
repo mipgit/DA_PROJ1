@@ -1,8 +1,5 @@
 #include "IndRoute.h"
-
 using namespace std;
-
-
 
 
 bool IndRoute::readFromFile(const string &filename) {
@@ -44,8 +41,8 @@ bool IndRoute::readFromFile(const string &filename) {
 
 void IndRoute::writeToFile(ostream &outFile) {
 
-    outFile << "Source: " << source << "\n";
-    outFile << "Destination: " << dest << "\n";
+    outFile << "Source:" << source << "\n";
+    outFile << "Destination:" << dest << "\n";
     
     //best
     outFile << "BestDrivingRoute:";
@@ -79,7 +76,6 @@ void IndRoute::writeToFile(ostream &outFile) {
 
 void IndRoute::calculateBestRoute() {
 
-
     if (!cityMap) {
         cout << "Error: cityMap is not initialized.\n";
         return;
@@ -100,6 +96,11 @@ void IndRoute::calculateBestRoute() {
 
 void IndRoute::calculateAltRoute() {
     
+    if (bestRoute.empty()) {
+        cout << "Calculate best route first!\n";
+        return;
+    }
+
     Graph<Location>* copy = copyGraph(cityMap);
 
     for (int i = 1; i < bestRoute.size()-1; i++) {
@@ -109,6 +110,12 @@ void IndRoute::calculateAltRoute() {
         if(loc) copy->removeVertex(loc->getInfo());     // if it isn't nullptr
     }
 
+    //if best route is the direct route from source to dest
+    if(bestRoute.size() == 2) copy->removeEdge(copy->findLocationId(source)->getInfo(), copy->findLocationId(dest)->getInfo());
+
+
+    //from here is the same logic as best route
+
     dijkstra(copy, source, dest);
 
     altRoute = getPath(copy, source, dest);
@@ -116,6 +123,8 @@ void IndRoute::calculateAltRoute() {
     Vertex<Location> *destVertex = copy->findLocationId(dest);
     altTime = destVertex->getDist();
 
+
+    //avoid mem leak
     delete copy;
 }
 

@@ -66,7 +66,7 @@ template <class T>
 static std::vector<int> getPath(Graph<T> * g, const int &origin, const int &dest) {
     std::vector<int> res;
     Vertex<T> *s = g->findLocationId(dest);
-    if (s == nullptr) return res;
+    if (s == nullptr || s->getDist() == INF) return res;
     res.push_back(s->getInfo().getId());
 
     while (s->getPath() != nullptr) {

@@ -12,7 +12,7 @@ using namespace std;
 
 
 // criei este novo porque não estava a funcionar com o outro
-#define infinite std::numeric_limits<int>::max()
+#define infinite std::numeric_limits<int>::max() //falar sobre isto amanha!!!
 
 
 map<string, Location> locations;
@@ -23,14 +23,12 @@ vector<Distance> distances;
 // ===== LOADING FUNCTIONS =====
 
 // Load Locations.csv
-void loadLocations(const string &filename)
-{
+void loadLocations(const string &filename){
     locations.clear();
 
     ifstream file(filename);
 
-    if (!file.is_open())
-    {
+    if (!file.is_open()) {
         cerr << "\nError opening Locations file: " << filename << endl;
         return;
     }
@@ -38,8 +36,7 @@ void loadLocations(const string &filename)
     string line;
     getline(file, line);
 
-    while (getline(file, line))
-    {
+    while (getline(file, line)) {
 
         stringstream ss(line);
         string name, id, code, parking;
@@ -58,8 +55,8 @@ void loadLocations(const string &filename)
 }
 
 // Load Distances.csv
-void loadDistances(const string &filename)
-{
+void loadDistances(const string &filename){
+    
     distances.clear();
 
     ifstream file(filename);
@@ -73,8 +70,7 @@ void loadDistances(const string &filename)
     string line;
     getline(file, line); // skip header
 
-    while (getline(file, line))
-    {
+    while (getline(file, line)) {
         stringstream ss(line);
         string loc1, loc2, driv, walk;
         int d_num, w_num;
@@ -88,14 +84,8 @@ void loadDistances(const string &filename)
         Location l2 = locations[loc2];
 
         // if driv or walk = "X"
-        try
-        {
-            d_num = stoi(driv);
-        }
-        catch (const invalid_argument &e)
-        {
-            d_num = infinite;
-        }
+        try {d_num = stoi(driv);}
+        catch (const invalid_argument &e) {d_num = INF;}
         /*
         catch (const out_of_range &e)
         {
@@ -103,14 +93,8 @@ void loadDistances(const string &filename)
         }
         */
 
-        try
-        {
-            w_num = stoi(driv);
-        }
-        catch (const invalid_argument &e)
-        {
-            w_num = infinite;
-        }
+        try {w_num = stoi(walk);}
+        catch (const invalid_argument &e) {w_num = INF;}
 
         Distance dist(l1, l2, d_num, w_num);
         distances.push_back(dist);
@@ -122,19 +106,16 @@ void loadDistances(const string &filename)
 
 // ===== GRAPH FUNCTIONS =====
 
-Graph<Location> *initializeGraph()
-{
+Graph<Location> *initializeGraph() {
 
     Graph<Location> *cityMap = new Graph<Location>();
 
     // add locations as vertices
-    for (auto &l : locations)
-    {
+    for (auto &l : locations) {
         cityMap->addVertex(l.second);
     }
 
-    for (auto &d : distances)
-    {
+    for (auto &d : distances) {
         Location l1 = d.getSource();
         Location l2 = d.getDestination();
         int driv = d.getDriving();
