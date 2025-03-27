@@ -49,24 +49,25 @@ void interactMode(Graph<Location>* cityMap, int choice) {
         vector<int> avoidNodes;
         vector<pair<int, int>> avoidSegs;
         string s, node, a, seg;
-        stringstream nodes(s), segs(a);
         
         switch(choice) {
             case 1:
                 route = new IndependentRoute(cityMap, mode, source, dest);
                 break;
 
-            case 2:
+            case 2: {
+
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
                 //NAO ESTÁ A FUNCIONAR!!!!
                 cout << "AvoidNodes:";
                 getline(cin, s);
-                //stringstream nodes(s);
+                stringstream nodes(s);
                 while(getline(nodes, node, ',')) avoidNodes.push_back(stoi(node));
 
                 cout << "\nAvoidSegments:";
                 getline(cin, a);
-                //stringstream segs(a);
+                stringstream segs(a);
                 while(getline(segs, seg, ')')) {
                     if(!seg.empty()) {
                         stringstream pairNodes(seg); 
@@ -83,6 +84,7 @@ void interactMode(Graph<Location>* cityMap, int choice) {
                 route = new RestrictedRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs);
                 
                 break;
+            }
 
             case 3:
 
