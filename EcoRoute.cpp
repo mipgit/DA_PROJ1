@@ -1,8 +1,10 @@
-#include "IndRoute.h"
+#include <iostream>
+#include "RestrictedRoute.h"
+
 using namespace std;
 
 
-bool IndRoute::readFromFile(const string &filename) {
+bool RestrictedRoute::readFromFile(const string &filename) {
     
     ifstream inFile(filename);
 
@@ -15,7 +17,7 @@ bool IndRoute::readFromFile(const string &filename) {
 
     while (getline(inFile, line)) {
         stringstream ss(line);
-        string key, value;
+        string key, value, value2, maxWalk;
 
         getline(ss, key, ':');  // por exemplo, "Mode:"
         getline(ss, value);     // por exemplo, "driving"
@@ -28,6 +30,32 @@ bool IndRoute::readFromFile(const string &filename) {
         if (key == "Mode" && value == "driving") mode = value;
         else if (key == "Source" && stoi(value) > 0) source = stoi(value);
         else if (key == "Destination" && stoi(value) > 0) dest = stoi(value);
+        else if (key == "MaxWalkTime" && stoi(value) > 0) maxWalk = stoi(value);
+        else if (key == "AvoidNodes") {
+            stringstream nodes(value);
+            string node;
+            while (getline(nodes, node, ',')) {
+                avoidNodes.push_back(stoi(node));
+            }
+        }
+        else if (key == "AvoidSegments") {
+            stringstream segs(value);
+            string seg;
+            while (getline(segs, seg, ')')) {
+                if (!seg.empty()) {
+                    stringstream pairStream(seg);
+                    int src, dst;
+                    pairStream.ignore(); 
+                    pairStream >> src;
+                    pairStream.ignore(); 
+                    pairStream >> dst;
+                    if (src > 0 && dst > 0) {
+                        avoidSegs.push_back(make_pair(src, dst));
+                    }
+                }
+            }
+        }
+        
         else {
             cout << "Invalid input format in " << filename << "\n\n";
             return false;
@@ -38,8 +66,8 @@ bool IndRoute::readFromFile(const string &filename) {
     return true;
 }
 
-
-void IndRoute::writeToFile(ostream &outFile) {
+/*
+void RestrictedRoute::writeToFile(ostream &outFile) {
 
     outFile << "Source:" << source << "\n";
     outFile << "Destination:" << dest << "\n";
@@ -73,55 +101,44 @@ void IndRoute::writeToFile(ostream &outFile) {
 
 }
 
+*/
 
-void IndRoute::calculateBestRoute() {
 
-    if (!cityMap) {
-        cout << "Error: cityMap is not initialized.\n";
-        return;
-    }
+
+
+
+
+
+void RestrictedRoute::calculateRoute() {
     
-    dijkstra(cityMap, source, dest); // Ensure cityMap is a pointer to a valid Graph object
-    
-    // Get the best route path
-    bestRoute = getPath(cityMap, source, dest);
-
-    // Calculate the bestTime
-    Vertex<Location> *destVertex = cityMap->findLocationId(dest);
-    bestTime = destVertex->getDist();
-  
-}
-
-
-
-void IndRoute::calculateAltRoute() {
-    
-    if (bestRoute.empty()) {
-        cout << "Calculate best route first!\n";
-        return;
-    }
-
     Graph<Location>* copy = copyGraph(cityMap);
 
-    for (int i = 1; i < bestRoute.size()-1; i++) {
-        int id = bestRoute[i];
+    for (auto id : avoidNodes) {
         Vertex<Location>* loc = copy->findLocationId(id);
-
         if(loc) copy->removeVertex(loc->getInfo());     // if it isn't nullptr
     }
 
-    //if best route is the direct route from source to dest
-    if(bestRoute.size() == 2) copy->removeEdge(copy->findLocationId(source)->getInfo(), copy->findLocationId(dest)->getInfo());
+    for (auto p : avoidSegs) {
+        int sId = p.first;
+        int dId = p.second;
 
+        Vertex<Location>* source = copy->findLocationId(sId);
+        Vertex<Location>* dest = copy->findLocationId(dId);
 
-    //from here is the same logic as best route
+        source->removeEdge(dest->getInfo());
+    }
 
-    dijkstra(copy, source, dest);
+    
+    dijkstra(copy, source, node);
+    route = getPath(copy, source, node);
 
-    altRoute = getPath(copy, source, dest);
+    dijkstra(copy, node, dest);
+    route2 = getPath(copy, source, node);
+
+    route.insert(route.end(), route2.begin(), route2.end());
 
     Vertex<Location> *destVertex = copy->findLocationId(dest);
-    altTime = destVertex->getDist();
+    time = destVertex->getDist();
 
 
     //avoid mem leak
@@ -129,8 +146,10 @@ void IndRoute::calculateAltRoute() {
 }
 
 
-void IndRoute::processRoute(ostream &outFile) {
-    calculateBestRoute();
-    calculateAltRoute();
+
+
+
+void RestrictedRoute::processRoute(ostream &outFile) {
+    calculateRoute();
     writeToFile(outFile);    
 }

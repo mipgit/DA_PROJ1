@@ -11,10 +11,6 @@
 using namespace std;
 
 
-// criei este novo porque não estava a funcionar com o outro
-#define infinite std::numeric_limits<int>::max() //falar sobre isto amanha!!!
-
-
 map<string, Location> locations;
 vector<Distance> distances;
 
