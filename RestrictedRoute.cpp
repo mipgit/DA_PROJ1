@@ -119,7 +119,7 @@ void RestrictedRoute::calculateRoute() {
             Vertex<Location>* source = copy->findLocationId(sId);
             Vertex<Location>* dest = copy->findLocationId(dId);
     
-            source->removeEdge(dest->getInfo());
+            if(source!=nullptr && dest!=nullptr) source->removeEdge(dest->getInfo());
         }
     }
 
