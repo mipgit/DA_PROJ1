@@ -8,7 +8,7 @@
 #include "Location.h"
 #include "IndependentRoute.h"
 #include "RestrictedRoute.h"
-//#include "EcoRoute.h"
+#include "EcoRoute.h"
 using namespace std;
 
 
@@ -18,7 +18,7 @@ using namespace std;
 // ===== MODE =====
 
 //por agora vamos assumir que escolhe sempre a opçao 1
-void interactMode(Graph<Location>* cityMap, int choice) {
+void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
     string mode;
     int source = -1, dest = -1;
     //depois vao ser precisas mais cenas... (see T2.2)
@@ -31,16 +31,24 @@ void interactMode(Graph<Location>* cityMap, int choice) {
 
         while (true) {
             cout << "Mode (driving/walking): ";
-            std::cin >> mode;
-            if (mode == "driving" || mode == "walking") break;
-            cout << "Invalid mode! Please enter 'driving' or 'walking'.\n";
+            cin >> mode;
+            if (mode == "driving" || mode == "driving-walking") break;
+            cout << "Invalid mode! Please enter 'driving' or 'driving-walking'.\n";
         }
 
-        cout << "Source id: ";
-        cin >> source;
+        while (true) {
+            cout << "Source id: ";
+            cin >> source;
+            if (cityMap->findLocationId(source) != nullptr) break;
+            cout << "Invalid source id! Please enter a node id present in the graph.\n";
+        }
 
-        cout << "Destination id: ";
-        cin >> dest;
+        while (true) {
+            cout << "Destination id: ";
+            cin >> dest;
+            if (cityMap->findLocationId(dest) != nullptr) break;
+            cout << "Invalid destination id! Please enter a node id present in the graph.\n";
+        }
 
         
         //falta validar inputs antes de avançar
@@ -62,9 +70,11 @@ void interactMode(Graph<Location>* cityMap, int choice) {
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 
+
                 cout << "AvoidNodes: ";
                 getline(cin, n);
                 stringstream nodes(n);
+
                 while (getline(nodes, node, ',')) {
                     if(!node.empty()) avoidNodes.push_back(stoi(node));
                 }
@@ -85,11 +95,31 @@ void interactMode(Graph<Location>* cityMap, int choice) {
                     }
                 }
 
-                cout << "IncludeNode: ";
-                getline(cin, mandatoryNode);
                 int mn;
+                /*
+                while (true) {
+                    cout << "IncludeNode: ";
+                    getline(cin, mandatoryNode);
+                    
+                    if (cityMap->findLocationId(stoi(mandatoryNode)) == nullptr) {
+                        
+                        cout << "Invalid node id! Please enter a node id present in the graph.\n";
+                        continue;                        
+                    }
+                    else break;                   
+                }
+
                 if (!mandatoryNode.empty()) mn = stoi(mandatoryNode);
                 else mn = -1; // Default value when user inputs nothing
+                */
+
+                
+                cout << "IncludeNode: ";
+                getline(cin, mandatoryNode);
+        
+                if (!mandatoryNode.empty()) mn = stoi(mandatoryNode);
+                else mn = -1; // Default value when user inputs nothing
+                
                 
 
                 // finally
@@ -97,9 +127,58 @@ void interactMode(Graph<Location>* cityMap, int choice) {
                 break;
             }
 
-            case 3:
+            case 3: {
+                vector<int> avoidNodes;
+                vector<pair<int, int>> avoidSegs;
+                string n, node, s, seg, maxWalk;
+                int maxWalkTime;
 
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+
+                while (true) {
+                    cout << "MaxWalkTime: ";
+                    getline(cin, maxWalk);
+
+                    if (!maxWalk.empty()) {
+                        maxWalkTime = stoi(maxWalk);
+                        break;
+                    }
+                    cout << "MaxWalkTime is mandatory! Please enter a time.\n"; 
+                }
+
+
+                cout << "AvoidNodes: ";
+                getline(cin, n);
+                stringstream nodes(n);
+
+                while (getline(nodes, node, ',')) {
+                    if(!node.empty()) avoidNodes.push_back(stoi(node));
+                }
+
+
+                cout << "AvoidSegments: ";
+                getline(cin, s);
+                stringstream segs(s);
+                while(getline(segs, seg, ')')) {
+                    if(!seg.empty()) {
+                        stringstream pairNodes(seg); 
+                        int src, dst;
+                        pairNodes.ignore();
+                        pairNodes >> src;
+                        pairNodes.ignore();
+                        pairNodes >> dst;
+                        if (src>0 && dst>0) avoidSegs.push_back(make_pair(src, dst));
+                        
+                    }
+                }
+
+                                
+
+                // finally
+                route = new EcoRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs, maxWalkTime);
                 break;
+            }
 
             default:
                 cout << "Invalid choice. Exiting...\n";
@@ -136,7 +215,7 @@ void interactMode(Graph<Location>* cityMap, int choice) {
 
 
 //por agora vamos assumir que escolhe sempre a opçao 1
-void batchMode(Graph<Location>* cityMap, int choice) {
+void batchMode(Graph<Location>* cityMap, int choice, int fSize) {       // falta fazer o controlo de erro dos nodes no batchMode
     string inputFileName, outputFileName;
 
     cout << "Enter input file name: ";
@@ -157,7 +236,7 @@ void batchMode(Graph<Location>* cityMap, int choice) {
             break;
 
         case 3:
-            //route = new EcoRoute(cityMap);
+            route = new EcoRoute(cityMap);
             break;
 
         default:
@@ -182,7 +261,7 @@ void batchMode(Graph<Location>* cityMap, int choice) {
 }
 
 
-void chooseMode(Graph<Location>* cityMap, int choice) {
+void chooseMode(Graph<Location>* cityMap, int choice, int fSize) {
 
     int mode;
     
@@ -198,12 +277,12 @@ void chooseMode(Graph<Location>* cityMap, int choice) {
         switch(mode) {
             case 1:
                 cout << "\nGoing to interactive mode...\n\n";
-                interactMode(cityMap, choice);
+                interactMode(cityMap, choice, fSize);
                 break;
 
             case 2:
                 cout << "\nGoing to batch mode...\n";
-                batchMode(cityMap, choice);
+                batchMode(cityMap, choice, fSize);
                 break;
             
             case 0:
@@ -220,7 +299,7 @@ void chooseMode(Graph<Location>* cityMap, int choice) {
 
 
 // ===== PLAN =====
-void routePlan(Graph<Location>* cityMap) {
+void chooseRoute(Graph<Location>* cityMap, int fSize) {
 
     int choice;
 
@@ -243,7 +322,7 @@ void routePlan(Graph<Location>* cityMap) {
             case 2:
             case 3:
                 cout << "\nGreat! Going to next step...\n\n";
-                chooseMode(cityMap, choice);
+                chooseMode(cityMap, choice, fSize);
                 break;
 
             case 0:

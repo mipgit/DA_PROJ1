@@ -19,20 +19,24 @@ vector<Distance> distances;
 // ===== LOADING FUNCTIONS =====
 
 // Load Locations.csv
-void loadLocations(const string &filename){
+int loadLocations(const string &filename){
     locations.clear();
+
+    int fSize = 0;
 
     ifstream file(filename);
 
     if (!file.is_open()) {
         cerr << "\nError opening Locations file: " << filename << endl;
-        return;
+        return fSize;
     }
 
     string line;
     getline(file, line);
 
     while (getline(file, line)) {
+
+        fSize ++;
 
         stringstream ss(line);
         string name, id, code, parking;
@@ -48,6 +52,8 @@ void loadLocations(const string &filename){
 
     file.close();
     cout << "\nLoaded " << locations.size() << " locations successfully.\n";
+
+    return fSize;
 }
 
 // Load Distances.csv

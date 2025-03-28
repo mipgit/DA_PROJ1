@@ -18,12 +18,12 @@ using namespace std;
 int main() {
     
     // Load data sets
-    loadLocations("data_sets/LittleLocations.csv");
+    int inFileSize = loadLocations("data_sets/LittleLocations.csv");
     loadDistances("data_sets/LittleDistances.csv");
 
     Graph<Location>* cityMap = initializeGraph();
 
-    routePlan(cityMap);
+    chooseRoute(cityMap, inFileSize);
 
     delete cityMap;
 

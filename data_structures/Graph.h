@@ -9,6 +9,7 @@
 #include <queue>
 #include <limits>
 #include <algorithm>
+#include <utility>
 #include "MutablePriorityQueue.h"
 
 template <class T>
@@ -138,6 +139,12 @@ public:
     bool addBidirectionalEdge(const T &sourc, const T &dest, double d, double w);
 
     int getNumVertex() const;
+
+
+    //for Restricted + Eco Route
+    void avoidVertices(std::vector<int> vertices);
+    void avoidEdges(std::vector<std::pair<int,int>> edges);
+
 
     std::vector<Vertex<T> *> getVertexSet() const;
 
@@ -549,6 +556,36 @@ Graph<T>::~Graph() {
     deleteMatrix(distMatrix, vertexSet.size());
     deleteMatrix(pathMatrix, vertexSet.size());
 }
+
+
+
+template<class T>
+void Graph<T>::avoidVertices(std::vector<int> vertices) {
+    if (!vertices.empty()) {
+        for (auto id : vertices) {
+            Vertex<T>* loc = findLocationId(id);
+            if(loc) removeVertex(loc->getInfo());     // if it isn't nullptr
+        }
+    }
+}
+
+
+template<class T>
+void Graph<T>::avoidEdges(std::vector<std::pair<int,int>> edges) {
+    if (!edges.empty()) {
+        for (auto p : edges) {
+            int sId = p.first;
+            int dId = p.second;
+    
+            Vertex<T>* source = findLocationId(sId);
+            Vertex<T>* dest = findLocationId(dId);
+    
+            if(source!=nullptr && dest!=nullptr) source->removeEdge(dest->getInfo());
+        }
+    }
+}
+
+
 
 
 template <class T>

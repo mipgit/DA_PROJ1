@@ -8,18 +8,28 @@
 using namespace std;
 
 template <class T>
-bool relax(Edge<T> *edge) { // d[u] + w(u,v) < d[v]
-    if (edge->getOrig()->getDist() + edge->getDriving() < edge->getDest()->getDist()) {
-        edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getDriving());
+bool relax(Edge<T> *edge, bool mode) { // d[u] + w(u,v) < d[v]
+    if (mode) {
+        if (edge->getOrig()->getDist() + edge->getDriving() < edge->getDest()->getDist()) {
+            edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getDriving());
+            edge->getDest()->setPath(edge);
+            return true;
+        }
+        return false;
+    }
+
+    if (edge->getOrig()->getDist() + edge->getWalking() < edge->getDest()->getDist()) {
+        edge->getDest()->setDist(edge->getOrig()->getDist() + edge->getWalking());
         edge->getDest()->setPath(edge);
         return true;
     }
     return false;
+   
 }
 
 
 template <class T>
-void dijkstra(Graph<T> * g, const int &origin, const int &dest) {
+void dijkstra(Graph<T> * g, const int &origin, const int &dest, bool mode) {
 
     if (g->getVertexSet().empty()) return;
 
@@ -33,9 +43,9 @@ void dijkstra(Graph<T> * g, const int &origin, const int &dest) {
     //encontrar ids
     Vertex<T> *s = g->findLocationId(origin);
     Vertex<T> *d = g->findLocationId(dest);
-    s->setDist(0);
-
     if (!s || !d) return;
+
+    s->setDist(0);
 
     //inicializamos a fila de prioridade
     MutablePriorityQueue<Vertex<T>> pq;
@@ -52,7 +62,7 @@ void dijkstra(Graph<T> * g, const int &origin, const int &dest) {
             Vertex<T> *w = e->getDest();
             if (!w->isVisited()) {
                 double oldDist = e->getDest()->getDist();
-                if (relax(e)) {
+                if (relax(e, mode)) {
                     if (oldDist == INF) pq.insert(e->getDest());
                     else pq.decreaseKey(e->getDest());
                 }

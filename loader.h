@@ -20,7 +20,7 @@ extern vector<Distance> distances;
 
 
 // Load Locations.csv
-void loadLocations(const string &filename);
+int loadLocations(const string &filename);
 
 // Load Distances.csv
 void loadDistances(const string &filename);

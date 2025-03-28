@@ -5,6 +5,8 @@
 #include <fstream>
 #include <sstream>
 #include <ostream>
+#include <utility>
+#include <algorithm>
 #include <string>
 #include <vector>
 

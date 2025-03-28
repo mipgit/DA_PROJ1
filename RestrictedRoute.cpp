@@ -38,7 +38,11 @@ bool RestrictedRoute::readFromFile(const string &filename) {
                 stringstream nodes(value);
                 string node;
                 while (getline(nodes, node, ',')) {
-                    if(!node.empty()) avoidNodes.push_back(stoi(node));
+                    if(!node.empty()) {
+                        int id = stoi(node);
+                        if (id == source || id == dest) cout << "Can't avoid source/dest nodes!\n";
+                        else avoidNodes.push_back(id);
+                    }
                 }
             }
 
@@ -103,47 +107,33 @@ void RestrictedRoute::calculateRoute() {
     
     Graph<Location>* copy = copyGraph(cityMap);
 
-    if (!avoidNodes.empty()) {
-        for (auto id : avoidNodes) {
-            Vertex<Location>* loc = copy->findLocationId(id);
-            if(loc) copy->removeVertex(loc->getInfo());     // if it isn't nullptr
-        }
-    }
-
-
-    if (!avoidSegs.empty()) {
-        for (auto p : avoidSegs) {
-            int sId = p.first;
-            int dId = p.second;
-    
-            Vertex<Location>* source = copy->findLocationId(sId);
-            Vertex<Location>* dest = copy->findLocationId(dId);
-    
-            if(source!=nullptr && dest!=nullptr) source->removeEdge(dest->getInfo());
-        }
-    }
-
+    copy->avoidVertices(avoidNodes);
+    copy->avoidEdges(avoidSegs);
 
     if (node!=-1 && node!=source && node!=dest) {
 
         //path from source to mandatory node
-        dijkstra(copy, source, node);
+        dijkstra(copy, source, node, 1);
         route = getPath(copy, source, node);
         Vertex<Location> *nodeVertex = copy->findLocationId(node);
         int time1 = nodeVertex->getDist();
+
+        //avoid repetition of nodes
+        route.pop_back();
+        copy->avoidVertices(route);
         
         //path from mandatory node to destination
-        dijkstra(copy, node, dest);
+        dijkstra(copy, node, dest, 1);
         vector<int> route2 = getPath(copy, node, dest);
         Vertex<Location> *destVertex = copy->findLocationId(dest);
         int time2 = destVertex->getDist();
 
         //combination of the two results
-        route.insert(route.end(), route2.begin()+1, route2.end());  
+        route.insert(route.end(), route2.begin(), route2.end());  
         time = time1 + time2;
 
     } else {
-        dijkstra(copy, source, dest);
+        dijkstra(copy, source, dest, 1);
         route = getPath(copy, source, dest);
         Vertex<Location> *destVertex = copy->findLocationId(dest);
         time = destVertex->getDist();

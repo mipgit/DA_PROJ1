@@ -81,7 +81,7 @@ void IndependentRoute::calculateBestRoute() {
         return;
     }
     
-    dijkstra(cityMap, source, dest); // Ensure cityMap is a pointer to a valid Graph object
+    dijkstra(cityMap, source, dest, 1); // Ensure cityMap is a pointer to a valid Graph object
     
     // Get the best route path
     bestRoute = getPath(cityMap, source, dest);
@@ -116,7 +116,7 @@ void IndependentRoute::calculateAltRoute() {
 
     //from here is the same logic as best route
 
-    dijkstra(copy, source, dest);
+    dijkstra(copy, source, dest, 1);
 
     altRoute = getPath(copy, source, dest);
 
