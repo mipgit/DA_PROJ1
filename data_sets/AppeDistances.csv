@@ -1,0 +1,11 @@
+Location1,Location2,Driving,Walking
+A,B,40,100000
+B,F,X,10
+A,C,45,100000
+C,F,X,5
+A,C,45,100000
+C,F,X,5
+A,D,50,100000
+D,F,X,5
+A,E,20,100000
+E,F,X,15

@@ -109,7 +109,7 @@ void EcoRoute::writeToFile(ostream &outFile) {
 
     outFile << "ParkingNode:";
     if (time == 0) outFile << "none\n";
-    else outFile << parkingNode;
+    else outFile << parkingNode << "\n";
     
     
     outFile << "WalkingRoute:";
