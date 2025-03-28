@@ -2,16 +2,6 @@
 #define ECOROUTE_H
 
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <ostream>
-#include <string>
-#include <vector>
-
-#include "data_structures/Graph.h"
-#include "Location.h"
-#include "dijkstra.h"
 #include "Route.h"
 
 

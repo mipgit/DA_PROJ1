@@ -1,17 +1,6 @@
 #ifndef INDROUTE_H
 #define INDROUTE_H
 
-
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <ostream>
-#include <string>
-#include <vector>
-
-#include "data_structures/Graph.h"
-#include "Location.h"
-#include "dijkstra.h"
 #include "Route.h"
 
 using namespace std;

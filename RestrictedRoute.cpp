@@ -4,6 +4,9 @@
 using namespace std;
 
 
+//É PRECISO FAZER A CONFIRMAÇÃO SE O SOURCE/DEST SÃO IDS VÁLIDOS
+//E CASO O USER NAO COLOQUE NADA, DAR MENSAGEM DE ERRO
+
 bool RestrictedRoute::readFromFile(const string &filename) {
     
     ifstream inFile(filename);
@@ -31,32 +34,40 @@ bool RestrictedRoute::readFromFile(const string &filename) {
         else if (key == "Source" && stoi(value) > 0) source = stoi(value);
         else if (key == "Destination" && stoi(value) > 0) dest = stoi(value);
         else if (key == "AvoidNodes") {
-            stringstream nodes(value);
-            string node;
-            while (getline(nodes, node, ',')) {
-                avoidNodes.push_back(stoi(node));
+            if (!value.empty()) {
+                stringstream nodes(value);
+                string node;
+                while (getline(nodes, node, ',')) {
+                    if(!node.empty()) avoidNodes.push_back(stoi(node));
+                }
             }
+
         }
         else if (key == "AvoidSegments") {
-            stringstream segs(value);
-            string seg;
-            while (getline(segs, seg, ')')) {
-                if (!seg.empty()) {
-                    stringstream pairStream(seg);
-                    int src, dst;
-                    pairStream.ignore(); 
-                    pairStream >> src;
-                    pairStream.ignore(); 
-                    pairStream >> dst;
-                    if (src > 0 && dst > 0) {
-                        avoidSegs.push_back(make_pair(src, dst));
+            if (!value.empty()) {
+                stringstream segs(value);
+                string seg;
+                while (getline(segs, seg, ')')) {
+                    if (!seg.empty()) {
+                        stringstream pairStream(seg);
+                        int src, dst;
+                        pairStream.ignore(); 
+                        pairStream >> src;
+                        pairStream.ignore(); 
+                        pairStream >> dst;
+                        if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
                     }
                 }
             }
         }
         
+        else if (key == "IncludeNode") {  
+            if (!value.empty()) node = stoi(value);
+            else node = -1;  
+        }
+
         else {
-            cout << "Invalid input format in " << filename << "\n\n";
+            cout << "\nInvalid input format in " << filename << "\n";
             return false;
         }
     }
@@ -92,32 +103,51 @@ void RestrictedRoute::calculateRoute() {
     
     Graph<Location>* copy = copyGraph(cityMap);
 
-    for (auto id : avoidNodes) {
-        Vertex<Location>* loc = copy->findLocationId(id);
-        if(loc) copy->removeVertex(loc->getInfo());     // if it isn't nullptr
+    if (!avoidNodes.empty()) {
+        for (auto id : avoidNodes) {
+            Vertex<Location>* loc = copy->findLocationId(id);
+            if(loc) copy->removeVertex(loc->getInfo());     // if it isn't nullptr
+        }
     }
 
-    for (auto p : avoidSegs) {
-        int sId = p.first;
-        int dId = p.second;
 
-        Vertex<Location>* source = copy->findLocationId(sId);
-        Vertex<Location>* dest = copy->findLocationId(dId);
-
-        source->removeEdge(dest->getInfo());
-    }
-
+    if (!avoidSegs.empty()) {
+        for (auto p : avoidSegs) {
+            int sId = p.first;
+            int dId = p.second;
     
-    dijkstra(copy, source, node);
-    route = getPath(copy, source, node);
+            Vertex<Location>* source = copy->findLocationId(sId);
+            Vertex<Location>* dest = copy->findLocationId(dId);
+    
+            source->removeEdge(dest->getInfo());
+        }
+    }
 
-    dijkstra(copy, node, dest);
-    route2 = getPath(copy, source, node);
 
-    route.insert(route.end(), route2.begin(), route2.end());
+    if (node!=-1 && node!=source && node!=dest) {
 
-    Vertex<Location> *destVertex = copy->findLocationId(dest);
-    time = destVertex->getDist();
+        //path from source to mandatory node
+        dijkstra(copy, source, node);
+        route = getPath(copy, source, node);
+        Vertex<Location> *nodeVertex = copy->findLocationId(node);
+        int time1 = nodeVertex->getDist();
+        
+        //path from mandatory node to destination
+        dijkstra(copy, node, dest);
+        vector<int> route2 = getPath(copy, node, dest);
+        Vertex<Location> *destVertex = copy->findLocationId(dest);
+        int time2 = destVertex->getDist();
+
+        //combination of the two results
+        route.insert(route.end(), route2.begin()+1, route2.end());  
+        time = time1 + time2;
+
+    } else {
+        dijkstra(copy, source, dest);
+        route = getPath(copy, source, dest);
+        Vertex<Location> *destVertex = copy->findLocationId(dest);
+        time = destVertex->getDist();
+    }
 
 
     //avoid mem leak

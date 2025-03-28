@@ -8,6 +8,7 @@
 #include "Location.h"
 #include "IndependentRoute.h"
 #include "RestrictedRoute.h"
+//#include "EcoRoute.h"
 using namespace std;
 
 
@@ -46,28 +47,31 @@ void interactMode(Graph<Location>* cityMap, int choice) {
 
         Route* route = nullptr;
 
-        vector<int> avoidNodes;
-        vector<pair<int, int>> avoidSegs;
-        string s, node, a, seg;
+    
         
         switch(choice) {
             case 1:
+                //!!! falta validar se escreveu 'driving'
                 route = new IndependentRoute(cityMap, mode, source, dest);
                 break;
 
             case 2: {
-
+                vector<int> avoidNodes;
+                vector<pair<int, int>> avoidSegs;
+                string n, node, s, seg, mandatoryNode;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                //NAO ESTÁ A FUNCIONAR!!!!
-                cout << "AvoidNodes:";
-                getline(cin, s);
-                stringstream nodes(s);
-                while(getline(nodes, node, ',')) avoidNodes.push_back(stoi(node));
 
-                cout << "\nAvoidSegments:";
-                getline(cin, a);
-                stringstream segs(a);
+                cout << "AvoidNodes: ";
+                getline(cin, n);
+                stringstream nodes(n);
+                while (getline(nodes, node, ',')) {
+                    if(!node.empty()) avoidNodes.push_back(stoi(node));
+                }
+
+                cout << "AvoidSegments: ";
+                getline(cin, s);
+                stringstream segs(s);
                 while(getline(segs, seg, ')')) {
                     if(!seg.empty()) {
                         stringstream pairNodes(seg); 
@@ -81,8 +85,15 @@ void interactMode(Graph<Location>* cityMap, int choice) {
                     }
                 }
 
-                route = new RestrictedRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs);
+                cout << "IncludeNode: ";
+                getline(cin, mandatoryNode);
+                int mn;
+                if (!mandatoryNode.empty()) mn = stoi(mandatoryNode);
+                else mn = -1; // Default value when user inputs nothing
                 
+
+                // finally
+                route = new RestrictedRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs, mn);
                 break;
             }
 
@@ -117,6 +128,8 @@ void interactMode(Graph<Location>* cityMap, int choice) {
             exit(0);
         }
 
+        //nao basta pôr só o 'else if'?
+
 
     } 
 }
@@ -141,9 +154,11 @@ void batchMode(Graph<Location>* cityMap, int choice) {
 
         case 2:
             route = new RestrictedRoute(cityMap);
+            break;
 
         case 3:
-            route = new RestrictedRoute(cityMap);
+            //route = new EcoRoute(cityMap);
+            break;
 
         default:
             cout << "\nInvalid\n";
@@ -159,7 +174,7 @@ void batchMode(Graph<Location>* cityMap, int choice) {
         } else {
             cerr << "Route calculation failed.\n\n";
         }
-
+        exit(0);
     }
 
     
