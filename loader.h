@@ -21,14 +21,14 @@ extern map<string, Location> locations;
 extern vector<Distance> distances;
 
 
-// Load Locations.csv
+// load Locations.csv
 int loadLocations(const string &filename);
 
-// Load Distances.csv
+// load Distances.csv
 void loadDistances(const string &filename);
 
 
-// Initialization of main Graph
+// initialization of main Graph
 Graph<Location>* initializeGraph();
 
 

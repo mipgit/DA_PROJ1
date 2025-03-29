@@ -9,11 +9,11 @@
 #include <fstream>
 #include <sstream>
 #include "utils.h"
-#include "data_structures/Location.h"
 #include "routes/IndependentRoute.h"
 #include "routes/RestrictedRoute.h"
 #include "routes/EcoRoute.h"
 #include "data_structures/Graph.h"
+#include "data_structures/Location.h"
 using namespace std;
 
 void interactMode(Graph<Location>* cityMap, char choice, int fSize);

@@ -8,7 +8,7 @@ vector<Distance> distances;
 
 // ===== LOADING FUNCTIONS =====
 
-// Load Locations.csv
+// load Locations.csv
 int loadLocations(const string &filename){
     locations.clear();
 
@@ -46,15 +46,14 @@ int loadLocations(const string &filename){
     return fSize;
 }
 
-// Load Distances.csv
+// load Distances.csv
 void loadDistances(const string &filename){
     
     distances.clear();
 
     ifstream file(filename);
 
-    if (!file.is_open())
-    {
+    if (!file.is_open()) {
         cerr << "\nError opening Distances file: " << filename << endl;
         return;
     }
@@ -78,12 +77,6 @@ void loadDistances(const string &filename){
         // if driv or walk = "X"
         try {d_num = stoi(driv);}
         catch (const invalid_argument &e) {d_num = INF;}
-        /*
-        catch (const out_of_range &e)
-        {
-            cerr << "Error: Out of range - " << e.what() << endl;
-        }
-        */
 
         try {w_num = stoi(walk);}
         catch (const invalid_argument &e) {w_num = INF;}
@@ -107,6 +100,7 @@ Graph<Location> *initializeGraph() {
         cityMap->addVertex(l.second);
     }
 
+    // process distances as edges
     for (auto &d : distances) {
         Location l1 = d.getSource();
         Location l2 = d.getDestination();

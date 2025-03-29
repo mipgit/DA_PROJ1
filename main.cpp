@@ -24,6 +24,5 @@ int main() {
     chooseRoute(cityMap, inFileSize);
 
     delete cityMap;
-
     return 0;
 }

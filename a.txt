@@ -1,9 +1,6 @@
-Source:90
+Source:5
 Destination:6
-DrivingRoute:none
-ParkingNode:none
-WalkingRoute:none
-TotalTime:
-Message:No possible routes.
-
-There are no aproximate solutions for your input.
+DrivingRoute:5,3(12)
+ParkingNode:3
+WalkingRoute:3,5,6(20)
+TotalTime:32
