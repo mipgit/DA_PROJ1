@@ -5,10 +5,11 @@ using namespace std;
 
 
 
-vector<int> EcoRoute::findParking() {
+vector<int> EcoRoute::findParking(int source, int dest) {
     vector<int> parkingNodes;
     for (auto vertex : cityMap->getVertexSet()) {
-        if (vertex->getInfo().hasParking()) {
+        Location loc = vertex->getInfo();
+        if (loc.hasParking() && loc.getId() != source && loc.getId() != dest) {
             parkingNodes.push_back(vertex->getInfo().getId());
         }
     }
@@ -172,23 +173,29 @@ bool EcoRoute::calculateRoute() {
 
 
     // finds all parking nodes
-    vector<int> parkingNodes = findParking();
+    vector<int> parkingNodes = findParking(source, dest);
 
     if (parkingNodes.empty()) failureReason = "No available parking nodes.\n";
 
 
 
     for (int parking : parkingNodes) {
-        dijkstra(copy, source, parking, 1);
+
+        if (initDijkstra(copy)) dijkstra(copy, source, parking, 1);
         vector<int> drivingPath = getPath(copy, source, parking);
         if (drivingPath.empty()) continue; 
 
         int dt = copy->findLocationId(parking)->getDist();
 
-        //avoid repetition of nodes
-        //copy->avoidVertices(drivingPath);
+        if (initDijkstra(copy)) {
+            for (int i = 0; i < drivingPath.size()-1; i++) {
+                Vertex<Location> *p = copy->findLocationId(drivingPath[i]);
+                p->setVisited(true);
+            }
+            
+            dijkstra(copy, parking, dest, 0);
+        }
 
-        dijkstra(copy, parking, dest, 0);
         vector<int> walkingPath = getPath(copy, parking, dest);
         if (walkingPath.empty()) continue; 
 

@@ -84,7 +84,7 @@ void IndependentRoute::calculateBestRoute() {
         return;
     }
     
-    dijkstra(cityMap, source, dest, 1);
+    if (initDijkstra(cityMap)) dijkstra(cityMap, source, dest, 1);
     
     bestRoute = getPath(cityMap, source, dest);
 
@@ -117,7 +117,7 @@ void IndependentRoute::calculateAltRoute() {
 
     //from here is the same logic as best route
 
-    dijkstra(copy, source, dest, 1);
+    if (initDijkstra(copy)) dijkstra(copy, source, dest, 1);
 
     altRoute = getPath(copy, source, dest);
 

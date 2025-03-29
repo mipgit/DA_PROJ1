@@ -4,9 +4,6 @@
 using namespace std;
 
 
-//É PRECISO FAZER A CONFIRMAÇÃO SE O SOURCE/DEST SÃO IDS VÁLIDOS
-//E CASO O USER NAO COLOQUE NADA, DAR MENSAGEM DE ERRO
-
 bool RestrictedRoute::readFromFile(const string &filename) {
     
     ifstream inFile(filename);
@@ -129,7 +126,7 @@ void RestrictedRoute::calculateRoute() {
     if (node!=-1 && node!=source && node!=dest) {
 
         //path from source to mandatory node
-        dijkstra(copy, source, node, 1);
+        if (initDijkstra(copy)) dijkstra(copy, source, node, 1);
         route = getPath(copy, source, node);
         Vertex<Location> *nodeVertex = copy->findLocationId(node);
         int time1 = nodeVertex->getDist();
@@ -139,7 +136,7 @@ void RestrictedRoute::calculateRoute() {
         copy->avoidVertices(route);
         
         //path from mandatory node to destination
-        dijkstra(copy, node, dest, 1);
+        if (initDijkstra(copy)) dijkstra(copy, node, dest, 1);
         vector<int> route2 = getPath(copy, node, dest);
         Vertex<Location> *destVertex = copy->findLocationId(dest);
         int time2 = destVertex->getDist();
@@ -149,7 +146,7 @@ void RestrictedRoute::calculateRoute() {
         time = time1 + time2;
 
     } else {
-        dijkstra(copy, source, dest, 1);
+        if (initDijkstra(copy)) dijkstra(copy, source, dest, 1);
         route = getPath(copy, source, dest);
         Vertex<Location> *destVertex = copy->findLocationId(dest);
         time = destVertex->getDist();

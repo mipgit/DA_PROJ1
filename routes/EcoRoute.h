@@ -49,7 +49,7 @@ class EcoRoute : public Route {
         //if the error is concerning maxWalk, we have to provide 2 alternatives
         vector<AproxSolution> aproxSolutions;
 
-        vector<int> findParking();
+        vector<int> findParking(int source, int dest);
 
 };
 
