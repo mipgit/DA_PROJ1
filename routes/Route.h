@@ -12,7 +12,7 @@
 
 #include "../data_structures/Graph.h"
 #include "../data_structures/Location.h"
-#include "../dijkstra.h"
+#include "dijkstra.h"
 
 using namespace std;
 

@@ -8,8 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Define source files
 set(SOURCES
     main.cpp
-    menu.cpp
-    loader.cpp
+        processors/menu.cpp
+        processors/loader.cpp
         data_structures/Location.cpp
         data_structures/Distance.cpp
         routes/IndependentRoute.cpp
@@ -24,6 +24,7 @@ add_executable(DA_T03_G04 ${SOURCES})
 include_directories(
         ${CMAKE_SOURCE_DIR}/data_sets
         ${CMAKE_SOURCE_DIR}/data_structures
+        ${CMAKE_SOURCE_DIR}/processors
         ${CMAKE_SOURCE_DIR}/routes
 )
 

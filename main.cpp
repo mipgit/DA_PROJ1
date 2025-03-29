@@ -5,8 +5,8 @@
 #include <map>
 #include <fstream>
 #include <sstream>
-#include "loader.h"
-#include "menu.h"
+#include "processors/loader.h"
+#include "processors/menu.h"
 
 using namespace std;
 
@@ -16,12 +16,12 @@ using namespace std;
 int main() {
     
     // Load data sets
-    int inFileSize = loadLocations("../data_sets/LittleLocations.csv");
+    loadLocations("../data_sets/LittleLocations.csv");
     loadDistances("../data_sets/LittleDistances.csv");
 
     Graph<Location>* cityMap = initializeGraph();
 
-    chooseRoute(cityMap, inFileSize);
+    chooseRoute(cityMap);
 
     delete cityMap;
     return 0;

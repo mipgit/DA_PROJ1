@@ -7,7 +7,7 @@ using namespace std;
 
 // ================================= ROUTE =================================
 
-void chooseRoute(Graph<Location>* cityMap, int fSize) {
+void chooseRoute(Graph<Location>* cityMap) {
 
     char choice;
 
@@ -26,7 +26,7 @@ void chooseRoute(Graph<Location>* cityMap, int fSize) {
             case '2':
             case '3':
                 cout << "\nGreat! Going to next step...\n\n";
-                chooseMode(cityMap, choice, fSize);
+                chooseMode(cityMap, choice);
                 break;
 
             case 'e':
@@ -48,7 +48,7 @@ void chooseRoute(Graph<Location>* cityMap, int fSize) {
 
 // ================================= MODE =================================
 
-void chooseMode(Graph<Location>* cityMap, char choice, int fSize) {
+void chooseMode(Graph<Location>* cityMap, char choice) {
 
     char mode;
 
@@ -65,12 +65,12 @@ void chooseMode(Graph<Location>* cityMap, char choice, int fSize) {
         switch(mode) {
             case '1':
                 cout << "\nGoing to interactive mode...\n\n";
-                interactMode(cityMap, choice, fSize);
+                interactMode(cityMap, choice);
                 break;
 
             case '2':
                 cout << "\nGoing to batch mode...\n";
-                batchMode(cityMap, choice, fSize);
+                batchMode(cityMap, choice);
                 break;
 
             case 'r':
@@ -94,7 +94,7 @@ void chooseMode(Graph<Location>* cityMap, char choice, int fSize) {
 
 
 
-void interactMode(Graph<Location>* cityMap, char choice, int fSize) {
+void interactMode(Graph<Location>* cityMap, char choice) {
     string mode;
     int source = -1, dest = -1;
 
@@ -319,7 +319,7 @@ void interactMode(Graph<Location>* cityMap, char choice, int fSize) {
 }
 
 
-void batchMode(Graph<Location>* cityMap, char choice, int fSize) {       // falta fazer o controlo de erro dos nodes no batchMode
+void batchMode(Graph<Location>* cityMap, char choice) {       // falta fazer o controlo de erro dos nodes no batchMode
     string inputFileName, outputFileName;
     string inputFilePath, outputFilePath;
 

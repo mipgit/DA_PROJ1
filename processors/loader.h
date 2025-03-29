@@ -10,9 +10,9 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "data_structures/Location.h"
-#include "data_structures/Distance.h"
-#include "data_structures/Graph.h"
+#include "../data_structures/Location.h"
+#include "../data_structures/Distance.h"
+#include "../data_structures/Graph.h"
 using namespace std;
 
 
@@ -22,7 +22,7 @@ extern vector<Distance> distances;
 
 
 // load Locations.csv
-int loadLocations(const string &filename);
+void loadLocations(const string &filename);
 
 // load Distances.csv
 void loadDistances(const string &filename);

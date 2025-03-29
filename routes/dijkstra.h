@@ -2,8 +2,8 @@
 #define DIJKSTRA_H
 
 
-#include "data_structures/Graph.h"
-#include "data_structures/MutablePriorityQueue.h"
+#include "../data_structures/Graph.h"
+#include "../data_structures/MutablePriorityQueue.h"
 
 using namespace std;
 
@@ -27,18 +27,23 @@ bool relax(Edge<T> *edge, bool mode) { // d[u] + w(u,v) < d[v]
    
 }
 
-
 template <class T>
-void dijkstra(Graph<T> * g, const int &origin, const int &dest, bool mode) {
+bool initDijkstra(Graph<T> * g) {
 
-    if (g->getVertexSet().empty()) return;
-
+    if (g->getVertexSet().empty()) return false;
+    
     //we init variables
     for (Vertex<T> *v : g->getVertexSet()) { 
         v->setDist(INF);
         v->setPath(nullptr);
         v->setVisited(false);
     }
+
+    return true;
+}
+
+template <class T>
+void dijkstra(Graph<T> * g, const int &origin, const int &dest, bool mode) {
 
     //we find ids
     Vertex<T> *s = g->findLocationId(origin);
