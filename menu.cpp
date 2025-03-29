@@ -5,13 +5,11 @@ using namespace std;
 // ======== MENU ========
 
 
-// ===== MODE =====
+// ================================= MODE =================================
 
-//por agora vamos assumir que escolhe sempre a opçao 1
 void interactMode(Graph<Location>* cityMap, char choice, int fSize) {
     string mode;
     int source = -1, dest = -1;
-    //depois vao ser precisas mais cenas... (see T2.2)
 
     bool keepRunning = true;
 
@@ -206,6 +204,7 @@ void interactMode(Graph<Location>* cityMap, char choice, int fSize) {
             default:
                 cout << "Invalid choice. Exiting...\n";
                 exit(0);
+                break;
         }
 
 
@@ -282,7 +281,8 @@ void batchMode(Graph<Location>* cityMap, char choice, int fSize) {       // falt
             break;
 
         default:
-            cout << "\nInvalid choice\n";
+            cout << "\nInvalid route choice. Exiting...\n";
+            exit(0);
             break;
 
     }
@@ -347,7 +347,7 @@ void chooseMode(Graph<Location>* cityMap, char choice, int fSize) {
 
 
 
-// ===== ROUTE =====
+// ================================= ROUTE =================================
 void chooseRoute(Graph<Location>* cityMap, int fSize) {
 
     char choice;

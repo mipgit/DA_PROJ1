@@ -185,6 +185,9 @@ bool EcoRoute::calculateRoute() {
 
         int dt = copy->findLocationId(parking)->getDist();
 
+        //avoid repetition of nodes
+        //copy->avoidVertices(drivingPath);
+
         dijkstra(copy, parking, dest, 0);
         vector<int> walkingPath = getPath(copy, parking, dest);
         if (walkingPath.empty()) continue; 
@@ -214,6 +217,10 @@ bool EcoRoute::calculateRoute() {
             drivingRoute = drivingPath;
             walkingRoute = walkingPath;
         }
+
+        
+
+
     }
 
     delete copy; //we free mem
@@ -235,7 +242,7 @@ bool EcoRoute::calculateRoute() {
 void EcoRoute::calculateAproxSolution(ostream &outFile) {
 
     if (aproxSolutions.empty()) {
-        outFile << "\nThere are no aproximate solutions for your input.";
+        outFile << "\nThere are no approximate solutions for your input.";
         return;
     }
 
@@ -249,7 +256,8 @@ void EcoRoute::calculateAproxSolution(ostream &outFile) {
     sort(aproxSolutions.begin(), aproxSolutions.end(), 
               [](const AproxSolution& a, const AproxSolution& b) {
                   return a.time < b.time;
-              });
+              }
+        );
 
 
     //we only process the first 2 solutions w/ best time
