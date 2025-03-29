@@ -6,11 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include "loader.h"
-#include "menu.cpp"
-
+#include "menu.h"
 
 using namespace std;
-
 
 
 // ===== MAIN FUNCTION =====
@@ -18,8 +16,8 @@ using namespace std;
 int main() {
     
     // Load data sets
-    int inFileSize = loadLocations("data_sets/LittleLocations.csv");
-    loadDistances("data_sets/LittleDistances.csv");
+    int inFileSize = loadLocations("../data_sets/LittleLocations.csv");
+    loadDistances("../data_sets/LittleDistances.csv");
 
     Graph<Location>* cityMap = initializeGraph();
 

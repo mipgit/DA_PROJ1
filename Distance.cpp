@@ -1,5 +1,4 @@
 #include "Distance.h"
-#include <string>
 using namespace std;
 
 //if there is no distance, set it to 0

@@ -1,14 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <string>
-#include <map>
-#include <fstream>
-#include <sstream>
-#include "Location.h"
-#include "IndependentRoute.h"
-#include "RestrictedRoute.h"
-#include "EcoRoute.h"
+#include "menu.h"
 using namespace std;
 
 
@@ -246,15 +236,25 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
     } 
 }
 
+//we need to locate the input/output files
+string getFullPath(const std::string& relativePath) {
+    filesystem::path currentPath = filesystem::current_path();
+    filesystem::path parentPath = currentPath.parent_path();
+    return (parentPath / relativePath).string();
+}
 
-//por agora vamos assumir que escolhe sempre a opçao 1
+
 void batchMode(Graph<Location>* cityMap, int choice, int fSize) {       // falta fazer o controlo de erro dos nodes no batchMode
     string inputFileName, outputFileName;
+    string inputFilePath, outputFilePath;
 
-    cout << "Enter input file name: ";
+    cout << "Enter input file path/name: ";
     cin >> inputFileName;
-    cout << "Enter output file name: ";
-    cin >> outputFileName;  
+    inputFilePath = getFullPath(inputFileName);
+
+    cout << "Enter output file path/name: ";
+    cin >> outputFileName;
+    outputFilePath = getFullPath(outputFileName);
 
     
     Route* route = nullptr;
@@ -279,8 +279,8 @@ void batchMode(Graph<Location>* cityMap, int choice, int fSize) {       // falta
     }
 
     if (route) {
-        if (route->readFromFile(inputFileName)) {
-            ofstream file(outputFileName);
+        if (route->readFromFile(inputFilePath)) {
+            ofstream file(outputFilePath);
             route->processRoute(file);
             cout << "Route calculation completed. Results saved to " << outputFileName << '\n';
         } else {

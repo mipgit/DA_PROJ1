@@ -1,13 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <map>
-#include <fstream>
-#include <sstream>
-#include "Location.h"
-#include "Distance.h"
 #include "loader.h"
-#include "data_structures/Graph.h"
 using namespace std;
 
 

@@ -2,18 +2,19 @@ cmake_minimum_required(VERSION 3.26)
 project(DA_T03_G04)
 
 # Set the C++ standard
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Define source files
 set(SOURCES
     main.cpp
     menu.cpp
-    Distance.cpp
-    Location.cpp
     loader.cpp
+    Location.cpp
+    Distance.cpp
     IndependentRoute.cpp
     RestrictedRoute.cpp
+    EcoRoute.cpp
 )
 
 # Add executable
@@ -21,7 +22,8 @@ add_executable(DA_T03_G04 ${SOURCES})
 
 # Include directories
 include_directories(
-    data_structures 
+        ${CMAKE_SOURCE_DIR}/data_sets
+        ${CMAKE_SOURCE_DIR}/data_structures
 )
 
 # Link necessary libraries (if needed)

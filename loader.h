@@ -1,7 +1,12 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-
+#include <iostream>
+#include <vector>
+#include <string>
+#include <map>
+#include <fstream>
+#include <sstream>
 #include <string>
 #include <map>
 #include <vector>
