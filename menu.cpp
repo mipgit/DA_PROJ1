@@ -37,14 +37,14 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
         }
 
         while (true) {
-            cout << "Source id: ";
+            cout << "Source: ";
             cin >> source;
             if (cityMap->findLocationId(source) != nullptr) break;
             cout << "Invalid source id! Please enter a node id present in the graph.\n";
         }
 
         while (true) {
-            cout << "Destination id: ";
+            cout << "Destination: ";
             cin >> dest;
             if (cityMap->findLocationId(dest) != nullptr) break;
             cout << "Invalid destination id! Please enter a node id present in the graph.\n";
@@ -76,25 +76,42 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
                 stringstream nodes(n);
 
                 while (getline(nodes, node, ',')) {
-                    if(!node.empty()) avoidNodes.push_back(stoi(node));
+                    if(!node.empty()) {
+                        int id = stoi(node);
+                        if (id == source || id == dest) cout << "Can't avoid source/dest nodes!\n";
+                        else avoidNodes.push_back(id);
+                    }
                 }
 
                 cout << "AvoidSegments: ";
                 getline(cin, s);
                 stringstream segs(s);
-                while(getline(segs, seg, ')')) {
-                    if(!seg.empty()) {
-                        stringstream pairNodes(seg); 
+                
+                while (getline(segs, seg, ')')) { 
+
+                    //the segment itself
+                    if (!seg.empty()) {
+
+                        // "(src,dest" -> "src,dest"
+                        seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
+
+                        stringstream pairNodes(seg);
                         int src, dst;
-                        pairNodes.ignore();
-                        pairNodes >> src;
-                        pairNodes.ignore();
-                        pairNodes >> dst;
-                        if (src>0 && dst>0) avoidSegs.push_back(make_pair(src, dst));
-                        
+                        char comma;
+            
+                        // we extract src and dest
+                        if (pairNodes >> src >> comma >> dst && comma == ',') {
+                            if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                        }
                     }
+
+
+                    //the comma separating segments
+                    char separator;
+                    segs >> separator; 
                 }
 
+          
                 int mn;
                 /*
                 while (true) {
@@ -153,30 +170,46 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
                 stringstream nodes(n);
 
                 while (getline(nodes, node, ',')) {
-                    if(!node.empty()) avoidNodes.push_back(stoi(node));
+                    if(!node.empty()) {
+                        int id = stoi(node);
+                        if (id == source || id == dest) cout << "Can't avoid source/dest nodes!\n";
+                        else avoidNodes.push_back(id);
+                    }
                 }
 
 
                 cout << "AvoidSegments: ";
                 getline(cin, s);
                 stringstream segs(s);
-                while(getline(segs, seg, ')')) {
-                    if(!seg.empty()) {
-                        stringstream pairNodes(seg); 
+                
+                while (getline(segs, seg, ')')) { 
+
+                    //the segment itself
+                    if (!seg.empty()) {
+
+                        // "(src,dest" -> "src,dest"
+                        seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
+
+                        stringstream pairNodes(seg);
                         int src, dst;
-                        pairNodes.ignore();
-                        pairNodes >> src;
-                        pairNodes.ignore();
-                        pairNodes >> dst;
-                        if (src>0 && dst>0) avoidSegs.push_back(make_pair(src, dst));
-                        
+                        char comma;
+            
+                        // we extract src and dest
+                        if (pairNodes >> src >> comma >> dst && comma == ',') {
+                            if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                        }
                     }
+
+
+                    //the comma separating segments
+                    char separator;
+                    segs >> separator; 
                 }
 
                                 
 
                 // finally
-                route = new EcoRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs, maxWalkTime);
+                route = new EcoRoute(cityMap, mode, source, dest, maxWalkTime, avoidNodes, avoidSegs);
                 break;
             }
 

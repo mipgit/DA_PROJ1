@@ -51,16 +51,29 @@ bool RestrictedRoute::readFromFile(const string &filename) {
             if (!value.empty()) {
                 stringstream segs(value);
                 string seg;
-                while (getline(segs, seg, ')')) {
+
+                while (getline(segs, seg, ')')) { 
+
+                    //the segment itself
                     if (!seg.empty()) {
-                        stringstream pairStream(seg);
+
+                        // "(src,dest" -> "src,dest"
+                        seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
+
+                        stringstream pairNodes(seg);
                         int src, dst;
-                        pairStream.ignore(); 
-                        pairStream >> src;
-                        pairStream.ignore(); 
-                        pairStream >> dst;
-                        if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                        char comma;
+            
+                        // we extract src and dest
+                        if (pairNodes >> src >> comma >> dst && comma == ',') {
+                            if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                        }
                     }
+
+
+                    //the comma separating segments
+                    char separator;
+                    segs >> separator; 
                 }
             }
         }

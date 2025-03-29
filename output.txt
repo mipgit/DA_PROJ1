@@ -1,5 +1,0 @@
-Source:1
-Destination:8
-DrivingRoute:1,2,3,7(35)
-ParkingNode:7WalkingRoute:7,8(20)
-TotalTime:55

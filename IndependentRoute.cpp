@@ -58,7 +58,7 @@ void IndependentRoute::writeToFile(ostream &outFile) {
     }
 
 
-    //best
+    //alternative
     outFile << "AlternativeDrivingRoute:";
 
     if (altRoute.empty()) {
@@ -81,12 +81,10 @@ void IndependentRoute::calculateBestRoute() {
         return;
     }
     
-    dijkstra(cityMap, source, dest, 1); // Ensure cityMap is a pointer to a valid Graph object
+    dijkstra(cityMap, source, dest, 1);
     
-    // Get the best route path
     bestRoute = getPath(cityMap, source, dest);
 
-    // Calculate the bestTime
     Vertex<Location> *destVertex = cityMap->findLocationId(dest);
     bestTime = destVertex->getDist();
   
