@@ -8,7 +8,7 @@ using namespace std;
 // ===== MODE =====
 
 //por agora vamos assumir que escolhe sempre a opçao 1
-void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
+void interactMode(Graph<Location>* cityMap, char choice, int fSize) {
     string mode;
     int source = -1, dest = -1;
     //depois vao ser precisas mais cenas... (see T2.2)
@@ -48,12 +48,12 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
     
         
         switch(choice) {
-            case 1:
+            case '1':
                 //!!! falta validar se escreveu 'driving'
                 route = new IndependentRoute(cityMap, mode, source, dest);
                 break;
 
-            case 2: {
+            case '2': {
                 vector<int> avoidNodes;
                 vector<pair<int, int>> avoidSegs;
                 string n, node, s, seg, mandatoryNode;
@@ -134,7 +134,7 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
                 break;
             }
 
-            case 3: {
+            case '3': {
                 vector<int> avoidNodes;
                 vector<pair<int, int>> avoidSegs;
                 string n, node, s, seg, maxWalk;
@@ -209,7 +209,7 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
         }
 
 
-        cout << "\nResults are here!\n";
+        cout << "\nResults are here!\n\n";
         if (route) {
             route->processRoute(cout);
             delete route; // free mem
@@ -221,30 +221,39 @@ void interactMode(Graph<Location>* cityMap, int choice, int fSize) {
         char userChoice;
         cin >> userChoice;
 
-        if (userChoice == 'n' || userChoice == 'N') {
-            keepRunning = false;  // exit the loop
-            cout << "Going to mode panel...\n\n";
-
-        } else if (userChoice != 'y' && userChoice != 'Y') {
-            cout << "Invalid choice. Exiting...\n";
-            exit(0);
+        while (userChoice != 'y' && userChoice != 'Y' && userChoice != 'n' && userChoice != 'N') {
+            cout << "Invalid choice. Please enter 'y' for yes or 'n' for no: ";
+            cin >> userChoice;
         }
 
-        //nao basta pôr só o 'else if'?
+
+        if (userChoice == 'n' || userChoice == 'N') {
+
+            cout << "\nDo you want to go back to the mode panel or exit? (m/e): ";
+            char nextChoice;
+            cin >> nextChoice;
+
+            while (nextChoice != 'm' && nextChoice != 'M' && nextChoice != 'e' && nextChoice != 'E') {
+                cout << "Invalid choice. Please enter 'm' for mode panel or 'e' for exit: ";
+                cin >> nextChoice;
+            }
+
+            if (nextChoice == 'm' || nextChoice == 'M') {
+                keepRunning = false;  // exit the loop
+                cout << "Going to mode panel...\n\n";
+            } else {
+                cout << "Exiting...\n";
+                exit(0);
+            }
+        }
+
 
 
     } 
 }
 
-//we need to locate the input/output files
-string getFullPath(const std::string& relativePath) {
-    filesystem::path currentPath = filesystem::current_path();
-    filesystem::path parentPath = currentPath.parent_path();
-    return (parentPath / relativePath).string();
-}
 
-
-void batchMode(Graph<Location>* cityMap, int choice, int fSize) {       // falta fazer o controlo de erro dos nodes no batchMode
+void batchMode(Graph<Location>* cityMap, char choice, int fSize) {       // falta fazer o controlo de erro dos nodes no batchMode
     string inputFileName, outputFileName;
     string inputFilePath, outputFilePath;
 
@@ -260,20 +269,20 @@ void batchMode(Graph<Location>* cityMap, int choice, int fSize) {       // falta
     Route* route = nullptr;
 
     switch(choice) {
-        case 1:
+        case '1':
             route = new IndependentRoute(cityMap);
             break;
 
-        case 2:
+        case '2':
             route = new RestrictedRoute(cityMap);
             break;
 
-        case 3:
+        case '3':
             route = new EcoRoute(cityMap);
             break;
 
         default:
-            cout << "\nInvalid\n";
+            cout << "\nInvalid choice\n";
             break;
 
     }
@@ -294,79 +303,87 @@ void batchMode(Graph<Location>* cityMap, int choice, int fSize) {       // falta
 }
 
 
-void chooseMode(Graph<Location>* cityMap, int choice, int fSize) {
+void chooseMode(Graph<Location>* cityMap, char choice, int fSize) {
 
-    int mode;
+    char mode;
     
     do {
         cout << "======== CHOOSE MODE ========\n";
         cout << "1. Interactive mode\n";
         cout << "2. Batch mode\n";
-        cout << "0. Exit\n";
+        cout << "R. Go back to route selection\n";
+        cout << "E. Exit\n";
         cout << "Select an option: ";
         cin >> mode;
         cin.ignore();
 
         switch(mode) {
-            case 1:
+            case '1':
                 cout << "\nGoing to interactive mode...\n\n";
                 interactMode(cityMap, choice, fSize);
                 break;
 
-            case 2:
+            case '2':
                 cout << "\nGoing to batch mode...\n";
                 batchMode(cityMap, choice, fSize);
                 break;
-            
-            case 0:
+
+            case 'r':
+            case 'R':
+                 cout << "\nGoing to route selection panel...\n\n";
+                 return;
+
+            case 'e':
+            case 'E':
                 cout << "\nExiting...\n";
                 exit(0);
             
             default:
-                cout << "\nInvalid option. Please try again.\n";
+                cout << "\nInvalid option. Please try again.\n\n";
         }
-    } while (mode != 0);
+    } while (mode != 'e' && mode != 'E');
 
 }
 
 
 
-// ===== PLAN =====
+// ===== ROUTE =====
 void chooseRoute(Graph<Location>* cityMap, int fSize) {
 
-    int choice;
+    char choice;
 
     do {
-        cout << "======== CHOOSE YOUR ROUTE PLAN ========\n\n";
+        cout << "======== CHOOSE YOUR ROUTE PLAN ========\n";
 
         cout << "1. Independent Route Planning -> driving\n";
         cout << "2. Restricted Route Planning -> driving\n";
-        
+
         cout << "3. Best route for driving and walking\n";
 
-        cout << "0. Exit\n";
+        cout << "E. Exit\n";
 
         cout << "Select an option: ";
         cin >> choice;
         cin.ignore();
 
         switch(choice) {
-            case 1:
-            case 2:
-            case 3:
+            case '1':
+            case '2':
+            case '3':
                 cout << "\nGreat! Going to next step...\n\n";
                 chooseMode(cityMap, choice, fSize);
                 break;
 
-            case 0:
+            case 'e':
+            case 'E':
                 cout << "\nExiting...\n";
                 break;
             
             default:
-                cout << "\nInvalid option. Please try again.\n";
+                cout << "\nInvalid option. Please try again.\n\n";
         }
 
-    } while (choice != 0);
+    } while (choice != 'e' && choice != 'E');
 
 }
 

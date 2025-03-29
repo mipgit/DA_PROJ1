@@ -3,6 +3,8 @@
 
 to compile in clion:
 
+mkdir build
 cd build
+cmake ..
 cmake --build .
 ./DA_T03_G04

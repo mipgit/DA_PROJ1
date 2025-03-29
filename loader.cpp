@@ -5,7 +5,6 @@ using namespace std;
 map<string, Location> locations;
 vector<Distance> distances;
 
-// Graph<Location> cityMap;
 
 // ===== LOADING FUNCTIONS =====
 
@@ -42,7 +41,7 @@ int loadLocations(const string &filename){
     }
 
     file.close();
-    cout << "\nLoaded " << locations.size() << " locations successfully.\n";
+    cout << "\nLoaded " << locations.size() << " locations successfully.";
 
     return fSize;
 }

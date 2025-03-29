@@ -20,9 +20,6 @@ using namespace std;
 extern map<string, Location> locations;
 extern vector<Distance> distances;
 
-// graph
-//extern Graph<Location> cityMap;
-
 
 // Load Locations.csv
 int loadLocations(const string &filename);
