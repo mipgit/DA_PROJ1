@@ -104,8 +104,11 @@ bool EcoRoute::readFromFile(const string &filename) {
 
 void EcoRoute::writeToFile(ostream &outFile) {
 
-    outFile << "Source:" << source << "\n";
-    outFile << "Destination:" << dest << "\n";
+    if (cityMap->findLocationId(source) == nullptr) outFile << "Invalid source id! Please enter a node id present in the graph.\n";
+    else outFile << "Source:" << source << "\n";
+
+    if (cityMap->findLocationId(dest) == nullptr) outFile << "Invalid destination id! Please enter a node id present in the graph.\n";
+    else outFile << "Destination:" << dest << "\n";
     
     outFile << "DrivingRoute:";
 
