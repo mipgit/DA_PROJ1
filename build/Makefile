@@ -129,125 +129,53 @@ DA_T03_G04/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/build
 .PHONY : DA_T03_G04/fast
 
-Distance.o: Distance.cpp.o
-.PHONY : Distance.o
+data_structures/Distance.o: data_structures/Distance.cpp.o
+.PHONY : data_structures/Distance.o
 
 # target to build an object file
-Distance.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/Distance.cpp.o
-.PHONY : Distance.cpp.o
+data_structures/Distance.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o
+.PHONY : data_structures/Distance.cpp.o
 
-Distance.i: Distance.cpp.i
-.PHONY : Distance.i
+data_structures/Distance.i: data_structures/Distance.cpp.i
+.PHONY : data_structures/Distance.i
 
 # target to preprocess a source file
-Distance.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/Distance.cpp.i
-.PHONY : Distance.cpp.i
+data_structures/Distance.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.i
+.PHONY : data_structures/Distance.cpp.i
 
-Distance.s: Distance.cpp.s
-.PHONY : Distance.s
+data_structures/Distance.s: data_structures/Distance.cpp.s
+.PHONY : data_structures/Distance.s
 
 # target to generate assembly for a file
-Distance.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/Distance.cpp.s
-.PHONY : Distance.cpp.s
+data_structures/Distance.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.s
+.PHONY : data_structures/Distance.cpp.s
 
-EcoRoute.o: EcoRoute.cpp.o
-.PHONY : EcoRoute.o
+data_structures/Location.o: data_structures/Location.cpp.o
+.PHONY : data_structures/Location.o
 
 # target to build an object file
-EcoRoute.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o
-.PHONY : EcoRoute.cpp.o
+data_structures/Location.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o
+.PHONY : data_structures/Location.cpp.o
 
-EcoRoute.i: EcoRoute.cpp.i
-.PHONY : EcoRoute.i
-
-# target to preprocess a source file
-EcoRoute.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.i
-.PHONY : EcoRoute.cpp.i
-
-EcoRoute.s: EcoRoute.cpp.s
-.PHONY : EcoRoute.s
-
-# target to generate assembly for a file
-EcoRoute.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.s
-.PHONY : EcoRoute.cpp.s
-
-IndependentRoute.o: IndependentRoute.cpp.o
-.PHONY : IndependentRoute.o
-
-# target to build an object file
-IndependentRoute.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o
-.PHONY : IndependentRoute.cpp.o
-
-IndependentRoute.i: IndependentRoute.cpp.i
-.PHONY : IndependentRoute.i
+data_structures/Location.i: data_structures/Location.cpp.i
+.PHONY : data_structures/Location.i
 
 # target to preprocess a source file
-IndependentRoute.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.i
-.PHONY : IndependentRoute.cpp.i
+data_structures/Location.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.i
+.PHONY : data_structures/Location.cpp.i
 
-IndependentRoute.s: IndependentRoute.cpp.s
-.PHONY : IndependentRoute.s
-
-# target to generate assembly for a file
-IndependentRoute.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.s
-.PHONY : IndependentRoute.cpp.s
-
-Location.o: Location.cpp.o
-.PHONY : Location.o
-
-# target to build an object file
-Location.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/Location.cpp.o
-.PHONY : Location.cpp.o
-
-Location.i: Location.cpp.i
-.PHONY : Location.i
-
-# target to preprocess a source file
-Location.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/Location.cpp.i
-.PHONY : Location.cpp.i
-
-Location.s: Location.cpp.s
-.PHONY : Location.s
+data_structures/Location.s: data_structures/Location.cpp.s
+.PHONY : data_structures/Location.s
 
 # target to generate assembly for a file
-Location.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/Location.cpp.s
-.PHONY : Location.cpp.s
-
-RestrictedRoute.o: RestrictedRoute.cpp.o
-.PHONY : RestrictedRoute.o
-
-# target to build an object file
-RestrictedRoute.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o
-.PHONY : RestrictedRoute.cpp.o
-
-RestrictedRoute.i: RestrictedRoute.cpp.i
-.PHONY : RestrictedRoute.i
-
-# target to preprocess a source file
-RestrictedRoute.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.i
-.PHONY : RestrictedRoute.cpp.i
-
-RestrictedRoute.s: RestrictedRoute.cpp.s
-.PHONY : RestrictedRoute.s
-
-# target to generate assembly for a file
-RestrictedRoute.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.s
-.PHONY : RestrictedRoute.cpp.s
+data_structures/Location.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.s
+.PHONY : data_structures/Location.cpp.s
 
 loader.o: loader.cpp.o
 .PHONY : loader.o
@@ -321,6 +249,78 @@ menu.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/menu.cpp.s
 .PHONY : menu.cpp.s
 
+routes/EcoRoute.o: routes/EcoRoute.cpp.o
+.PHONY : routes/EcoRoute.o
+
+# target to build an object file
+routes/EcoRoute.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o
+.PHONY : routes/EcoRoute.cpp.o
+
+routes/EcoRoute.i: routes/EcoRoute.cpp.i
+.PHONY : routes/EcoRoute.i
+
+# target to preprocess a source file
+routes/EcoRoute.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.i
+.PHONY : routes/EcoRoute.cpp.i
+
+routes/EcoRoute.s: routes/EcoRoute.cpp.s
+.PHONY : routes/EcoRoute.s
+
+# target to generate assembly for a file
+routes/EcoRoute.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.s
+.PHONY : routes/EcoRoute.cpp.s
+
+routes/IndependentRoute.o: routes/IndependentRoute.cpp.o
+.PHONY : routes/IndependentRoute.o
+
+# target to build an object file
+routes/IndependentRoute.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o
+.PHONY : routes/IndependentRoute.cpp.o
+
+routes/IndependentRoute.i: routes/IndependentRoute.cpp.i
+.PHONY : routes/IndependentRoute.i
+
+# target to preprocess a source file
+routes/IndependentRoute.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.i
+.PHONY : routes/IndependentRoute.cpp.i
+
+routes/IndependentRoute.s: routes/IndependentRoute.cpp.s
+.PHONY : routes/IndependentRoute.s
+
+# target to generate assembly for a file
+routes/IndependentRoute.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.s
+.PHONY : routes/IndependentRoute.cpp.s
+
+routes/RestrictedRoute.o: routes/RestrictedRoute.cpp.o
+.PHONY : routes/RestrictedRoute.o
+
+# target to build an object file
+routes/RestrictedRoute.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o
+.PHONY : routes/RestrictedRoute.cpp.o
+
+routes/RestrictedRoute.i: routes/RestrictedRoute.cpp.i
+.PHONY : routes/RestrictedRoute.i
+
+# target to preprocess a source file
+routes/RestrictedRoute.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.i
+.PHONY : routes/RestrictedRoute.cpp.i
+
+routes/RestrictedRoute.s: routes/RestrictedRoute.cpp.s
+.PHONY : routes/RestrictedRoute.s
+
+# target to generate assembly for a file
+routes/RestrictedRoute.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DA_T03_G04.dir/build.make CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.s
+.PHONY : routes/RestrictedRoute.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -330,21 +330,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... DA_T03_G04"
-	@echo "... Distance.o"
-	@echo "... Distance.i"
-	@echo "... Distance.s"
-	@echo "... EcoRoute.o"
-	@echo "... EcoRoute.i"
-	@echo "... EcoRoute.s"
-	@echo "... IndependentRoute.o"
-	@echo "... IndependentRoute.i"
-	@echo "... IndependentRoute.s"
-	@echo "... Location.o"
-	@echo "... Location.i"
-	@echo "... Location.s"
-	@echo "... RestrictedRoute.o"
-	@echo "... RestrictedRoute.i"
-	@echo "... RestrictedRoute.s"
+	@echo "... data_structures/Distance.o"
+	@echo "... data_structures/Distance.i"
+	@echo "... data_structures/Distance.s"
+	@echo "... data_structures/Location.o"
+	@echo "... data_structures/Location.i"
+	@echo "... data_structures/Location.s"
 	@echo "... loader.o"
 	@echo "... loader.i"
 	@echo "... loader.s"
@@ -354,6 +345,15 @@ help:
 	@echo "... menu.o"
 	@echo "... menu.i"
 	@echo "... menu.s"
+	@echo "... routes/EcoRoute.o"
+	@echo "... routes/EcoRoute.i"
+	@echo "... routes/EcoRoute.s"
+	@echo "... routes/IndependentRoute.o"
+	@echo "... routes/IndependentRoute.i"
+	@echo "... routes/IndependentRoute.s"
+	@echo "... routes/RestrictedRoute.o"
+	@echo "... routes/RestrictedRoute.i"
+	@echo "... routes/RestrictedRoute.s"
 .PHONY : help
 
 

@@ -10,11 +10,11 @@ set(SOURCES
     main.cpp
     menu.cpp
     loader.cpp
-    Location.cpp
-    Distance.cpp
-    IndependentRoute.cpp
-    RestrictedRoute.cpp
-    EcoRoute.cpp
+        data_structures/Location.cpp
+        data_structures/Distance.cpp
+        routes/IndependentRoute.cpp
+        routes/RestrictedRoute.cpp
+        routes/EcoRoute.cpp
 )
 
 # Add executable
@@ -24,6 +24,7 @@ add_executable(DA_T03_G04 ${SOURCES})
 include_directories(
         ${CMAKE_SOURCE_DIR}/data_sets
         ${CMAKE_SOURCE_DIR}/data_structures
+        ${CMAKE_SOURCE_DIR}/routes
 )
 
 # Link necessary libraries (if needed)

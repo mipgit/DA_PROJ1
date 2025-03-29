@@ -9,10 +9,10 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem>
-#include "Location.h"
-#include "IndependentRoute.h"
-#include "RestrictedRoute.h"
-#include "EcoRoute.h"
+#include "data_structures/Location.h"
+#include "routes/IndependentRoute.h"
+#include "routes/RestrictedRoute.h"
+#include "routes/EcoRoute.h"
 #include "data_structures/Graph.h"
 using namespace std;
 

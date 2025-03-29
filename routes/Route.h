@@ -10,9 +10,9 @@
 #include <string>
 #include <vector>
 
-#include "data_structures/Graph.h"
-#include "Location.h"
-#include "dijkstra.h"
+#include "../data_structures/Graph.h"
+#include "../data_structures/Location.h"
+#include "../dijkstra.h"
 
 using namespace std;
 

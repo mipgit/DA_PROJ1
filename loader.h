@@ -10,8 +10,8 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "Location.h"
-#include "Distance.h"
+#include "data_structures/Location.h"
+#include "data_structures/Distance.h"
 #include "data_structures/Graph.h"
 using namespace std;
 

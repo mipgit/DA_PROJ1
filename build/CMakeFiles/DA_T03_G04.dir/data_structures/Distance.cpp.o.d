@@ -1,7 +1,8 @@
-CMakeFiles/DA_T03_G04.dir/Location.cpp.o: \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Location.cpp \
+CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o: \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.cpp \
  /usr/include/stdc-predef.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Location.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \

@@ -166,8 +166,9 @@ CMakeFiles/DA_T03_G04.dir/loader.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Location.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Distance.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.h \
  /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Graph.h \
  /usr/include/c++/13/queue /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \

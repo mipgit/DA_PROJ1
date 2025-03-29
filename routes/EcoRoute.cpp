@@ -191,7 +191,7 @@ bool EcoRoute::calculateRoute() {
         int totalTime = dt + wt;
 
         if (wt > maxWalk) {
-            failureReason = "All walking routes exceed max walking time.\n";
+            failureReason = "No possible route with max. walking time of " + to_string(maxWalk) + " minutes.\n";
             AproxSolution sol = {drivingPath, dt, parking, walkingPath, wt, totalTime};
             aproxSolutions.push_back(sol);
             continue;
@@ -236,7 +236,7 @@ void EcoRoute::calculateAproxSolution(ostream &outFile) {
         return;
     }
 
-    outFile << "\nHere are 2 aproximate solutions for your input:\n\n";
+    outFile << "\nHere are 2 approximate solutions for your input:\n\n";
 
     outFile << "Source:" << source << "\n";
     outFile << "Destination:" << dest << "\n";

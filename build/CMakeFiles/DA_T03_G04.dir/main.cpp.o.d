@@ -169,8 +169,9 @@ CMakeFiles/DA_T03_G04.dir/main.cpp.o: \
  /usr/include/c++/13/bits/fstream.tcc /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc \
  /home/ines/Documents/DA/projeto/DA_T03_G04/loader.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Location.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Distance.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.h \
  /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Graph.h \
  /usr/include/c++/13/limits /usr/include/c++/13/algorithm \
  /usr/include/c++/13/bits/stl_algo.h \
@@ -202,9 +203,12 @@ CMakeFiles/DA_T03_G04.dir/main.cpp.o: \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/bits/unique_ptr.h /usr/include/c++/13/bits/fs_dir.h \
  /usr/include/c++/13/bits/fs_ops.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/IndependentRoute.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/Route.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/dijkstra.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/MutablePriorityQueue.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/RestrictedRoute.h \
- /home/ines/Documents/DA/projeto/DA_T03_G04/EcoRoute.h
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/IndependentRoute.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/Route.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/../data_structures/Graph.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/../data_structures/Location.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/../dijkstra.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/../data_structures/Graph.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/../data_structures/MutablePriorityQueue.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/RestrictedRoute.h \
+ /home/ines/Documents/DA/projeto/DA_T03_G04/routes/EcoRoute.h

@@ -111,86 +111,86 @@ CMakeFiles/DA_T03_G04.dir/loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/loader.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/loader.cpp -o CMakeFiles/DA_T03_G04.dir/loader.cpp.s
 
-CMakeFiles/DA_T03_G04.dir/Location.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
-CMakeFiles/DA_T03_G04.dir/Location.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/Location.cpp
-CMakeFiles/DA_T03_G04.dir/Location.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DA_T03_G04.dir/Location.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/Location.cpp.o -MF CMakeFiles/DA_T03_G04.dir/Location.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/Location.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/Location.cpp
+CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
+CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.cpp
+CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o -MF CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.cpp
 
-CMakeFiles/DA_T03_G04.dir/Location.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/Location.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/Location.cpp > CMakeFiles/DA_T03_G04.dir/Location.cpp.i
+CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.cpp > CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.i
 
-CMakeFiles/DA_T03_G04.dir/Location.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/Location.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/Location.cpp -o CMakeFiles/DA_T03_G04.dir/Location.cpp.s
+CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Location.cpp -o CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.s
 
-CMakeFiles/DA_T03_G04.dir/Distance.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
-CMakeFiles/DA_T03_G04.dir/Distance.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/Distance.cpp
-CMakeFiles/DA_T03_G04.dir/Distance.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DA_T03_G04.dir/Distance.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/Distance.cpp.o -MF CMakeFiles/DA_T03_G04.dir/Distance.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/Distance.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/Distance.cpp
+CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
+CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.cpp
+CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o -MF CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.cpp
 
-CMakeFiles/DA_T03_G04.dir/Distance.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/Distance.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/Distance.cpp > CMakeFiles/DA_T03_G04.dir/Distance.cpp.i
+CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.cpp > CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.i
 
-CMakeFiles/DA_T03_G04.dir/Distance.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/Distance.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/Distance.cpp -o CMakeFiles/DA_T03_G04.dir/Distance.cpp.s
+CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/data_structures/Distance.cpp -o CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.s
 
-CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
-CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/IndependentRoute.cpp
-CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o -MF CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/IndependentRoute.cpp
+CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
+CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/routes/IndependentRoute.cpp
+CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o -MF CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/routes/IndependentRoute.cpp
 
-CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/IndependentRoute.cpp > CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.i
+CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/routes/IndependentRoute.cpp > CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.i
 
-CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/IndependentRoute.cpp -o CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.s
+CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/routes/IndependentRoute.cpp -o CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.s
 
-CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
-CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/RestrictedRoute.cpp
-CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o -MF CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/RestrictedRoute.cpp
+CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
+CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/routes/RestrictedRoute.cpp
+CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o -MF CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/routes/RestrictedRoute.cpp
 
-CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/RestrictedRoute.cpp > CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.i
+CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/routes/RestrictedRoute.cpp > CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.i
 
-CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/RestrictedRoute.cpp -o CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.s
+CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/routes/RestrictedRoute.cpp -o CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.s
 
-CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
-CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/EcoRoute.cpp
-CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o -MF CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/EcoRoute.cpp
+CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/flags.make
+CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o: /home/ines/Documents/DA/projeto/DA_T03_G04/routes/EcoRoute.cpp
+CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o: CMakeFiles/DA_T03_G04.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o -MF CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o.d -o CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o -c /home/ines/Documents/DA/projeto/DA_T03_G04/routes/EcoRoute.cpp
 
-CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/EcoRoute.cpp > CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.i
+CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ines/Documents/DA/projeto/DA_T03_G04/routes/EcoRoute.cpp > CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.i
 
-CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/EcoRoute.cpp -o CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.s
+CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ines/Documents/DA/projeto/DA_T03_G04/routes/EcoRoute.cpp -o CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.s
 
 # Object files for target DA_T03_G04
 DA_T03_G04_OBJECTS = \
 "CMakeFiles/DA_T03_G04.dir/main.cpp.o" \
 "CMakeFiles/DA_T03_G04.dir/menu.cpp.o" \
 "CMakeFiles/DA_T03_G04.dir/loader.cpp.o" \
-"CMakeFiles/DA_T03_G04.dir/Location.cpp.o" \
-"CMakeFiles/DA_T03_G04.dir/Distance.cpp.o" \
-"CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o" \
-"CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o" \
-"CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o"
+"CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o" \
+"CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o" \
+"CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o" \
+"CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o" \
+"CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o"
 
 # External object files for target DA_T03_G04
 DA_T03_G04_EXTERNAL_OBJECTS =
@@ -198,11 +198,11 @@ DA_T03_G04_EXTERNAL_OBJECTS =
 DA_T03_G04: CMakeFiles/DA_T03_G04.dir/main.cpp.o
 DA_T03_G04: CMakeFiles/DA_T03_G04.dir/menu.cpp.o
 DA_T03_G04: CMakeFiles/DA_T03_G04.dir/loader.cpp.o
-DA_T03_G04: CMakeFiles/DA_T03_G04.dir/Location.cpp.o
-DA_T03_G04: CMakeFiles/DA_T03_G04.dir/Distance.cpp.o
-DA_T03_G04: CMakeFiles/DA_T03_G04.dir/IndependentRoute.cpp.o
-DA_T03_G04: CMakeFiles/DA_T03_G04.dir/RestrictedRoute.cpp.o
-DA_T03_G04: CMakeFiles/DA_T03_G04.dir/EcoRoute.cpp.o
+DA_T03_G04: CMakeFiles/DA_T03_G04.dir/data_structures/Location.cpp.o
+DA_T03_G04: CMakeFiles/DA_T03_G04.dir/data_structures/Distance.cpp.o
+DA_T03_G04: CMakeFiles/DA_T03_G04.dir/routes/IndependentRoute.cpp.o
+DA_T03_G04: CMakeFiles/DA_T03_G04.dir/routes/RestrictedRoute.cpp.o
+DA_T03_G04: CMakeFiles/DA_T03_G04.dir/routes/EcoRoute.cpp.o
 DA_T03_G04: CMakeFiles/DA_T03_G04.dir/build.make
 DA_T03_G04: CMakeFiles/DA_T03_G04.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ines/Documents/DA/projeto/DA_T03_G04/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable DA_T03_G04"

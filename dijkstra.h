@@ -33,25 +33,25 @@ void dijkstra(Graph<T> * g, const int &origin, const int &dest, bool mode) {
 
     if (g->getVertexSet().empty()) return;
 
-    //inicializar as variaveis auxiliares
+    //we init variables
     for (Vertex<T> *v : g->getVertexSet()) { 
         v->setDist(INF);
         v->setPath(nullptr);
         v->setVisited(false);
     }
 
-    //encontrar ids
+    //we find ids
     Vertex<T> *s = g->findLocationId(origin);
     Vertex<T> *d = g->findLocationId(dest);
     if (!s || !d) return;
 
     s->setDist(0);
 
-    //inicializamos a fila de prioridade
+    //we init priority queue
     MutablePriorityQueue<Vertex<T>> pq;
     pq.insert(s);
 
-    //processamos os nós da queue
+    //process queue vertices
     while (!pq.empty()) {
         Vertex<T>* v = pq.extractMin();
         v->setVisited(true);

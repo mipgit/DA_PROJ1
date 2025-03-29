@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ines/Documents/DA/projeto/DA_T03_G04/data_sets -I/home/ines/Documents/DA/projeto/DA_T03_G04/data_structures
+CXX_INCLUDES = -I/home/ines/Documents/DA/projeto/DA_T03_G04/data_sets -I/home/ines/Documents/DA/projeto/DA_T03_G04/data_structures -I/home/ines/Documents/DA/projeto/DA_T03_G04/routes
 
 CXX_FLAGS = -std=gnu++17
 
