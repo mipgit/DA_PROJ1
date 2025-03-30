@@ -522,6 +522,7 @@ void batchMode(Graph<Location>* cityMap, char choice) {       // falta fazer o c
     if (route) {
         ofstream file(outputFilePath);
         if (route->readFromFile(inputFilePath)) {
+            ofstream file(outputFilePath);
             route->processRoute(file);
             cout << "Route calculation completed. Results saved to " << outputFileName << '\n';
         } else {
