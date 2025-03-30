@@ -165,13 +165,13 @@ void RestrictedRoute::calculateRoute() {
 
         //path from source to mandatory node
         if (initDijkstra(copy)) dijkstra(copy, source, node, 1);
-        route = getPath(copy, source, node);
+        vector<int> route1 = getPath(copy, source, node);
         Vertex<Location> *nodeVertex = copy->findLocationId(node);
         int time1 = nodeVertex->getDist();
 
         //avoid repetition of nodes
-        route.pop_back();
-        copy->avoidVertices(route);
+        route1.pop_back();
+        copy->avoidVertices(route1);
         
         //path from mandatory node to destination
         if (initDijkstra(copy)) dijkstra(copy, node, dest, 1);
@@ -179,8 +179,15 @@ void RestrictedRoute::calculateRoute() {
         Vertex<Location> *destVertex = copy->findLocationId(dest);
         int time2 = destVertex->getDist();
 
+        //impossible path from mandatory node to destination
+        if(route1.empty() || route2.empty()) {
+            delete copy;
+            return;
+        }
+
         //combination of the two results
-        route.insert(route.end(), route2.begin(), route2.end());  
+        route1.insert(route1.end(), route2.begin(), route2.end()); 
+        route = route1; 
         time = time1 + time2;
 
     } else {
