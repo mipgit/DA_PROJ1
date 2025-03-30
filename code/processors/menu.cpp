@@ -197,9 +197,13 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                                     cout << "Can't avoid source/dest nodes!\n";
                                     flag = false;
                                     break;
-                                } else {
+                                } else if (cityMap->findLocationId(id) != nullptr) {
                                     avoidNodes.push_back(id);
                                     flag = true;
+                                } else {
+                                    cout << "Invalid ID(s)! Please enter ID(s) present in the graph.\n";
+                                    flag = false;
+                                    break;
                                 }
                             } catch (const invalid_argument& e) {
                                 cout << "Invalid node ID to avoid.\n";
@@ -239,10 +243,10 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                                 if (cityMap->findLocationId(src) != nullptr && cityMap->findLocationId(dst) != nullptr) {
                                     avoidSegs.push_back(make_pair(src, dst));
                                     flag = true;
-                                    break;
                                 } else {
                                     cout << "Invalid ID(s)! Please enter ID(s) present in the graph.\n";
                                     flag = false;
+                                    break;
                                 }
 
                             } else {
@@ -261,9 +265,8 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                 }
 
                 int inNode;
-                flag = false;
 
-                while (!flag) {
+                while (true) {
                     cout << "IncludeNode: ";
                     getline(cin, includeNode);
         
@@ -273,20 +276,17 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                             int n = stoi(includeNode);
                             if (cityMap->findLocationId(n) != nullptr) {
                                 inNode = n;
-                                flag = true;
                                 break;
                             } else {
                                 cout << "Invalid node ID! Please enter a node ID present in the graph.\n";
-                                flag = false;
                             }
                         } catch (const invalid_argument& e) {
                             cout << "Invalid node ID! Please enter a valid integer.\n";
-                            flag = false;
                         }
 
                     } else {
                         inNode = -1;    // default value when user inputs nothing
-                        flag = true;
+                        break;
                     }
                 }
                 
@@ -348,9 +348,13 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                                     cout << "Can't avoid source/dest nodes!\n";
                                     flag = false;
                                     break;
-                                } else {
+                                } else if (cityMap->findLocationId(id) != nullptr) {
                                     avoidNodes.push_back(id);
                                     flag = true;
+                                } else {
+                                    cout << "Invalid ID(s)! Please enter ID(s) present in the graph.\n";
+                                    flag = false;
+                                    break;
                                 }
                             } catch (const invalid_argument& e) {
                                 cout << "Invalid node ID to avoid.\n";
@@ -390,10 +394,10 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                                 if (cityMap->findLocationId(src) != nullptr && cityMap->findLocationId(dst) != nullptr) {
                                     avoidSegs.push_back(make_pair(src, dst));
                                     flag = true;
-                                    break;
                                 } else {
                                     cout << "Invalid ID(s)! Please enter ID(s) present in the graph.\n";
                                     flag = false;
+                                    break;
                                 }
 
                             } else {
@@ -403,12 +407,14 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                         
                         }
                     
+                    
                         //the comma separating segments
                         char separator;
                         segs >> separator; 
                     }
 
                 }
+
 
                                 
 
@@ -438,6 +444,11 @@ void interactMode(Graph<Location>* cityMap, char choice) {
 
         while (userChoice != 'y' && userChoice != 'Y' && userChoice != 'n' && userChoice != 'N') {
             cout << "Invalid choice. Please enter 'y' for yes or 'n' for no: ";
+            //we clear the error state
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); //ignore invalid chars
+            
+            //and ask for the choice again
             cin >> userChoice;
         }
 
@@ -450,6 +461,11 @@ void interactMode(Graph<Location>* cityMap, char choice) {
 
             while (nextChoice != 'm' && nextChoice != 'M' && nextChoice != 'e' && nextChoice != 'E') {
                 cout << "Invalid choice. Please enter 'm' for mode panel or 'e' for exit: ";
+                //we clear the error state
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n'); //ignore invalid chars
+                
+                //and ask for the choice again
                 cin >> nextChoice;
             }
 

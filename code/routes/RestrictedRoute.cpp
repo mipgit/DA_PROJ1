@@ -69,7 +69,8 @@ bool RestrictedRoute::readFromFile(const string &filename) {
                             if (id == source || id == dest) {
                                 cout << "Can't avoid source/dest nodes! Node " << id << " is either the source or destination.\n";
                             } else {
-                                avoidNodes.push_back(id);
+                                if (cityMap->findLocationId(id) == nullptr) return false;
+                                else avoidNodes.push_back(id);
                             }
                         } catch (const invalid_argument& e) {
                             cout << "Invalid node ID in 'AvoidNodes' field! Please enter a valid integer for each node.\n";
@@ -99,7 +100,8 @@ bool RestrictedRoute::readFromFile(const string &filename) {
                 
                         // We extract src and dest
                         if (pairNodes >> src >> comma >> dst && comma == ',') {
-                            avoidSegs.push_back(make_pair(src, dst));
+                            if (cityMap->findLocationId(src) == nullptr || cityMap->findLocationId(dst) == nullptr) return false;
+                            else avoidSegs.push_back(make_pair(src, dst));
                         } else {
                             cout << "Invalid segment format.\n";
                             return false; 
@@ -115,7 +117,16 @@ bool RestrictedRoute::readFromFile(const string &filename) {
         }
         
         else if (key == "IncludeNode") {  
-            if (!value.empty()) node = stoi(value);
+            if (!value.empty()) {
+                try {
+                    int n = stoi(value);
+                    if (cityMap->findLocationId(n) == nullptr) return false;
+                    else node = n;
+                } catch (const invalid_argument& e) {
+                    cout << "Invalid node ID in 'IncludeNode' field! Please enter a valid ID.\n";
+                    return false;
+                }
+            } 
             else node = -1;  
         }
 
