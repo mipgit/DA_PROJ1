@@ -1,10 +1,4 @@
-/*
- * MutablePriorityQueue.h
- * A simple implementation of mutable priority queues, required by Dijkstra algorithm.
- *
- * Created on: 17/03/2018
- *      Author: João Pascoal Faria
- */
+// Code adapted from DA 24/25
 
  #ifndef DA_TP_CLASSES_MUTABLEPRIORITYQUEUE
  #define DA_TP_CLASSES_MUTABLEPRIORITYQUEUE

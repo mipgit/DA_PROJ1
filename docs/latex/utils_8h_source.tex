@@ -1,0 +1,19 @@
+\doxysection{utils.\+h}
+\hypertarget{utils_8h_source}{}\label{utils_8h_source}\index{processors/utils.h@{processors/utils.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UTILS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UTILS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{inline}\ std::string\ getFullPath(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classEdge}{relativePath}})\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classEdge}{currentPath}}\ =\ std::filesystem::current\_path();}
+\DoxyCodeLine{00018\ \ \ \ \ std::filesystem::path\ \mbox{\hyperlink{classEdge}{parentPath}}\ =\ \mbox{\hyperlink{classEdge}{currentPath}}.parent\_path();}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classEdge}{parentPath}}\ /\ \mbox{\hyperlink{classEdge}{relativePath}}).string();}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

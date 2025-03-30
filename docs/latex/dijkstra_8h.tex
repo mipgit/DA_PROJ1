@@ -1,0 +1,137 @@
+\doxysection{routes/dijkstra.h File Reference}
+\hypertarget{dijkstra_8h}{}\label{dijkstra_8h}\index{routes/dijkstra.h@{routes/dijkstra.h}}
+
+
+Contains the implementation of Dijkstra\textquotesingle{}s algorithm.  
+
+
+{\ttfamily \#include "{}../data\+\_\+structures/\+Graph.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Mutable\+Priority\+Queue.\+h"{}}\newline
+Include dependency graph for dijkstra.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{dijkstra_8h_aa098c007af9de5337b83f8d039918cad}{relax}} (\mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{edge}}, \mbox{\hyperlink{classEdge}{bool}} mode)
+\begin{DoxyCompactList}\small\item\em Relaxes an edge if a shorter path is found. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{dijkstra_8h_a3bd82c38c57ea078056a768188a6e508}{init\+Dijkstra}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}})
+\begin{DoxyCompactList}\small\item\em Initializes all vertices for running Dijkstra\textquotesingle{}s algorithm. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{dijkstra_8h_aed0cca505f6339d22ea9ed61717a9c69}{dijkstra}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&\mbox{\hyperlink{classEdge}{origin}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&dest, \mbox{\hyperlink{classEdge}{bool}} mode)
+\begin{DoxyCompactList}\small\item\em Runs Dijkstra\textquotesingle{}s shortest path algorithm from a source to a destination. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{dijkstra_8h_aaa7ce194b033c6c5f1ceb9f92d049aed}{get\+Path}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&\mbox{\hyperlink{classEdge}{origin}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&dest)
+\begin{DoxyCompactList}\small\item\em Retrieves the shortest path from the origin to the destination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the implementation of Dijkstra\textquotesingle{}s algorithm. 
+
+This file implements the function {\ttfamily dijkstra} that calculates the shortest path between two vertices in a graph. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{dijkstra_8h_aed0cca505f6339d22ea9ed61717a9c69}\label{dijkstra_8h_aed0cca505f6339d22ea9ed61717a9c69} 
+\index{dijkstra.h@{dijkstra.h}!dijkstra@{dijkstra}}
+\index{dijkstra@{dijkstra}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{dijkstra()}{dijkstra()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{void}} dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&}]{origin,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&}]{dest,  }\item[{\mbox{\hyperlink{classEdge}{bool}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Runs Dijkstra\textquotesingle{}s shortest path algorithm from a source to a destination. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the graph vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em origin} & The ID of the starting vertex. \\
+\hline
+{\em dest} & The ID of the destination vertex. \\
+\hline
+{\em mode} & The mode of transportation (true for driving, false for walking). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{dijkstra_8h_aaa7ce194b033c6c5f1ceb9f92d049aed}\label{dijkstra_8h_aaa7ce194b033c6c5f1ceb9f92d049aed} 
+\index{dijkstra.h@{dijkstra.h}!getPath@{getPath}}
+\index{getPath@{getPath}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{getPath()}{getPath()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ get\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&}]{origin,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \&}]{dest }\end{DoxyParamCaption})}
+
+
+
+Retrieves the shortest path from the origin to the destination. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the graph vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+{\em origin} & The ID of the starting vertex. \\
+\hline
+{\em dest} & The ID of the destination vertex. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the path from origin to destination. 
+\end{DoxyReturn}
+\Hypertarget{dijkstra_8h_a3bd82c38c57ea078056a768188a6e508}\label{dijkstra_8h_a3bd82c38c57ea078056a768188a6e508} 
+\index{dijkstra.h@{dijkstra.h}!initDijkstra@{initDijkstra}}
+\index{initDijkstra@{initDijkstra}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{initDijkstra()}{initDijkstra()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{bool}} init\+Dijkstra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Initializes all vertices for running Dijkstra\textquotesingle{}s algorithm. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the graph vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Pointer to the graph. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if initialization was successful, false if the graph is empty. 
+\end{DoxyReturn}
+\Hypertarget{dijkstra_8h_aa098c007af9de5337b83f8d039918cad}\label{dijkstra_8h_aa098c007af9de5337b83f8d039918cad} 
+\index{dijkstra.h@{dijkstra.h}!relax@{relax}}
+\index{relax@{relax}!dijkstra.h@{dijkstra.h}}
+\doxysubsubsection{\texorpdfstring{relax()}{relax()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classEdge}{bool}} relax (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{Edge}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{edge,  }\item[{\mbox{\hyperlink{classEdge}{bool}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+Relaxes an edge if a shorter path is found. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of the graph vertices. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge being relaxed. \\
+\hline
+{\em mode} & The mode of transportation (true for driving, false for walking). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the edge was relaxed, false otherwise. 
+\end{DoxyReturn}

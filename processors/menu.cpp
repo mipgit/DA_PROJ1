@@ -295,7 +295,7 @@ void interactMode(Graph<Location>* cityMap, char choice) {
 
         if (userChoice == 'n' || userChoice == 'N') {
 
-            cout << "\nDo you want to go back to the mode panel or exit? (m/e): ";
+            cout << "\nDo you want to go back to the mode selection panel or exit? (m/e): ";
             char nextChoice;
             cin >> nextChoice;
 

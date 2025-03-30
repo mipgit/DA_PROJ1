@@ -1,0 +1,143 @@
+\chapter{Individual Route Planning Tool}
+\hypertarget{index}{}\label{index}\index{Individual Route Planning Tool@{Individual Route Planning Tool}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ \hypertarget{index_autotoc_md1}{}\doxysection{\texorpdfstring{Table of Contents}{Table of Contents}}\label{index_autotoc_md1}
+
+\begin{DoxyEnumerate}
+\item Introduction
+\item Project Motivation
+\item Features
+\item Technologies Used
+\item File Structure
+\item Setup and Installation
+\item Usage
+\item Demo
+\item Contributors
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Introduction}{Introduction}}\label{index_autotoc_md2}
+This project implements a path-\/planning tool designed to assist with urban navigation. Similar to GPS-\/based systems like Google Maps, the tool provides functionality for route planning but with an emphasis on environmentally sustainable and resilient mobility alternatives. The tool offers several key features, including calculating the fastest route, second-\/fastest route, restricted route planning, and environmentally-\/friendly routes that combine both driving and walking.\hypertarget{index_autotoc_md3}{}\doxysection{\texorpdfstring{Project Motivation}{Project Motivation}}\label{index_autotoc_md3}
+The motivation behind this project is to create an urban navigation tool that not only calculates the fastest routes but also optimizes routes based on sustainability by combining driving and walking, while also considering real-\/world constraints. These constraints may include restricted areas, unavailability of routes, and the existence of parking lots. The goal is to provide a versatile solution for diverse mobility needs, helping users plan routes that are faster and more eco-\/friendly.
+
+Key features include\+:
+\begin{DoxyItemize}
+\item {\bfseries{Independent \doxylink{classRoute}{Route} Planning}}\+: Find the fastest route and the second-\/fastest independent route.
+\item {\bfseries{Restricted \doxylink{classRoute}{Route} Planning}}\+: Plan routes that exclude specific nodes or segments of the urban map.
+\item {\bfseries{Eco-\/\+Friendly \doxylink{classRoute}{Route} Planning}}\+: Combine driving and walking routes, with parking options, to create environmentally-\/friendly solutions.
+\end{DoxyItemize}\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Features}{Features}}\label{index_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\bfseries{Dijkstra’s Algorithm}}\+: Used to find the shortest path between two nodes in the graph (either driving or walking).
+\item {\bfseries{Eco-\/\+Friendly \doxylink{classRoute}{Route}}}\+: Combines driving with walking, allowing users to park and then walk to their destination.
+\item {\bfseries{Independent Routes}}\+: Finds the fastest route as well as the second-\/best alternative route.
+\item {\bfseries{Restricted Routes}}\+: Excludes specific nodes or segments from the route calculation.
+\item {\bfseries{Customizable Parameters}}\+: Allows users to set constraints such as maximum walking distance, restricted nodes, and more.
+\end{DoxyItemize}\hypertarget{index_autotoc_md5}{}\doxysection{\texorpdfstring{Technologies Used}{Technologies Used}}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item {\bfseries{C++}}\+: The primary language used for implementing the project.
+\item {\bfseries{Dijkstra’s Algorithm}}\+: A well-\/known algorithm for finding the shortest path in a weighted graph.
+\item {\bfseries{\doxylink{classGraph}{Graph} Theory}}\+: Used to model the urban map and calculate routes.
+\item {\bfseries{Doxygen}}\+: Used for generating documentation from the code.
+\item {\bfseries{CMake}}\+: For building the project.
+\end{DoxyItemize}\hypertarget{index_autotoc_md6}{}\doxysection{\texorpdfstring{File Structure}{File Structure}}\label{index_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{.}
+\DoxyCodeLine{├──\ build\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Build\ directory\ (generated\ by\ CMake)}
+\DoxyCodeLine{├──\ CMakeLists.txt\ \ \ \ \ \ \ \ \ \ \ \ \#\ CMake\ build\ configuration}
+\DoxyCodeLine{├──\ data\_sets\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Directory\ containing\ data\ files\ for\ locations\ and\ distances}
+\DoxyCodeLine{│\ \ \ ├──\ Distances.csv\ \ \ \ \ \ \ \ \ \#\ Distance\ data\ for\ segments}
+\DoxyCodeLine{│\ \ \ ├──\ LittleDistances.csv\ \ \ \#\ Smaller\ test\ data\ set\ for\ distances}
+\DoxyCodeLine{│\ \ \ ├──\ LittleLocations.csv\ \ \ \#\ Smaller\ test\ data\ set\ for\ locations}
+\DoxyCodeLine{│\ \ \ └──\ Locations.csv\ \ \ \ \ \ \ \ \ \#\ Locations\ data\ (nodes)}
+\DoxyCodeLine{├──\ data\_structures\ \ \ \ \ \ \ \ \ \ \ \#\ Data\ structure\ files\ (e.g.,\ Graph,\ Distance,\ Location)}
+\DoxyCodeLine{│\ \ \ ├──\ Distance.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Distance.h}
+\DoxyCodeLine{│\ \ \ ├──\ Graph.h}
+\DoxyCodeLine{│\ \ \ ├──\ Location.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ Location.h}
+\DoxyCodeLine{│\ \ \ └──\ MutablePriorityQueue.h}
+\DoxyCodeLine{├──\ docs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen-\/generated\ documentation\ files}
+\DoxyCodeLine{│\ \ \ ├──\ html\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ HTML\ documentation}
+\DoxyCodeLine{│\ \ \ └──\ latex\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ LaTeX\ documentation}
+\DoxyCodeLine{├──\ Doxyfile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen\ configuration\ file}
+\DoxyCodeLine{├──\ main.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Main\ driver\ file}
+\DoxyCodeLine{├──\ processors\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Logic\ for\ loading\ and\ displaying\ routes}
+\DoxyCodeLine{│\ \ \ ├──\ loader.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ loader.h}
+\DoxyCodeLine{│\ \ \ ├──\ menu.cpp}
+\DoxyCodeLine{│\ \ \ ├──\ menu.h}
+\DoxyCodeLine{│\ \ \ └──\ utils.h}
+\DoxyCodeLine{├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Project\ description\ and\ documentation}
+\DoxyCodeLine{└──\ routes\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Route-\/related\ classes}
+\DoxyCodeLine{\ \ \ \ ├──\ dijkstra.h\ \ \ \ \ \ \ \ \ \ \ \ \#\ Dijkstra\ algorithm\ implementation}
+\DoxyCodeLine{\ \ \ \ ├──\ EcoRoute.cpp}
+\DoxyCodeLine{\ \ \ \ ├──\ EcoRoute.h}
+\DoxyCodeLine{\ \ \ \ ├──\ IndependentRoute.cpp}
+\DoxyCodeLine{\ \ \ \ ├──\ IndependentRoute.h}
+\DoxyCodeLine{\ \ \ \ ├──\ RestrictedRoute.cpp}
+\DoxyCodeLine{\ \ \ \ ├──\ RestrictedRoute.h}
+\DoxyCodeLine{\ \ \ \ └──\ Route.h}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Setup and Installation}{Setup and Installation}}\label{index_autotoc_md7}
+To compile in CLion\+:
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Create the Build Directory}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ build}
+\DoxyCodeLine{cd\ build}
+
+\end{DoxyCode}
+
+\item {\bfseries{Run CMake to Configure the Project}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ ..}
+
+\end{DoxyCode}
+
+\item {\bfseries{Build the Project}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\ -\/-\/build\ .}
+
+\end{DoxyCode}
+
+\item {\bfseries{Run the Executable}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./DA\_T03\_G04}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+And that should do it!\hypertarget{index_autotoc_md8}{}\doxysection{\texorpdfstring{Setup}{Setup}}\label{index_autotoc_md8}
+To use the route planning tool\+:
+
+
+\begin{DoxyEnumerate}
+\item Input Data\+: The tool takes input through predefined data sets such as Locations.\+csv and Distances.\+csv. These files contain the necessary data for locations and distances (e.\+g., time taken for driving and walking).
+\item Select \doxylink{classRoute}{Route} Type\+: Once the program is running, you can choose from various route options.
+\begin{DoxyItemize}
+\item Independent \doxylink{classRoute}{Route} Planning
+\item Restricted \doxylink{classRoute}{Route} Planning
+\item Environmentally-\/\+Friendly \doxylink{classRoute}{Route} Planning
+\end{DoxyItemize}
+\item Select Menu Mode\+: You will be asked to choose between to modes.
+\begin{DoxyItemize}
+\item Interactive mode -\/\texorpdfstring{$>$}{>} you interact directly with the terminal
+\item Batch mode -\/\texorpdfstring{$>$}{>} you provide input and ouput files to process your choices ~\newline
+
+\end{DoxyItemize}
+\item View Results\+: After selecting the appropriate options, the tool will compute the optimal route and display the path with relevant details such as the time taken and any restrictions that were applied.
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md9}{}\doxysection{\texorpdfstring{Demo}{Demo}}\label{index_autotoc_md9}
+maybe screen recording?\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{Contributors}{Contributors}}\label{index_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Carolina Ferreira (\href{mailto:up202303547@up.pt}{\texttt{ up202303547@up.\+pt}})
+\item Constança Ferreira (\href{mailto:up202306850@up.pt}{\texttt{ up202306850@up.\+pt}})
+\item Maria Inês Pinho (\href{mailto:up202306659@up.pt}{\texttt{ up202306659@up.\+pt}}) \begin{quote}
+T03\+\_\+\+G04 -\/ DA 2024/25 \end{quote}
+
+\end{DoxyItemize}

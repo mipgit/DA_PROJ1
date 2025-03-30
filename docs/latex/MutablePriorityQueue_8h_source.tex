@@ -1,0 +1,98 @@
+\doxysection{Mutable\+Priority\+Queue.\+h}
+\hypertarget{MutablePriorityQueue_8h_source}{}\label{MutablePriorityQueue_8h_source}\index{data\_structures/MutablePriorityQueue.h@{data\_structures/MutablePriorityQueue.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//\ Code\ adapted\ from\ DA\ 24/25}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\ \#ifndef\ DA\_TP\_CLASSES\_MUTABLEPRIORITYQUEUE}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\ \#define\ DA\_TP\_CLASSES\_MUTABLEPRIORITYQUEUE}}
+\DoxyCodeLine{00005\ \ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\ \#include\ <vector>}}
+\DoxyCodeLine{00007\ \ }
+\DoxyCodeLine{00012\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00013\ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ std::vector<T\ *>\ H;}
+\DoxyCodeLine{00015\ \ \ \ \ \ \textcolor{keywordtype}{void}\ heapifyUp(\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{i}});}
+\DoxyCodeLine{00016\ \ \ \ \ \ \textcolor{keywordtype}{void}\ heapifyDown(\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{i}});}
+\DoxyCodeLine{00017\ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ set(\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{i}},\ \mbox{\hyperlink{classEdge}{T}}\ *\ \mbox{\hyperlink{classEdge}{x}});}
+\DoxyCodeLine{00018\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue}}();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \textcolor{keywordtype}{void}\ insert(\mbox{\hyperlink{classEdge}{T}}\ *\ \mbox{\hyperlink{classEdge}{x}});}
+\DoxyCodeLine{00021\ \ \ \ \ \ \mbox{\hyperlink{classEdge}{T}}\ *\ extractMin();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \textcolor{keywordtype}{void}\ decreaseKey(\mbox{\hyperlink{classEdge}{T}}\ *\ \mbox{\hyperlink{classEdge}{x}});}
+\DoxyCodeLine{00023\ \ \ \ \ \ \textcolor{keywordtype}{bool}\ empty();}
+\DoxyCodeLine{00024\ \ \};}
+\DoxyCodeLine{00025\ \ }
+\DoxyCodeLine{00026\ \ \textcolor{comment}{//\ Index\ calculations}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \#define\ parent(i)\ ((i)\ /\ 2)}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\ \#define\ leftChild(i)\ ((i)\ *\ 2)}}
+\DoxyCodeLine{00029\ \ }
+\DoxyCodeLine{00030\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00031\ \ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::MutablePriorityQueue}}()\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ H.push\_back(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \textcolor{comment}{//\ indices\ will\ be\ used\ starting\ in\ 1}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \textcolor{comment}{//\ to\ facilitate\ parent/child\ calculations}}
+\DoxyCodeLine{00035\ \ \}}
+\DoxyCodeLine{00036\ \ }
+\DoxyCodeLine{00037\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00038\ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::empty}}()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \textcolor{keywordflow}{return}\ H.size()\ ==\ 1;}
+\DoxyCodeLine{00040\ \ \}}
+\DoxyCodeLine{00041\ \ }
+\DoxyCodeLine{00042\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00043\ \ \mbox{\hyperlink{classEdge}{T}}*\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::extractMin}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classEdge}{x}}\ =\ H[1];}
+\DoxyCodeLine{00045\ \ \ \ \ \ H[1]\ =\ H.back();}
+\DoxyCodeLine{00046\ \ \ \ \ \ H.pop\_back();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \textcolor{keywordflow}{if}(H.size()\ >\ 1)\ heapifyDown(1);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \mbox{\hyperlink{classEdge}{x}}-\/>queueIndex\ =\ 0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classEdge}{x}};}
+\DoxyCodeLine{00050\ \ \}}
+\DoxyCodeLine{00051\ \ }
+\DoxyCodeLine{00052\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00053\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::insert}}(\mbox{\hyperlink{classEdge}{T}}\ *\mbox{\hyperlink{classEdge}{x}})\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ H.push\_back(\mbox{\hyperlink{classEdge}{x}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ heapifyUp(H.size()-\/1);}
+\DoxyCodeLine{00056\ \ \}}
+\DoxyCodeLine{00057\ \ }
+\DoxyCodeLine{00058\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00059\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::decreaseKey}}(\mbox{\hyperlink{classEdge}{T}}\ *\mbox{\hyperlink{classEdge}{x}})\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ heapifyUp(\mbox{\hyperlink{classEdge}{x}}-\/>queueIndex);}
+\DoxyCodeLine{00061\ \ \}}
+\DoxyCodeLine{00062\ \ }
+\DoxyCodeLine{00063\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00064\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::heapifyUp}}(\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{i}})\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classEdge}{x}}\ =\ H[\mbox{\hyperlink{classEdge}{i}}];}
+\DoxyCodeLine{00066\ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{classEdge}{i}}\ >\ 1\ \&\&\ *\mbox{\hyperlink{classEdge}{x}}\ <\ *H[parent(\mbox{\hyperlink{classEdge}{i}})])\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ set(\mbox{\hyperlink{classEdge}{i}},\ H[parent(\mbox{\hyperlink{classEdge}{i}})]);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{i}}\ =\ parent(\mbox{\hyperlink{classEdge}{i}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ \ \ \ \ \ set(\mbox{\hyperlink{classEdge}{i}},\ \mbox{\hyperlink{classEdge}{x}});}
+\DoxyCodeLine{00071\ \ \}}
+\DoxyCodeLine{00072\ \ }
+\DoxyCodeLine{00073\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00074\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::heapifyDown}}(\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{i}})\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{classEdge}{x}}\ =\ H[\mbox{\hyperlink{classEdge}{i}}];}
+\DoxyCodeLine{00076\ \ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{k}}\ =\ leftChild(\mbox{\hyperlink{classEdge}{i}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEdge}{k}}\ >=\ H.size())}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classEdge}{k}}+1\ <\ H.size()\ \&\&\ *H[\mbox{\hyperlink{classEdge}{k}}+1]\ <\ *H[\mbox{\hyperlink{classEdge}{k}}])}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{classEdge}{k}};\ \textcolor{comment}{//\ right\ child\ of\ i}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ !\ (*H[\mbox{\hyperlink{classEdge}{k}}]\ <\ *\mbox{\hyperlink{classEdge}{x}})\ )}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ set(\mbox{\hyperlink{classEdge}{i}},\ H[\mbox{\hyperlink{classEdge}{k}}]);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{i}}\ =\ \mbox{\hyperlink{classEdge}{k}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ set(\mbox{\hyperlink{classEdge}{i}},\ \mbox{\hyperlink{classEdge}{x}});}
+\DoxyCodeLine{00088\ \ \}}
+\DoxyCodeLine{00089\ \ }
+\DoxyCodeLine{00090\ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00091\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMutablePriorityQueue}{MutablePriorityQueue<T>::set}}(\textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classEdge}{i}},\ \mbox{\hyperlink{classEdge}{T}}\ *\ \mbox{\hyperlink{classEdge}{x}})\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ H[\mbox{\hyperlink{classEdge}{i}}]\ =\ \mbox{\hyperlink{classEdge}{x}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \mbox{\hyperlink{classEdge}{x}}-\/>queueIndex\ =\ \mbox{\hyperlink{classEdge}{i}};}
+\DoxyCodeLine{00094\ \ \}}
+\DoxyCodeLine{00095\ \ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \#endif\ }\textcolor{comment}{/*\ DA\_TP\_CLASSES\_MUTABLEPRIORITYQUEUE\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

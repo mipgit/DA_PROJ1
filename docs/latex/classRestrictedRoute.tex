@@ -1,0 +1,186 @@
+\doxysection{Restricted\+Route Class Reference}
+\hypertarget{classRestrictedRoute}{}\label{classRestrictedRoute}\index{RestrictedRoute@{RestrictedRoute}}
+
+
+Class for handling route calculation with restrictions, extending the \doxylink{classRoute}{Route} class.  
+
+
+
+
+{\ttfamily \#include $<$Restricted\+Route.\+h$>$}
+
+
+
+Inheritance diagram for Restricted\+Route\+:
+% FIG 0
+
+
+Collaboration diagram for Restricted\+Route\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRestrictedRoute_a37ba036f58577acbd3444985ea836951}{Restricted\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}})
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classRestrictedRoute}{Restricted\+Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRestrictedRoute_aa97a5b08e7243cfe747037286f888c1c}{Restricted\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}}, \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \mbox{\hyperlink{classEdge}{avoidN}}, \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{pair}}$<$ \mbox{\hyperlink{classEdge}{int}}, \mbox{\hyperlink{classEdge}{int}} $>$ $>$ \mbox{\hyperlink{classEdge}{avoidS}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{inc}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classRestrictedRoute}{Restricted\+Route} with specific mode, source, destination, and restrictions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classRestrictedRoute_a809896bef1eb29c89862a7f89938303e}{read\+From\+File}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Reads route data from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRestrictedRoute_a4727074c0e690c1d09524151bf31e0b0}{write\+To\+File}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Writes route data to an output stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRestrictedRoute_a076ac9bbf74d8c340d8ce1fa7e13c51e}{calculate\+Route}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the route while avoiding certain nodes and edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRestrictedRoute_a182cb551a679ec85f6e568e7d7ccbebe}{process\+Route}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Processes the route, calling {\ttfamily calculate\+Route} and {\ttfamily write\+To\+File}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRoute}{Route}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoute_ad70fde78a61a895836c416ea0c6a2b28}{Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classRoute}{Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{virtual}} {\bfseries \texorpdfstring{$\sim$}{\string~}\+Route} ()=\mbox{\hyperlink{classEdge}{default}}
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classRoute}{Route} class. Ensures proper cleanup of derived classes when an object is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classRoute}{Route}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*} {\bfseries city\+Map}
+\begin{DoxyCompactList}\small\item\em Pointer to the graph representing the city map with locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em Mode of transportation (e.\+g., "{}driving"{} or "{}driving-\/walking"{}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries source}
+\begin{DoxyCompactList}\small\item\em ID of the source location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries dest}
+\begin{DoxyCompactList}\small\item\em ID of the destination location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling route calculation with restrictions, extending the \doxylink{classRoute}{Route} class. 
+
+This class calculates a route between a source and destination on a given map with specific routing restrictions. It enables users to avoid undesirable areas, excluding specific nodes from the graph. It enables users to avoid undesirable road segments, excluding specific segments from the graph. It enables users to simultaneously exclude the combination of nodes and segments of the graph. It enables users to include a single specific node (or stop) that the route must include while ensuring that the calculated route remains the fastest possible 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRestrictedRoute_a37ba036f58577acbd3444985ea836951}\label{classRestrictedRoute_a37ba036f58577acbd3444985ea836951} 
+\index{RestrictedRoute@{RestrictedRoute}!RestrictedRoute@{RestrictedRoute}}
+\index{RestrictedRoute@{RestrictedRoute}!RestrictedRoute@{RestrictedRoute}}
+\doxysubsubsection{\texorpdfstring{RestrictedRoute()}{RestrictedRoute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Restricted\+Route\+::\+Restricted\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \doxylink{classRestrictedRoute}{Restricted\+Route}. 
+
+Initializes a \doxylink{classRestrictedRoute}{Restricted\+Route} object with the provided map, mode, source, and destination. Sets up restrictions for nodes and edges.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & A pointer to the \doxylink{classGraph}{Graph} representing the map with locations. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRestrictedRoute_aa97a5b08e7243cfe747037286f888c1c}\label{classRestrictedRoute_aa97a5b08e7243cfe747037286f888c1c} 
+\index{RestrictedRoute@{RestrictedRoute}!RestrictedRoute@{RestrictedRoute}}
+\index{RestrictedRoute@{RestrictedRoute}!RestrictedRoute@{RestrictedRoute}}
+\doxysubsubsection{\texorpdfstring{RestrictedRoute()}{RestrictedRoute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Restricted\+Route\+::\+Restricted\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{m,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{src,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{dt,  }\item[{\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$}]{avoidN,  }\item[{\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{pair}}$<$ \mbox{\hyperlink{classEdge}{int}}, \mbox{\hyperlink{classEdge}{int}} $>$ $>$}]{avoidS,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{inc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{classRestrictedRoute}{Restricted\+Route} with specific mode, source, destination, and restrictions. 
+
+Initializes a \doxylink{classRestrictedRoute}{Restricted\+Route} object with the provided parameters, setting up restrictions on nodes and segments, as well as the node where the route must end.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & A pointer to the \doxylink{classGraph}{Graph} representing the map with locations. \\
+\hline
+{\em m} & A string representing the mode of transportation ("{}driving"{}, "{}driving-\/walking"{}). \\
+\hline
+{\em src} & The ID of the source location. \\
+\hline
+{\em dt} & The ID of the destination location. \\
+\hline
+{\em avoidN} & A vector of node IDs to avoid during the route calculation. \\
+\hline
+{\em avoidS} & A vector of pairs representing edge segments to avoid (start, end). \\
+\hline
+{\em inc} & The ID of a node to include on the path. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRestrictedRoute_a076ac9bbf74d8c340d8ce1fa7e13c51e}\label{classRestrictedRoute_a076ac9bbf74d8c340d8ce1fa7e13c51e} 
+\index{RestrictedRoute@{RestrictedRoute}!calculateRoute@{calculateRoute}}
+\index{calculateRoute@{calculateRoute}!RestrictedRoute@{RestrictedRoute}}
+\doxysubsubsection{\texorpdfstring{calculateRoute()}{calculateRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Restricted\+Route\+::calculate\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the route while avoiding certain nodes and edges. 
+
+This method calculates the route while considering the restricted areas, such as avoiding specific nodes and segments. It updates the route and time variables accordingly. \Hypertarget{classRestrictedRoute_a182cb551a679ec85f6e568e7d7ccbebe}\label{classRestrictedRoute_a182cb551a679ec85f6e568e7d7ccbebe} 
+\index{RestrictedRoute@{RestrictedRoute}!processRoute@{processRoute}}
+\index{processRoute@{processRoute}!RestrictedRoute@{RestrictedRoute}}
+\doxysubsubsection{\texorpdfstring{processRoute()}{processRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Restricted\+Route\+::process\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes the route, calling {\ttfamily calculate\+Route} and {\ttfamily write\+To\+File}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & The output stream where the processed route results will be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoute_ac58074883b927ba230a9904cfc3ec07b}{Route}}.
+
+\Hypertarget{classRestrictedRoute_a809896bef1eb29c89862a7f89938303e}\label{classRestrictedRoute_a809896bef1eb29c89862a7f89938303e} 
+\index{RestrictedRoute@{RestrictedRoute}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!RestrictedRoute@{RestrictedRoute}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Restricted\+Route\+::read\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads route data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if reading was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoute_a66c1e494b5b10315f9a08d68283e2185}{Route}}.
+
+\Hypertarget{classRestrictedRoute_a4727074c0e690c1d09524151bf31e0b0}\label{classRestrictedRoute_a4727074c0e690c1d09524151bf31e0b0} 
+\index{RestrictedRoute@{RestrictedRoute}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!RestrictedRoute@{RestrictedRoute}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Restricted\+Route\+::write\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Writes route data to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & Output stream to write the route data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoute_a77325f40d3efd4aeb74158ebb550c08e}{Route}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+routes/Restricted\+Route.\+h\item 
+routes/Restricted\+Route.\+cpp\end{DoxyCompactItemize}

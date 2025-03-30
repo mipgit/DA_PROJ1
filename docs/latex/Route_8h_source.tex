@@ -1,0 +1,48 @@
+\doxysection{Route.\+h}
+\hypertarget{Route_8h_source}{}\label{Route_8h_source}\index{routes/Route.h@{routes/Route.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ROUTE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ROUTE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../data\_structures/Graph.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../data\_structures/Location.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dijkstra_8h}{dijkstra.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRoute}{Route}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRoute_ad70fde78a61a895836c416ea0c6a2b28}{Route}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{m}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{src}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{dt}})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classRoute_ad3fc27ccb071d7be3ad0584f9b9732df}{cityMap}}(\mbox{\hyperlink{classEdge}{map}}),\ \mbox{\hyperlink{classRoute_a82c09142f8fc459c0c2f148026d89ec4}{mode}}(\mbox{\hyperlink{classEdge}{m}}),\ \mbox{\hyperlink{classRoute_adbff3395b424b39ffb03c8c1a2a56c56}{source}}(\mbox{\hyperlink{classEdge}{src}}),\ \mbox{\hyperlink{classRoute_afdd52d94063ece74262f070edf9fa3c9}{dest}}(\mbox{\hyperlink{classEdge}{dt}})\ \{\}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classRoute_aba3596ac4dc71ee199bdf1b7d962caf6}{\string~Route}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRoute_a66c1e494b5b10315f9a08d68283e2185}{readFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}})\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRoute_a77325f40d3efd4aeb74158ebb550c08e}{writeToFile}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ =\ 0;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRoute_ac58074883b927ba230a9904cfc3ec07b}{processRoute}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ =\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classRoute_ad3fc27ccb071d7be3ad0584f9b9732df}{cityMap}};\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classRoute_a82c09142f8fc459c0c2f148026d89ec4}{mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRoute_adbff3395b424b39ffb03c8c1a2a56c56}{source}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRoute_afdd52d94063ece74262f070edf9fa3c9}{dest}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ROUTE\_H}}
+
+\end{DoxyCode}

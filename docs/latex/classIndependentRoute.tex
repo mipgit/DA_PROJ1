@@ -1,0 +1,192 @@
+\doxysection{Independent\+Route Class Reference}
+\hypertarget{classIndependentRoute}{}\label{classIndependentRoute}\index{IndependentRoute@{IndependentRoute}}
+
+
+Class for handling independent route calculation, extending the \doxylink{classRoute}{Route} class.  
+
+
+
+
+{\ttfamily \#include $<$Independent\+Route.\+h$>$}
+
+
+
+Inheritance diagram for Independent\+Route\+:
+% FIG 0
+
+
+Collaboration diagram for Independent\+Route\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIndependentRoute_ab6d58fe0317c7725f3fa772df77c8a43}{Independent\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}})
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classIndependentRoute}{Independent\+Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIndependentRoute_a2a2b55b0d896db68a56c460d9527237e}{Independent\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classIndependentRoute}{Independent\+Route} with specific mode, source, and destination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classIndependentRoute_a32f9062ece3da4ba4f148dd05ffef675}{read\+From\+File}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Reads route data from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classIndependentRoute_a6efcded989490fd6915bbbbacae84e33}{write\+To\+File}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Writes route data to an output stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classIndependentRoute_a8642714b7c6f6c425a18d6ca42a7e256}{calculate\+Best\+Route}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the best route between the source and destination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classIndependentRoute_ae933b2263a5478597b3682b8c1acfeda}{calculate\+Alt\+Route}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the alternative route between the source and destination. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classIndependentRoute_a3cf48e9ec1bea2539f0744124faabe47}{process\+Route}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Processes the route, calling {\ttfamily calculate\+Best\+Route}, {\ttfamily calculate\+Alt\+Route} and {\ttfamily write\+To\+File}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRoute}{Route}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoute_ad70fde78a61a895836c416ea0c6a2b28}{Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classRoute}{Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{virtual}} {\bfseries \texorpdfstring{$\sim$}{\string~}\+Route} ()=\mbox{\hyperlink{classEdge}{default}}
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classRoute}{Route} class. Ensures proper cleanup of derived classes when an object is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classRoute}{Route}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*} {\bfseries city\+Map}
+\begin{DoxyCompactList}\small\item\em Pointer to the graph representing the city map with locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em Mode of transportation (e.\+g., "{}driving"{} or "{}driving-\/walking"{}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries source}
+\begin{DoxyCompactList}\small\item\em ID of the source location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries dest}
+\begin{DoxyCompactList}\small\item\em ID of the destination location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling independent route calculation, extending the \doxylink{classRoute}{Route} class. 
+
+This class calculates the best route and an alternative route between a source and destination on a given map. The two routes share no intermediate nodes or segments, except for the source and destination, and that the alternative route is equal to or greater in travel time than the primary route. This provides a robust “\+Plan-\/\+B” option for navigation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIndependentRoute_ab6d58fe0317c7725f3fa772df77c8a43}\label{classIndependentRoute_ab6d58fe0317c7725f3fa772df77c8a43} 
+\index{IndependentRoute@{IndependentRoute}!IndependentRoute@{IndependentRoute}}
+\index{IndependentRoute@{IndependentRoute}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{IndependentRoute()}{IndependentRoute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Independent\+Route\+::\+Independent\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \doxylink{classIndependentRoute}{Independent\+Route}. 
+
+Initializes an \doxylink{classIndependentRoute}{Independent\+Route} object with the provided map, mode, source, and destination. Sets up best and alternative route variables.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & A pointer to the \doxylink{classGraph}{Graph} representing the map with locations. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classIndependentRoute_a2a2b55b0d896db68a56c460d9527237e}\label{classIndependentRoute_a2a2b55b0d896db68a56c460d9527237e} 
+\index{IndependentRoute@{IndependentRoute}!IndependentRoute@{IndependentRoute}}
+\index{IndependentRoute@{IndependentRoute}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{IndependentRoute()}{IndependentRoute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Independent\+Route\+::\+Independent\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{m,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{src,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{classIndependentRoute}{Independent\+Route} with specific mode, source, and destination. 
+
+Initializes an \doxylink{classIndependentRoute}{Independent\+Route} object with the provided parameters. Sets up the best and alternative route variables based on the provided mode and locations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & A pointer to the \doxylink{classGraph}{Graph} representing the map with locations. \\
+\hline
+{\em m} & A string representing the mode of transportation ("{}driving"{}, "{}driving-\/walking"{}). \\
+\hline
+{\em src} & The ID of the source location. \\
+\hline
+{\em dt} & The ID of the destination location. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIndependentRoute_ae933b2263a5478597b3682b8c1acfeda}\label{classIndependentRoute_ae933b2263a5478597b3682b8c1acfeda} 
+\index{IndependentRoute@{IndependentRoute}!calculateAltRoute@{calculateAltRoute}}
+\index{calculateAltRoute@{calculateAltRoute}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{calculateAltRoute()}{calculateAltRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Independent\+Route\+::calculate\+Alt\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the alternative route between the source and destination. 
+
+This method calculates the best alternative route, that shares no intermediate nodes or segments with the best one. It updates the alt\+Route and alt\+Time member variables. \Hypertarget{classIndependentRoute_a8642714b7c6f6c425a18d6ca42a7e256}\label{classIndependentRoute_a8642714b7c6f6c425a18d6ca42a7e256} 
+\index{IndependentRoute@{IndependentRoute}!calculateBestRoute@{calculateBestRoute}}
+\index{calculateBestRoute@{calculateBestRoute}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{calculateBestRoute()}{calculateBestRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Independent\+Route\+::calculate\+Best\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the best route between the source and destination. 
+
+It updates the best\+Route and best\+Time member variables. \Hypertarget{classIndependentRoute_a3cf48e9ec1bea2539f0744124faabe47}\label{classIndependentRoute_a3cf48e9ec1bea2539f0744124faabe47} 
+\index{IndependentRoute@{IndependentRoute}!processRoute@{processRoute}}
+\index{processRoute@{processRoute}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{processRoute()}{processRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Independent\+Route\+::process\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes the route, calling {\ttfamily calculate\+Best\+Route}, {\ttfamily calculate\+Alt\+Route} and {\ttfamily write\+To\+File}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & The output stream where the processed route results will be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoute_ac58074883b927ba230a9904cfc3ec07b}{Route}}.
+
+\Hypertarget{classIndependentRoute_a32f9062ece3da4ba4f148dd05ffef675}\label{classIndependentRoute_a32f9062ece3da4ba4f148dd05ffef675} 
+\index{IndependentRoute@{IndependentRoute}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Independent\+Route\+::read\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads route data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if reading was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoute_a66c1e494b5b10315f9a08d68283e2185}{Route}}.
+
+\Hypertarget{classIndependentRoute_a6efcded989490fd6915bbbbacae84e33}\label{classIndependentRoute_a6efcded989490fd6915bbbbacae84e33} 
+\index{IndependentRoute@{IndependentRoute}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!IndependentRoute@{IndependentRoute}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Independent\+Route\+::write\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Writes route data to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & Output stream to write the route data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoute_a77325f40d3efd4aeb74158ebb550c08e}{Route}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+routes/Independent\+Route.\+h\item 
+routes/Independent\+Route.\+cpp\end{DoxyCompactItemize}

@@ -1,10 +1,7 @@
 #include "Location.h"
 using namespace std;
 
-
-//empty
 Location::Location() : location(""), id(0), code(""), parking(false) {} 
-//else
 Location::Location(string l, int id, string code, bool p) : location(l), id(id), code(code), parking(p) {}
 
 string Location::getLocation() const { return location; }

@@ -5,27 +5,67 @@
 #include <string>
 using namespace std;
 
+/**
+ * @class Location
+ * @brief Represents a location with details such as name, ID, code, and parking availability.
+ */
+class Location {
+    public:
+        /**
+         * @brief Default constructor that initializes a Location object with default values.
+         *
+         * Initializes the Location with empty values for the string fields and 0 for the ID, 
+         * and sets parking availability to false.
+         */
+        Location();
 
-class Location
-{
-public:
-    //empty
-    Location();
-    //else
-    Location(string l, int id, string code, bool p);
+        /**
+         * @brief Constructor to initialize a Location object with the given details.
+         *
+         * @param l The name of the location.
+         * @param id The unique identifier for the location.
+         * @param code A code associated with the location.
+         * @param p A boolean indicating if the location has parking available.
+         */
+        Location(string l, int id, string code, bool p);
 
-    string getLocation() const;
-    int getId() const;
-    string getCode() const;
-    bool hasParking() const;
+        /**
+         * @brief Gets the name of the location.
+         * @return The name of the location as a string.
+         */
+        string getLocation() const;
 
-    bool operator==(const Location &other) const;
+        /**
+         * @brief Gets the unique ID of the location.
+         * @return The unique ID of the location as an integer.
+         */
+        int getId() const;
 
-private:
-    string location;
-    int id;
-    string code;
-    bool parking;
+        /**
+         * @brief Gets the code associated with the location.
+         * @return The code of the location as a string.
+         */
+        string getCode() const;
+
+        /**
+         * @brief Checks if the location has parking available.
+         * @return True if the location has parking, false otherwise.
+         */
+        bool hasParking() const;
+
+        /**
+         * @brief Compares two Location objects for equality.
+         * 
+         * @param other The Location object to compare to.
+         * @return True if the two Location objects are equal, false otherwise.
+         */
+        bool operator==(const Location &other) const;
+
+    private:
+        string location; ///< The name of the location.
+        int id;          ///< The unique identifier for the location.
+        string code;     ///< The code associated with the location.
+        bool parking;    ///< Indicates if the location has parking available.
 };
 
 

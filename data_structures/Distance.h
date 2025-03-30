@@ -7,25 +7,60 @@
 using namespace std;
 
 
-class Distance
-{
-public:
-    //if there is no distance, set it to 0
-    Distance();
-    //else
-    Distance(Location l1, Location l2, int d, double w);
-
+/**
+ * @class Distance
+ * @brief Represents the distance between two locations, including both driving and walking distances.
+ */
+class Distance {
+    public:
+        /**
+         * @brief Default constructor that sets distance to 0.
+         *
+         * This constructor initializes the distance to 0 when no specific locations or distances 
+         * are provided.
+         */
+        Distance();
     
-    Location getSource() const;
-    Location getDestination() const; 
-    int getDriving() const;
-    double getWalking() const;
-
-private:
-    Location location1;
-    Location location2;
-    int driving;
-    int walking;
+        /**
+         * @brief Constructor to initialize a Distance object with two locations, driving distance, 
+         *        and walking distance.
+         *
+         * @param l1 The first location.
+         * @param l2 The second location.
+         * @param d The driving distance between the locations.
+         * @param w The walking distance between the locations.
+         */
+        Distance(Location l1, Location l2, int d, double w);
+    
+        /**
+         * @brief Gets the source location.
+         * @return The source location.
+         */
+        Location getSource() const;
+    
+        /**
+         * @brief Gets the destination location.
+         * @return The destination location.
+         */
+        Location getDestination() const; 
+    
+        /**
+         * @brief Gets the driving distance between the locations.
+         * @return The driving distance.
+         */
+        int getDriving() const;
+    
+        /**
+         * @brief Gets the walking distance between the locations.
+         * @return The walking distance.
+         */
+        double getWalking() const;
+    
+    private:
+        Location location1; ///< The first location.
+        Location location2; ///< The second location.
+        int driving;        ///< The driving distance.
+        double walking;     ///< The walking distance.
 };
 
 

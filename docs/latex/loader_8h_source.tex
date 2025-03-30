@@ -1,0 +1,48 @@
+\doxysection{loader.\+h}
+\hypertarget{loader_8h_source}{}\label{loader_8h_source}\index{processors/loader.h@{processors/loader.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LOADER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LOADER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../data\_structures/Location.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../data\_structures/Distance.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}../data\_structures/Graph.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ maps}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classEdge}{map<string,\ Location>}}\ locations;}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classEdge}{vector<Distance>}}\ distances;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ load\ Locations.csv}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ loadLocations(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ load\ Distances.csv}}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ loadDistances(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ initialization\ of\ main\ Graph}}
+\DoxyCodeLine{00032\ \mbox{\hyperlink{classEdge}{Graph<Location>}}*\ initializeGraph();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//testers}}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ displayLocations();}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ displayDistances();}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ displayVertices();}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ displayEdges();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif\ }}
+
+\end{DoxyCode}

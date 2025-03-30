@@ -7,6 +7,23 @@
 
 using namespace std;
 
+/** @file dijkstra.h
+ *  @brief Contains the implementation of Dijkstra's algorithm.
+ *
+ *  This file implements the function `dijkstra` that calculates the shortest path 
+ *  between two vertices in a graph.
+ */
+
+
+
+/**
+ * @brief Relaxes an edge if a shorter path is found.
+ *
+ * @tparam T Type of the graph vertices.
+ * @param edge The edge being relaxed.
+ * @param mode The mode of transportation (true for driving, false for walking).
+ * @return True if the edge was relaxed, false otherwise.
+ */
 template <class T>
 bool relax(Edge<T> *edge, bool mode) { // d[u] + w(u,v) < d[v]
     if (mode) {
@@ -27,6 +44,14 @@ bool relax(Edge<T> *edge, bool mode) { // d[u] + w(u,v) < d[v]
    
 }
 
+
+/**
+ * @brief Initializes all vertices for running Dijkstra's algorithm.
+ *
+ * @tparam T Type of the graph vertices.
+ * @param g Pointer to the graph.
+ * @return True if initialization was successful, false if the graph is empty.
+ */
 template <class T>
 bool initDijkstra(Graph<T> * g) {
 
@@ -42,6 +67,16 @@ bool initDijkstra(Graph<T> * g) {
     return true;
 }
 
+
+/**
+ * @brief Runs Dijkstra's shortest path algorithm from a source to a destination.
+ *
+ * @tparam T Type of the graph vertices.
+ * @param g Pointer to the graph.
+ * @param origin The ID of the starting vertex.
+ * @param dest The ID of the destination vertex.
+ * @param mode The mode of transportation (true for driving, false for walking).
+ */
 template <class T>
 void dijkstra(Graph<T> * g, const int &origin, const int &dest, bool mode) {
 
@@ -77,9 +112,19 @@ void dijkstra(Graph<T> * g, const int &origin, const int &dest, bool mode) {
 
 }
 
+
+/**
+ * @brief Retrieves the shortest path from the origin to the destination.
+ *
+ * @tparam T Type of the graph vertices.
+ * @param g Pointer to the graph.
+ * @param origin The ID of the starting vertex.
+ * @param dest The ID of the destination vertex.
+ * @return A vector containing the path from origin to destination.
+ */
 template <class T>
-static std::vector<int> getPath(Graph<T> * g, const int &origin, const int &dest) {
-    std::vector<int> res;
+vector<int> getPath(Graph<T> * g, const int &origin, const int &dest) {
+    vector<int> res;
     Vertex<T> *s = g->findLocationId(dest);
     if (s == nullptr || s->getDist() == INF) return res;
     res.push_back(s->getInfo().getId());

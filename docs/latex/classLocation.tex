@@ -1,0 +1,144 @@
+\doxysection{Location Class Reference}
+\hypertarget{classLocation}{}\label{classLocation}\index{Location@{Location}}
+
+
+Represents a location with details such as name, ID, code, and parking availability.  
+
+
+
+
+{\ttfamily \#include $<$Location.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLocation_a87790c14997fd8cdd12080c78c9794bb}{Location}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes a \doxylink{classLocation}{Location} object with default values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLocation_af7d95991f21669f8672416a9342d50dd}{Location}} (\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{l}}, \mbox{\hyperlink{classEdge}{int}} id, \mbox{\hyperlink{classEdge}{string}} code, \mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classEdge}{p}})
+\begin{DoxyCompactList}\small\item\em Constructor to initialize a \doxylink{classLocation}{Location} object with the given details. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classLocation_ace723bbdfce5c89e59c2db7fb16de800}{get\+Location}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classLocation_a8ee8524c351b20c7afe6127b6ecb847b}{get\+Id}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the unique ID of the location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classLocation_a94353677cb6f82122761988235f97a2b}{get\+Code}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the code associated with the location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classLocation_aeeabbfbd24159ae14f894ae4f083bad2}{has\+Parking}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Checks if the location has parking available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classLocation_a0c99c1e65cc6607121da4abdb4894b74}{operator==}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classLocation}{Location}} \&\mbox{\hyperlink{classEdge}{other}}) \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Compares two \doxylink{classLocation}{Location} objects for equality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a location with details such as name, ID, code, and parking availability. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLocation_a87790c14997fd8cdd12080c78c9794bb}\label{classLocation_a87790c14997fd8cdd12080c78c9794bb} 
+\index{Location@{Location}!Location@{Location}}
+\index{Location@{Location}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Location\+::\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor that initializes a \doxylink{classLocation}{Location} object with default values. 
+
+Initializes the \doxylink{classLocation}{Location} with empty values for the string fields and 0 for the ID, and sets parking availability to false. \Hypertarget{classLocation_af7d95991f21669f8672416a9342d50dd}\label{classLocation_af7d95991f21669f8672416a9342d50dd} 
+\index{Location@{Location}!Location@{Location}}
+\index{Location@{Location}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{Location()}{Location()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Location\+::\+Location (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{string}}}]{l,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{id,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{code,  }\item[{\mbox{\hyperlink{classEdge}{bool}}}]{p }\end{DoxyParamCaption})}
+
+
+
+Constructor to initialize a \doxylink{classLocation}{Location} object with the given details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & The name of the location. \\
+\hline
+{\em id} & The unique identifier for the location. \\
+\hline
+{\em code} & A code associated with the location. \\
+\hline
+{\em p} & A boolean indicating if the location has parking available. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLocation_a94353677cb6f82122761988235f97a2b}\label{classLocation_a94353677cb6f82122761988235f97a2b} 
+\index{Location@{Location}!getCode@{getCode}}
+\index{getCode@{getCode}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} Location\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the code associated with the location. 
+
+\begin{DoxyReturn}{Returns}
+The code of the location as a string. 
+\end{DoxyReturn}
+\Hypertarget{classLocation_a8ee8524c351b20c7afe6127b6ecb847b}\label{classLocation_a8ee8524c351b20c7afe6127b6ecb847b} 
+\index{Location@{Location}!getId@{getId}}
+\index{getId@{getId}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} Location\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the unique ID of the location. 
+
+\begin{DoxyReturn}{Returns}
+The unique ID of the location as an integer. 
+\end{DoxyReturn}
+\Hypertarget{classLocation_ace723bbdfce5c89e59c2db7fb16de800}\label{classLocation_ace723bbdfce5c89e59c2db7fb16de800} 
+\index{Location@{Location}!getLocation@{getLocation}}
+\index{getLocation@{getLocation}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{getLocation()}{getLocation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{string}} Location\+::get\+Location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the name of the location. 
+
+\begin{DoxyReturn}{Returns}
+The name of the location as a string. 
+\end{DoxyReturn}
+\Hypertarget{classLocation_aeeabbfbd24159ae14f894ae4f083bad2}\label{classLocation_aeeabbfbd24159ae14f894ae4f083bad2} 
+\index{Location@{Location}!hasParking@{hasParking}}
+\index{hasParking@{hasParking}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{hasParking()}{hasParking()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Location\+::has\+Parking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the location has parking available. 
+
+\begin{DoxyReturn}{Returns}
+True if the location has parking, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classLocation_a0c99c1e65cc6607121da4abdb4894b74}\label{classLocation_a0c99c1e65cc6607121da4abdb4894b74} 
+\index{Location@{Location}!operator==@{operator==}}
+\index{operator==@{operator==}!Location@{Location}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Location\+::operator== (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classLocation}{Location}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two \doxylink{classLocation}{Location} objects for equality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \doxylink{classLocation}{Location} object to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the two \doxylink{classLocation}{Location} objects are equal, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structures/Location.\+h\item 
+data\+\_\+structures/Location.\+cpp\end{DoxyCompactItemize}

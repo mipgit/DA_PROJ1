@@ -1,0 +1,43 @@
+\doxysection{main.\+cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{main.cpp@{main.cpp}}
+
+
+Main function of the program.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}processors/loader.\+h"{}}\newline
+{\ttfamily \#include "{}processors/menu.\+h"{}}\newline
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main function of the program. 
+
+This function serves as the entry point of the program. It loads the necessary data sets, initializes the graph representing the city map, and then presents the user with a menu to choose the type of route to calculate. The program\textquotesingle{}s execution is then concluded by deleting the graph object to free allocated memory.
+
+
+\begin{DoxyItemize}
+\item Loads the locations from the "{}\+Locations.\+csv"{} file.
+\item Loads the distances from the "{}\+Distances.\+csv"{} file.
+\item Initializes the graph that represents the city map.
+\item Starts a menu, calling the {\ttfamily choose\+Route} function to allow the user to select a route, which will call {\ttfamily choose\+Mode} to select a menu mode.
+\item Frees the dynamically allocated memory used by the graph object.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+0 to indicate successful execution of the program. 
+\end{DoxyReturn}

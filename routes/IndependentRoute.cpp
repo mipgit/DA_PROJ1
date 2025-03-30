@@ -17,10 +17,9 @@ bool IndependentRoute::readFromFile(const string &filename) {
         stringstream ss(line);
         string key, value;
 
-        getline(ss, key, ':');  // por exemplo, "Mode:"
-        getline(ss, value);     // por exemplo, "driving"
+        getline(ss, key, ':');  // for example, "Mode:"
+        getline(ss, value);     // for exemple, "driving"
 
-        // tiramos espaços
         while (!value.empty() && value.front() == ' ') {
             value.erase(0, 1);
         }
@@ -49,7 +48,6 @@ void IndependentRoute::writeToFile(ostream &outFile) {
     
     //best
     outFile << "BestDrivingRoute:";
-
     if (bestRoute.empty()) {
         outFile << "none\n";
     } else {
@@ -63,7 +61,6 @@ void IndependentRoute::writeToFile(ostream &outFile) {
 
     //alternative
     outFile << "AlternativeDrivingRoute:";
-
     if (altRoute.empty()) {
         outFile << "none\n";
     } else {
@@ -90,7 +87,6 @@ void IndependentRoute::calculateBestRoute() {
 
     Vertex<Location> *destVertex = cityMap->findLocationId(dest);
     bestTime = destVertex->getDist();
-  
 }
 
 
@@ -116,7 +112,6 @@ void IndependentRoute::calculateAltRoute() {
 
 
     //from here is the same logic as best route
-
     if (initDijkstra(copy)) dijkstra(copy, source, dest, 1);
 
     altRoute = getPath(copy, source, dest);

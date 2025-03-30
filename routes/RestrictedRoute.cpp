@@ -19,10 +19,9 @@ bool RestrictedRoute::readFromFile(const string &filename) {
         stringstream ss(line);
         string key, value, value2;
 
-        getline(ss, key, ':');  // por exemplo, "Mode:"
-        getline(ss, value);     // por exemplo, "driving"
+        getline(ss, key, ':');
+        getline(ss, value);
 
-        // tiramos espaços
         while (!value.empty() && value.front() == ' ') {
             value.erase(0, 1);
         }
@@ -30,6 +29,7 @@ bool RestrictedRoute::readFromFile(const string &filename) {
         if (key == "Mode" && value == "driving") mode = value;
         else if (key == "Source" && stoi(value) > 0) source = stoi(value);
         else if (key == "Destination" && stoi(value) > 0) dest = stoi(value);
+
         else if (key == "AvoidNodes") {
             if (!value.empty()) {
                 stringstream nodes(value);
@@ -42,8 +42,8 @@ bool RestrictedRoute::readFromFile(const string &filename) {
                     }
                 }
             }
-
         }
+
         else if (key == "AvoidSegments") {
             if (!value.empty()) {
                 stringstream segs(value);
@@ -110,7 +110,6 @@ void RestrictedRoute::writeToFile(ostream &outFile) {
         }
         outFile << "(" << time << ")\n";
     }
-
 }
 
 
@@ -156,7 +155,6 @@ void RestrictedRoute::calculateRoute() {
     //avoid mem leak
     delete copy;
 }
-
 
 
 

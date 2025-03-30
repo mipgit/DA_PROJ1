@@ -1,0 +1,64 @@
+\doxysection{Eco\+Route.\+h}
+\hypertarget{EcoRoute_8h_source}{}\label{EcoRoute_8h_source}\index{routes/EcoRoute.h@{routes/EcoRoute.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ECOROUTE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ECOROUTE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Route.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structAproxSolution}{AproxSolution}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ \mbox{\hyperlink{structAproxSolution_a8bec5a1bddf998602281bd5d79b4b376}{drivingRoute}};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAproxSolution_a93e84977152d3fe1d1ac278156f3de5d}{drivingTime}};\ }
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAproxSolution_aedd042929430d12191318b8a64a6de02}{parkingNode}};\ }
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ \mbox{\hyperlink{structAproxSolution_a6715e3dc62c6f21e707a353e51e06a05}{walkingRoute}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAproxSolution_a94e443f9801c23f0d7791b94babacead}{walkingTime}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structAproxSolution_a0daaf444ed81353cbf843062c7e05276}{time}};\ }
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEcoRoute}{EcoRoute}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoute}{Route}}\ \{}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEcoRoute_aeacfba91164050a5bee5efaa9702642a}{EcoRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}})\ :\ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\textcolor{stringliteral}{"{}"{}},-\/1,-\/1),\ maxWalk(INF),\ parkingNode(-\/1),\ time(0),\ drivingTime(0),\ walkingTime(0)\ \{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEcoRoute_ae090ce60e345e24263eb08d01dc07b43}{EcoRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{m}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{src}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{dt}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{mw}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{vector<int>}}\ \&\mbox{\hyperlink{classEdge}{avoidN}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classEdge}{vector}}<\mbox{\hyperlink{classEdge}{pair<int,\ int>}}>\ \&\mbox{\hyperlink{classEdge}{avoidS}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\mbox{\hyperlink{classEdge}{m}},\mbox{\hyperlink{classEdge}{src}},\mbox{\hyperlink{classEdge}{dt}}),\ maxWalk(\mbox{\hyperlink{classEdge}{mw}}),\ avoidNodes(\mbox{\hyperlink{classEdge}{avoidN}}),\ avoidSegs(\mbox{\hyperlink{classEdge}{avoidS}}),\ parkingNode(-\/1),\ time(0),\ drivingTime(0),\ walkingTime(0)\ \{\}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEcoRoute_a43f3f64ffb7d9b93a8e336b2d88c44fb}{readFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEcoRoute_a31c815c8ad394f06887de932267ba243}{writeToFile}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classEcoRoute_a3887752cf73e516784ad58cc3810d4d6}{calculateRoute}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEcoRoute_a9d76f5b8f8ea43d98e708d875f6861ae}{calculateAproxSolution}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEcoRoute_af96810a670396ba0484523e8d357c517}{processRoute}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ avoidNodes;\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<pair<int,\ int>}}>\ avoidSegs;\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ maxWalk;\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ parkingNode;\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ time;\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ drivingRoute;\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ drivingTime;\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ walkingRoute;\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ walkingTime;\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ message;\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<AproxSolution>}}\ aproxSolutions;\ }
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ findParking(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRoute_adbff3395b424b39ffb03c8c1a2a56c56}{source}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classRoute_afdd52d94063ece74262f070edf9fa3c9}{dest}});}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

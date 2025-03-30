@@ -1,0 +1,153 @@
+\doxysection{Route Class Reference}
+\hypertarget{classRoute}{}\label{classRoute}\index{Route@{Route}}
+
+
+Abstract class representing a route between a source and destination.  
+
+
+
+
+{\ttfamily \#include $<$Route.\+h$>$}
+
+
+
+Inheritance diagram for Route\+:
+% FIG 0
+
+
+Collaboration diagram for Route\+:
+% FIG 1
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoute_ad70fde78a61a895836c416ea0c6a2b28}{Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classRoute}{Route}. \end{DoxyCompactList}\item 
+\Hypertarget{classRoute_aba3596ac4dc71ee199bdf1b7d962caf6}\label{classRoute_aba3596ac4dc71ee199bdf1b7d962caf6} 
+\mbox{\hyperlink{classEdge}{virtual}} {\bfseries \texorpdfstring{$\sim$}{\string~}\+Route} ()=\mbox{\hyperlink{classEdge}{default}}
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classRoute}{Route} class. Ensures proper cleanup of derived classes when an object is destroyed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classRoute_a66c1e494b5b10315f9a08d68283e2185}{read\+From\+File}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}})=0
+\begin{DoxyCompactList}\small\item\em Reads the route data from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRoute_a77325f40d3efd4aeb74158ebb550c08e}{write\+To\+File}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}})=0
+\begin{DoxyCompactList}\small\item\em Writes the route data to an output stream (e.\+g., a file or console). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRoute_ac58074883b927ba230a9904cfc3ec07b}{process\+Route}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}})=0
+\begin{DoxyCompactList}\small\item\em Processes the route, which may involve calculations, optimizations, or other actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRoute_ad3fc27ccb071d7be3ad0584f9b9732df}\label{classRoute_ad3fc27ccb071d7be3ad0584f9b9732df} 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*} {\bfseries city\+Map}
+\begin{DoxyCompactList}\small\item\em Pointer to the graph representing the city map with locations. \end{DoxyCompactList}\item 
+\Hypertarget{classRoute_a82c09142f8fc459c0c2f148026d89ec4}\label{classRoute_a82c09142f8fc459c0c2f148026d89ec4} 
+\mbox{\hyperlink{classEdge}{string}} {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em Mode of transportation (e.\+g., "{}driving"{} or "{}driving-\/walking"{}). \end{DoxyCompactList}\item 
+\Hypertarget{classRoute_adbff3395b424b39ffb03c8c1a2a56c56}\label{classRoute_adbff3395b424b39ffb03c8c1a2a56c56} 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries source}
+\begin{DoxyCompactList}\small\item\em ID of the source location. \end{DoxyCompactList}\item 
+\Hypertarget{classRoute_afdd52d94063ece74262f070edf9fa3c9}\label{classRoute_afdd52d94063ece74262f070edf9fa3c9} 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries dest}
+\begin{DoxyCompactList}\small\item\em ID of the destination location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class representing a route between a source and destination. 
+
+This class provides an interface for classes that define specific types of routes (independent, restriced or eco-\/friendly), allowing the calculation and processing of routes based on a source and destination location on a map. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRoute_ad70fde78a61a895836c416ea0c6a2b28}\label{classRoute_ad70fde78a61a895836c416ea0c6a2b28} 
+\index{Route@{Route}!Route@{Route}}
+\index{Route@{Route}!Route@{Route}}
+\doxysubsubsection{\texorpdfstring{Route()}{Route()}}
+{\footnotesize\ttfamily Route\+::\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{m,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{src,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for \doxylink{classRoute}{Route}. 
+
+Initializes a \doxylink{classRoute}{Route} object with the given parameters\+: a map, mode, source, and destination.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & A pointer to the \doxylink{classGraph}{Graph} representing the map with locations. \\
+\hline
+{\em m} & A string representing the mode of transportation (driving, driving-\/walking). \\
+\hline
+{\em src} & The ID of the source location. \\
+\hline
+{\em dt} & The ID of the destination location. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRoute_ac58074883b927ba230a9904cfc3ec07b}\label{classRoute_ac58074883b927ba230a9904cfc3ec07b} 
+\index{Route@{Route}!processRoute@{processRoute}}
+\index{processRoute@{processRoute}!Route@{Route}}
+\doxysubsubsection{\texorpdfstring{processRoute()}{processRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{void}} Route\+::process\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Processes the route, which may involve calculations, optimizations, or other actions. 
+
+This is a pure virtual function, which must be implemented in derived classes to handle processing of the route based on the specific route type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & The output stream to which results will be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEcoRoute_af96810a670396ba0484523e8d357c517}{Eco\+Route}}, \mbox{\hyperlink{classIndependentRoute_a3cf48e9ec1bea2539f0744124faabe47}{Independent\+Route}}, and \mbox{\hyperlink{classRestrictedRoute_a182cb551a679ec85f6e568e7d7ccbebe}{Restricted\+Route}}.
+
+\Hypertarget{classRoute_a66c1e494b5b10315f9a08d68283e2185}\label{classRoute_a66c1e494b5b10315f9a08d68283e2185} 
+\index{Route@{Route}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!Route@{Route}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{bool}} Route\+::read\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reads the route data from a file. 
+
+This is a pure virtual function, which must be implemented in derived classes to handle reading the route information from a file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if reading was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classEcoRoute_a43f3f64ffb7d9b93a8e336b2d88c44fb}{Eco\+Route}}, \mbox{\hyperlink{classIndependentRoute_a32f9062ece3da4ba4f148dd05ffef675}{Independent\+Route}}, and \mbox{\hyperlink{classRestrictedRoute_a809896bef1eb29c89862a7f89938303e}{Restricted\+Route}}.
+
+\Hypertarget{classRoute_a77325f40d3efd4aeb74158ebb550c08e}\label{classRoute_a77325f40d3efd4aeb74158ebb550c08e} 
+\index{Route@{Route}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!Route@{Route}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{void}} Route\+::write\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Writes the route data to an output stream (e.\+g., a file or console). 
+
+This is a pure virtual function, which must be implemented in derived classes to handle writing the route information to an output stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & The output stream to write the data to (could be a file or std\+::cout). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classEcoRoute_a31c815c8ad394f06887de932267ba243}{Eco\+Route}}, \mbox{\hyperlink{classIndependentRoute_a6efcded989490fd6915bbbbacae84e33}{Independent\+Route}}, and \mbox{\hyperlink{classRestrictedRoute_a4727074c0e690c1d09524151bf31e0b0}{Restricted\+Route}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+routes/Route.\+h\end{DoxyCompactItemize}

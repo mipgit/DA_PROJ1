@@ -1,0 +1,124 @@
+\doxysection{Distance Class Reference}
+\hypertarget{classDistance}{}\label{classDistance}\index{Distance@{Distance}}
+
+
+Represents the distance between two locations, including both driving and walking distances.  
+
+
+
+
+{\ttfamily \#include $<$Distance.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDistance_a10c71cb57a2a8f5c66b2e91f63e3595a}{Distance}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that sets distance to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDistance_a729464d72cf5708f89433f308db7c7e3}{Distance}} (\mbox{\hyperlink{classLocation}{Location}} \mbox{\hyperlink{classEdge}{l1}}, \mbox{\hyperlink{classLocation}{Location}} \mbox{\hyperlink{classEdge}{l2}}, \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{d}}, \mbox{\hyperlink{classEdge}{double}} \mbox{\hyperlink{classEdge}{w}})
+\begin{DoxyCompactList}\small\item\em Constructor to initialize a \doxylink{classDistance}{Distance} object with two locations, driving distance, and walking distance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLocation}{Location}} \mbox{\hyperlink{classDistance_a422a1f80bddc30fcc6eea1b94d203351}{get\+Source}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the source location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLocation}{Location}} \mbox{\hyperlink{classDistance_a22c8b41249b18d6a52fbff1c35d22c21}{get\+Destination}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the destination location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classDistance_a882a639d4ce26285c99199adfcbf165f}{get\+Driving}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the driving distance between the locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{double}} \mbox{\hyperlink{classDistance_a3977e8af0c98be530e440800d25281ad}{get\+Walking}} () \mbox{\hyperlink{classEdge}{const}}
+\begin{DoxyCompactList}\small\item\em Gets the walking distance between the locations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the distance between two locations, including both driving and walking distances. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDistance_a10c71cb57a2a8f5c66b2e91f63e3595a}\label{classDistance_a10c71cb57a2a8f5c66b2e91f63e3595a} 
+\index{Distance@{Distance}!Distance@{Distance}}
+\index{Distance@{Distance}!Distance@{Distance}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Distance\+::\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor that sets distance to 0. 
+
+This constructor initializes the distance to 0 when no specific locations or distances are provided. \Hypertarget{classDistance_a729464d72cf5708f89433f308db7c7e3}\label{classDistance_a729464d72cf5708f89433f308db7c7e3} 
+\index{Distance@{Distance}!Distance@{Distance}}
+\index{Distance@{Distance}!Distance@{Distance}}
+\doxysubsubsection{\texorpdfstring{Distance()}{Distance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Distance\+::\+Distance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLocation}{Location}}}]{l1,  }\item[{\mbox{\hyperlink{classLocation}{Location}}}]{l2,  }\item[{\mbox{\hyperlink{classEdge}{int}}}]{d,  }\item[{\mbox{\hyperlink{classEdge}{double}}}]{w }\end{DoxyParamCaption})}
+
+
+
+Constructor to initialize a \doxylink{classDistance}{Distance} object with two locations, driving distance, and walking distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l1} & The first location. \\
+\hline
+{\em l2} & The second location. \\
+\hline
+{\em d} & The driving distance between the locations. \\
+\hline
+{\em w} & The walking distance between the locations. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDistance_a22c8b41249b18d6a52fbff1c35d22c21}\label{classDistance_a22c8b41249b18d6a52fbff1c35d22c21} 
+\index{Distance@{Distance}!getDestination@{getDestination}}
+\index{getDestination@{getDestination}!Distance@{Distance}}
+\doxysubsubsection{\texorpdfstring{getDestination()}{getDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLocation}{Location}} Distance\+::get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the destination location. 
+
+\begin{DoxyReturn}{Returns}
+The destination location. 
+\end{DoxyReturn}
+\Hypertarget{classDistance_a882a639d4ce26285c99199adfcbf165f}\label{classDistance_a882a639d4ce26285c99199adfcbf165f} 
+\index{Distance@{Distance}!getDriving@{getDriving}}
+\index{getDriving@{getDriving}!Distance@{Distance}}
+\doxysubsubsection{\texorpdfstring{getDriving()}{getDriving()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{int}} Distance\+::get\+Driving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the driving distance between the locations. 
+
+\begin{DoxyReturn}{Returns}
+The driving distance. 
+\end{DoxyReturn}
+\Hypertarget{classDistance_a422a1f80bddc30fcc6eea1b94d203351}\label{classDistance_a422a1f80bddc30fcc6eea1b94d203351} 
+\index{Distance@{Distance}!getSource@{getSource}}
+\index{getSource@{getSource}!Distance@{Distance}}
+\doxysubsubsection{\texorpdfstring{getSource()}{getSource()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLocation}{Location}} Distance\+::get\+Source (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the source location. 
+
+\begin{DoxyReturn}{Returns}
+The source location. 
+\end{DoxyReturn}
+\Hypertarget{classDistance_a3977e8af0c98be530e440800d25281ad}\label{classDistance_a3977e8af0c98be530e440800d25281ad} 
+\index{Distance@{Distance}!getWalking@{getWalking}}
+\index{getWalking@{getWalking}!Distance@{Distance}}
+\doxysubsubsection{\texorpdfstring{getWalking()}{getWalking()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{double}} Distance\+::get\+Walking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the walking distance between the locations. 
+
+\begin{DoxyReturn}{Returns}
+The walking distance. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+data\+\_\+structures/Distance.\+h\item 
+data\+\_\+structures/Distance.\+cpp\end{DoxyCompactItemize}

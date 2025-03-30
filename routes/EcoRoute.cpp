@@ -4,7 +4,6 @@
 using namespace std;
 
 
-
 vector<int> EcoRoute::findParking(int source, int dest) {
     vector<int> parkingNodes;
     for (auto vertex : cityMap->getVertexSet()) {
@@ -15,8 +14,6 @@ vector<int> EcoRoute::findParking(int source, int dest) {
     }
     return parkingNodes;
 }
-
-
 
 
 
@@ -38,7 +35,6 @@ bool EcoRoute::readFromFile(const string &filename) {
         getline(ss, key, ':');  
         getline(ss, value);     
 
-        // tiramos espaços
         while (!value.empty() && value.front() == ' ') {
             value.erase(0, 1);
         }
@@ -47,6 +43,7 @@ bool EcoRoute::readFromFile(const string &filename) {
         else if (key == "Source" && stoi(value) > 0) {source = stoi(value);}
         else if (key == "Destination" && stoi(value) > 0) {dest = stoi(value);}
         else if (key == "MaxWalkTime" && stoi(value) > 0) {maxWalk = stoi(value);}
+
         else if (key == "AvoidNodes") {
             if (!value.empty()) {
                 stringstream nodes(value);
@@ -59,8 +56,8 @@ bool EcoRoute::readFromFile(const string &filename) {
                     }
                 }
             }
-
         }
+
         else if (key == "AvoidSegments") {
             if (!value.empty()) {
                 stringstream segs(value);
@@ -112,7 +109,6 @@ void EcoRoute::writeToFile(ostream &outFile) {
     else outFile << "Destination:" << dest << "\n";
     
     outFile << "DrivingRoute:";
-
     if (drivingRoute.empty()) {
         outFile << "none\n";
     } else {
@@ -130,11 +126,9 @@ void EcoRoute::writeToFile(ostream &outFile) {
     
     
     outFile << "WalkingRoute:";
-
     if (walkingRoute.empty()) {
         outFile << "none\n";
     } else {
-        
         for (size_t i = 0; i < walkingRoute.size(); i++) {
             outFile << walkingRoute[i];
             if (i < walkingRoute.size() - 1) outFile << ",";
@@ -155,11 +149,6 @@ void EcoRoute::writeToFile(ostream &outFile) {
 
 
 
-
-
-
-
-
 bool EcoRoute::calculateRoute() {
     
     Graph<Location>* copy = copyGraph(cityMap);
@@ -171,12 +160,10 @@ bool EcoRoute::calculateRoute() {
     bool validRoute = false;
     string failureReason = "No possible routes.\n";
 
-
     // finds all parking nodes
     vector<int> parkingNodes = findParking(source, dest);
 
     if (parkingNodes.empty()) failureReason = "No available parking nodes.\n";
-
 
 
     for (int parking : parkingNodes) {
@@ -210,9 +197,7 @@ bool EcoRoute::calculateRoute() {
             continue;
         } 
 
-
         if (totalTime < minTotalTime || (totalTime == minTotalTime && wt > walkingTime)) {
-            
             validRoute = true;
             
             minTotalTime = totalTime;
@@ -224,10 +209,6 @@ bool EcoRoute::calculateRoute() {
             drivingRoute = drivingPath;
             walkingRoute = walkingPath;
         }
-
-        
-
-
     }
 
     delete copy; //we free mem
@@ -239,12 +220,6 @@ bool EcoRoute::calculateRoute() {
     return true;
 }
 
-// 1 2 3 . 7 8 - 15 + 45 = 60
-// 1 2 . 4 8 - 10 + 25 + 18 = 53
-// 1 2 3 
-
-
-
 
 void EcoRoute::calculateAproxSolution(ostream &outFile) {
 
@@ -253,11 +228,10 @@ void EcoRoute::calculateAproxSolution(ostream &outFile) {
         return;
     }
 
-    outFile << "\nHere are 2 approximate solutions for your input:\n\n";
+    outFile << "\nApproximate solution(s) for your input:\n\n";
 
     outFile << "Source:" << source << "\n";
     outFile << "Destination:" << dest << "\n";
-
 
     //we sort the solutions by best total time
     sort(aproxSolutions.begin(), aproxSolutions.end(), 
@@ -265,7 +239,6 @@ void EcoRoute::calculateAproxSolution(ostream &outFile) {
                   return a.time < b.time;
               }
         );
-
 
     //we only process the first 2 solutions w/ best time
     for (size_t i = 0; i < min(aproxSolutions.size(), size_t(2)); i++) {
@@ -308,11 +281,7 @@ void EcoRoute::calculateAproxSolution(ostream &outFile) {
         else outFile << cur.time << '\n';
     }
 
-
 }
-
-
-
 
 
 
