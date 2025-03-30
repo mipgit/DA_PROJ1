@@ -38,8 +38,8 @@ using namespace std;
 int main() {
     
     // Load data sets
-    loadLocations("../data_sets/LittleLocations.csv");
-    loadDistances("../data_sets/LittleDistances.csv");
+    loadLocations("../data_sets/Locations.csv");
+    loadDistances("../data_sets/Distances.csv");
 
     Graph<Location>* cityMap = initializeGraph();
 
