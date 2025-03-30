@@ -43,41 +43,42 @@ Key features include\+:
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{.}
-\DoxyCodeLine{├──\ build\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Build\ directory\ (generated\ by\ CMake)}
-\DoxyCodeLine{├──\ CMakeLists.txt\ \ \ \ \ \ \ \ \ \ \ \ \#\ CMake\ build\ configuration}
-\DoxyCodeLine{├──\ data\_sets\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Directory\ containing\ data\ files\ for\ locations\ and\ distances}
-\DoxyCodeLine{│\ \ \ ├──\ Distances.csv\ \ \ \ \ \ \ \ \ \#\ Distance\ data\ for\ segments}
-\DoxyCodeLine{│\ \ \ ├──\ LittleDistances.csv\ \ \ \#\ Smaller\ test\ data\ set\ for\ distances}
-\DoxyCodeLine{│\ \ \ ├──\ LittleLocations.csv\ \ \ \#\ Smaller\ test\ data\ set\ for\ locations}
-\DoxyCodeLine{│\ \ \ └──\ Locations.csv\ \ \ \ \ \ \ \ \ \#\ Locations\ data\ (nodes)}
-\DoxyCodeLine{├──\ data\_structures\ \ \ \ \ \ \ \ \ \ \ \#\ Data\ structure\ files\ (e.g.,\ Graph,\ Distance,\ Location)}
-\DoxyCodeLine{│\ \ \ ├──\ Distance.cpp}
-\DoxyCodeLine{│\ \ \ ├──\ Distance.h}
-\DoxyCodeLine{│\ \ \ ├──\ Graph.h}
-\DoxyCodeLine{│\ \ \ ├──\ Location.cpp}
-\DoxyCodeLine{│\ \ \ ├──\ Location.h}
-\DoxyCodeLine{│\ \ \ └──\ MutablePriorityQueue.h}
-\DoxyCodeLine{├──\ docs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen-\/generated\ documentation\ files}
-\DoxyCodeLine{│\ \ \ ├──\ html\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ HTML\ documentation}
-\DoxyCodeLine{│\ \ \ └──\ latex\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ LaTeX\ documentation}
-\DoxyCodeLine{├──\ Doxyfile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen\ configuration\ file}
-\DoxyCodeLine{├──\ main.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Main\ driver\ file}
-\DoxyCodeLine{├──\ processors\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Logic\ for\ loading\ and\ displaying\ routes}
-\DoxyCodeLine{│\ \ \ ├──\ loader.cpp}
-\DoxyCodeLine{│\ \ \ ├──\ loader.h}
-\DoxyCodeLine{│\ \ \ ├──\ menu.cpp}
-\DoxyCodeLine{│\ \ \ ├──\ menu.h}
-\DoxyCodeLine{│\ \ \ └──\ utils.h}
-\DoxyCodeLine{├──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Project\ description\ and\ documentation}
-\DoxyCodeLine{└──\ routes\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Route-\/related\ classes}
-\DoxyCodeLine{\ \ \ \ ├──\ dijkstra.h\ \ \ \ \ \ \ \ \ \ \ \ \#\ Dijkstra\ algorithm\ implementation}
-\DoxyCodeLine{\ \ \ \ ├──\ EcoRoute.cpp}
-\DoxyCodeLine{\ \ \ \ ├──\ EcoRoute.h}
-\DoxyCodeLine{\ \ \ \ ├──\ IndependentRoute.cpp}
-\DoxyCodeLine{\ \ \ \ ├──\ IndependentRoute.h}
-\DoxyCodeLine{\ \ \ \ ├──\ RestrictedRoute.cpp}
-\DoxyCodeLine{\ \ \ \ ├──\ RestrictedRoute.h}
-\DoxyCodeLine{\ \ \ \ └──\ Route.h}
+\DoxyCodeLine{├──\ code\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Source\ code\ directory}
+\DoxyCodeLine{│\ \ \ ├──\ build\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Build\ directory\ (generated\ by\ CMake)}
+\DoxyCodeLine{│\ \ \ ├──\ CMakeLists.txt\ \ \ \ \ \ \ \#\ CMake\ build\ configuration}
+\DoxyCodeLine{│\ \ \ ├──\ data\_sets\ \ \ \ \ \ \ \ \ \ \ \ \#\ Dataset\ files\ for\ locations\ and\ distances}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Distances.csv\ \ \ \ \ \ \ \ \ \#\ Distance\ data\ for\ segments}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ LittleDistances.csv\ \ \ \#\ Smaller\ test\ dataset\ for\ distances}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ LittleLocations.csv\ \ \ \#\ Smaller\ test\ dataset\ for\ locations}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ Locations.csv\ \ \ \ \ \ \ \ \#\ Locations\ data\ (nodes)}
+\DoxyCodeLine{│\ \ \ ├──\ data\_structures\ \ \ \ \ \ \#\ Data\ structure\ definitions\ (Graph,\ Distance,\ Location)}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Distance.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Distance.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Graph.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Location.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ Location.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ MutablePriorityQueue.h}
+\DoxyCodeLine{│\ \ \ ├──\ main.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Main\ program\ entry\ point}
+\DoxyCodeLine{│\ \ \ ├──\ processors\ \ \ \ \ \ \ \ \ \ \ \#\ Logic\ for\ loading\ and\ processing\ routes}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ loader.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ loader.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ menu.cpp}
+\DoxyCodeLine{│\ \ \ │\ \ \ ├──\ menu.h}
+\DoxyCodeLine{│\ \ \ │\ \ \ └──\ utils.h}
+\DoxyCodeLine{│\ \ \ └──\ routes\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Route-\/related\ implementations}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ dijkstra.h\ \ \ \ \ \ \ \#\ Dijkstra's\ algorithm\ implementation}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ EcoRoute.cpp}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ EcoRoute.h}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ IndependentRoute.cpp}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ IndependentRoute.h}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ RestrictedRoute.cpp}
+\DoxyCodeLine{│\ \ \ \ \ \ \ ├──\ RestrictedRoute.h}
+\DoxyCodeLine{│\ \ \ \ \ \ \ └──\ Route.h}
+\DoxyCodeLine{├──\ docs\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen-\/generated\ documentation}
+\DoxyCodeLine{│\ \ \ ├──\ html\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ HTML\ output}
+\DoxyCodeLine{│\ \ \ └──\ latex\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ LaTeX\ output}
+\DoxyCodeLine{├──\ Doxyfile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Doxygen\ configuration\ file}
+\DoxyCodeLine{└──\ README.md\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#\ Project\ documentation}
 
 \end{DoxyCode}
 \hypertarget{index_autotoc_md7}{}\doxysection{\texorpdfstring{Setup and Installation}{Setup and Installation}}\label{index_autotoc_md7}
@@ -87,6 +88,7 @@ To compile in CLion\+:
 \begin{DoxyEnumerate}
 \item {\bfseries{Create the Build Directory}}\+: 
 \begin{DoxyCode}{0}
+\DoxyCodeLine{cd\ code}
 \DoxyCodeLine{mkdir\ build}
 \DoxyCodeLine{cd\ build}
 
@@ -117,7 +119,7 @@ To use the route planning tool\+:
 
 
 \begin{DoxyEnumerate}
-\item Input Data\+: The tool takes input through predefined data sets such as Locations.\+csv and Distances.\+csv. These files contain the necessary data for locations and distances (e.\+g., time taken for driving and walking).
+\item Input Data\+: The tool takes input through predefined data sets such as \doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{Locations.\+csv} and \doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{Distances.\+csv}. These files contain the necessary data for locations and distances (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., time taken for driving and walking).
 \item Select \doxylink{classRoute}{Route} Type\+: Once the program is running, you can choose from various route options.
 \begin{DoxyItemize}
 \item Independent \doxylink{classRoute}{Route} Planning

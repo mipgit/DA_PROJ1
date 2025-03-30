@@ -1,0 +1,5 @@
+<map id="EcoRoute" name="EcoRoute">
+<area shape="rect" id="Node000001" title="Class for handling environmentally&#45;friendly route calculation, extending the Route class." alt="" coords="5,347,223,679"/>
+<area shape="rect" id="Node000002" href="$classRoute.html" title="Abstract class representing a route between a source and destination." alt="" coords="11,5,217,299"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,313,117,347,111,347,111,313"/>
+</map>

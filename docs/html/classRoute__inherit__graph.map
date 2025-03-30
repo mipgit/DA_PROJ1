@@ -1,0 +1,9 @@
+<map id="Route" name="Route">
+<area shape="rect" id="Node000001" title="Abstract class representing a route between a source and destination." alt="" coords="249,5,454,299"/>
+<area shape="rect" id="Node000002" href="$classEcoRoute.html" title="Class for handling environmentally&#45;friendly route calculation, extending the Route class." alt="" coords="5,347,223,679"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,312,225,349,221,346,245,309"/>
+<area shape="rect" id="Node000003" href="$classIndependentRoute.html" title="Class for handling independent route calculation, extending the Route class." alt="" coords="247,369,455,657"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="354,312,354,368,349,368,349,312"/>
+<area shape="rect" id="Node000004" href="$classRestrictedRoute.html" title="Class for handling route calculation with restrictions, extending the Route class." alt="" coords="480,371,697,654"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="458,309,498,370,493,373,453,312"/>
+</map>

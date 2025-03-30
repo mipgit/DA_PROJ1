@@ -1,0 +1,5 @@
+<map id="IndependentRoute" name="IndependentRoute">
+<area shape="rect" id="Node000001" title="Class for handling independent route calculation, extending the Route class." alt="" coords="5,347,213,635"/>
+<area shape="rect" id="Node000002" href="$classRoute.html" title="Abstract class representing a route between a source and destination." alt="" coords="7,5,212,299"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,312,112,346,107,346,107,312"/>
+</map>

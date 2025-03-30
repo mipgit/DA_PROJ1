@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['calculatealtroute_0',['calculateAltRoute',['../classIndependentRoute.html#ae933b2263a5478597b3682b8c1acfeda',1,'IndependentRoute']]],
-  ['calculateaproxsolution_1',['calculateAproxSolution',['../classEcoRoute.html#a9d76f5b8f8ea43d98e708d875f6861ae',1,'EcoRoute']]],
-  ['calculatebestroute_2',['calculateBestRoute',['../classIndependentRoute.html#a8642714b7c6f6c425a18d6ca42a7e256',1,'IndependentRoute']]],
-  ['calculateroute_3',['calculateroute',['../classEcoRoute.html#a3887752cf73e516784ad58cc3810d4d6',1,'EcoRoute::calculateRoute()'],['../classRestrictedRoute.html#a076ac9bbf74d8c340d8ce1fa7e13c51e',1,'RestrictedRoute::calculateRoute()']]]
+  ['addbidirectionaledge_0',['addBidirectionalEdge',['../classGraph.html#a21d846e75a90e7c37f23618dcce9d08e',1,'Graph']]],
+  ['addedge_1',['addedge',['../classVertex.html#ac71ab9a72b485fb4657a990af316580f',1,'Vertex::addEdge()'],['../classGraph.html#a187a2a2aedc2a6b1274881b8937fcac6',1,'Graph::addEdge(const T &amp;sourc, const T &amp;dest, double d, double w)']]],
+  ['addvertex_2',['addVertex',['../classGraph.html#a00be284ea2be3b3d0f0d2e493b70245b',1,'Graph']]],
+  ['avoidedges_3',['avoidEdges',['../classGraph.html#a7f124456c2e43a2220dc4d26c4404a73',1,'Graph']]],
+  ['avoidvertices_4',['avoidVertices',['../classGraph.html#a6f1b2f273c3c036ba9b0d1629c823443',1,'Graph']]]
 ];

@@ -84,12 +84,24 @@ $(function() {
 Inheritance diagram for IndependentRoute:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIndependentRoute__inherit__graph.png" border="0" usemap="#aIndependentRoute_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<map name="aIndependentRoute_inherit__map" id="aIndependentRoute_inherit__map">
+<area shape="rect" title="Class for handling independent route calculation, extending the Route class." alt="" coords="5,347,213,635"/>
+<area shape="rect" href="classRoute.html" title="Abstract class representing a route between a source and destination." alt="" coords="7,5,212,299"/>
+<area shape="poly" title=" " alt="" coords="112,312,112,346,107,346,107,312"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for IndependentRoute:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIndependentRoute__coll__graph.png" border="0" usemap="#aIndependentRoute_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<map name="aIndependentRoute_coll__map" id="aIndependentRoute_coll__map">
+<area shape="rect" title="Class for handling independent route calculation, extending the Route class." alt="" coords="12,1019,220,1307"/>
+<area shape="rect" href="classRoute.html" title="Abstract class representing a route between a source and destination." alt="" coords="13,711,219,969"/>
+<area shape="poly" title=" " alt="" coords="119,983,119,1018,113,1018,113,983"/>
+<area shape="rect" href="classGraph.html" title=" " alt="" coords="5,5,227,648"/>
+<area shape="poly" title=" " alt="" coords="119,648,119,694,113,694,113,648"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -132,7 +144,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ad3fc27ccb071d7be3ad0584f9b9732df inherit pro_attribs_classRoute"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c09142f8fc459c0c2f148026d89ec4 inherit pro_attribs_classRoute" id="r_a82c09142f8fc459c0c2f148026d89ec4"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="classEdge.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mode</b></td></tr>
-<tr class="memdesc:a82c09142f8fc459c0c2f148026d89ec4 inherit pro_attribs_classRoute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of transportation (e.g., "driving" or "driving-walking"). <br /></td></tr>
+<tr class="memdesc:a82c09142f8fc459c0c2f148026d89ec4 inherit pro_attribs_classRoute"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of transportation (<a class="el" href="classEdge.html#a65bcda45fc447af2ef58b467cce63eca" title="Constructor to initialize an edge with a given source, destination, distances, and weights.">e.g</a>., "driving" or "driving-walking"). <br /></td></tr>
 <tr class="separator:a82c09142f8fc459c0c2f148026d89ec4 inherit pro_attribs_classRoute"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbff3395b424b39ffb03c8c1a2a56c56 inherit pro_attribs_classRoute" id="r_adbff3395b424b39ffb03c8c1a2a56c56"><td class="memItemLeft" align="right" valign="top">
 <a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>source</b></td></tr>
@@ -175,7 +187,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes an <a class="el" href="classIndependentRoute.html" title="Class for handling independent route calculation, extending the Route class.">IndependentRoute</a> object with the provided map, mode, source, and destination. Sets up best and alternative route variables.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">map</td><td>A pointer to the <a class="el" href="classGraph.html">Graph</a> representing the map with locations. </td></tr>
+    <tr><td class="paramname">map</td><td>A pointer to the <a class="el" href="classGraph.html" title="Class representing a graph consisting of vertices and edges.">Graph</a> representing the map with locations. </td></tr>
   </table>
   </dd>
 </dl>
@@ -232,7 +244,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes an <a class="el" href="classIndependentRoute.html" title="Class for handling independent route calculation, extending the Route class.">IndependentRoute</a> object with the provided parameters. Sets up the best and alternative route variables based on the provided mode and locations.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">map</td><td>A pointer to the <a class="el" href="classGraph.html">Graph</a> representing the map with locations. </td></tr>
+    <tr><td class="paramname">map</td><td>A pointer to the <a class="el" href="classGraph.html" title="Class representing a graph consisting of vertices and edges.">Graph</a> representing the map with locations. </td></tr>
     <tr><td class="paramname">m</td><td>A string representing the mode of transportation ("driving", "driving-walking"). </td></tr>
     <tr><td class="paramname">src</td><td>The ID of the source location. </td></tr>
     <tr><td class="paramname">dt</td><td>The ID of the destination location. </td></tr>
@@ -393,8 +405,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>routes/<a class="el" href="IndependentRoute_8h_source.html">IndependentRoute.h</a></li>
-<li>routes/<b>IndependentRoute.cpp</b></li>
+<li>code/routes/<a class="el" href="IndependentRoute_8h_source.html">IndependentRoute.h</a></li>
+<li>code/routes/<b>IndependentRoute.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,44 +1,45 @@
 \doxysection{Independent\+Route.\+h}
-\hypertarget{IndependentRoute_8h_source}{}\label{IndependentRoute_8h_source}\index{routes/IndependentRoute.h@{routes/IndependentRoute.h}}
-
+\hypertarget{IndependentRoute_8h_source}{}\label{IndependentRoute_8h_source}\index{code/routes/IndependentRoute.h@{code/routes/IndependentRoute.h}}
+\mbox{\hyperlink{IndependentRoute_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ INDROUTE\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ INDROUTE\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}Route.h"{}}}
-\DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIndependentRoute}{IndependentRoute}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoute}{Route}}\ \{}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00020\ }
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classIndependentRoute_ab6d58fe0317c7725f3fa772df77c8a43}{IndependentRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}})\ :\ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\textcolor{stringliteral}{"{}"{}},-\/1,-\/1),\ bestTime(0),\ altTime(0)\ \{\}}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classIndependentRoute_a2a2b55b0d896db68a56c460d9527237e}{IndependentRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{m}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{src}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{dt}})}
-\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\ \mbox{\hyperlink{classEdge}{m}},\ \mbox{\hyperlink{classEdge}{src}},\ \mbox{\hyperlink{classEdge}{dt}}),\ bestTime(0),\ altTime(0)\ \{\}}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIndependentRoute_a32f9062ece3da4ba4f148dd05ffef675}{readFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}})\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_a6efcded989490fd6915bbbbacae84e33}{writeToFile}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_a8642714b7c6f6c425a18d6ca42a7e256}{calculateBestRoute}}();}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_ae933b2263a5478597b3682b8c1acfeda}{calculateAltRoute}}();}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ INDEPENDENTROUTE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ INDEPENDENTROUTE\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Route_8h}{Route.h}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIndependentRoute}{IndependentRoute}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoute}{Route}}\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classIndependentRoute_ab6d58fe0317c7725f3fa772df77c8a43}{IndependentRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}})\ :\ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\textcolor{stringliteral}{"{}"{}},-\/1,-\/1),\ bestTime(0),\ altTime(0)\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classIndependentRoute_a2a2b55b0d896db68a56c460d9527237e}{IndependentRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{m}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{src}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{dt}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\ \mbox{\hyperlink{classEdge}{m}},\ \mbox{\hyperlink{classEdge}{src}},\ \mbox{\hyperlink{classEdge}{dt}}),\ bestTime(0),\ altTime(0)\ \{\}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIndependentRoute_a32f9062ece3da4ba4f148dd05ffef675}{readFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_a6efcded989490fd6915bbbbacae84e33}{writeToFile}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_a8642714b7c6f6c425a18d6ca42a7e256}{calculateBestRoute}}();}
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_a3cf48e9ec1bea2539f0744124faabe47}{processRoute}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ bestRoute;\ \ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ altRoute;\ \ \ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bestTime;\ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ altTime;\ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_ae933b2263a5478597b3682b8c1acfeda}{calculateAltRoute}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classIndependentRoute_a3cf48e9ec1bea2539f0744124faabe47}{processRoute}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
 \DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ bestRoute;\ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ altRoute;\ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ bestTime;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ altTime;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

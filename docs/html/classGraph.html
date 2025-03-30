@@ -77,57 +77,486 @@ $(function() {
   <div class="headertitle"><div class="title">Graph&lt; T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class representing a graph consisting of vertices and edges.  
+ <a href="classGraph.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="Graph_8h_source.html">Graph.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Graph&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classGraph__coll__graph.png" border="0" usemap="#aGraph_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aGraph_3_01T_01_4_coll__map" id="aGraph_3_01T_01_4_coll__map">
+<area shape="rect" title="Class representing a graph consisting of vertices and edges." alt="" coords="5,5,224,575"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b7b7465fbfd562e2a469f90a437ab75" id="r_a8b7b7465fbfd562e2a469f90a437ab75"><td class="memItemLeft" align="right" valign="top"><a id="a8b7b7465fbfd562e2a469f90a437ab75" name="a8b7b7465fbfd562e2a469f90a437ab75"></a>
-<a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>findVertex</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>) <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memitem:a43eab1460b5c8ceaa526b40e56a0fb0c" id="r_a43eab1460b5c8ceaa526b40e56a0fb0c"><td class="memItemLeft" align="right" valign="top"><a id="a43eab1460b5c8ceaa526b40e56a0fb0c" name="a43eab1460b5c8ceaa526b40e56a0fb0c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~Graph</b> ()</td></tr>
+<tr class="memdesc:a43eab1460b5c8ceaa526b40e56a0fb0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor that cleans up dynamically allocated vertices and edges. <br /></td></tr>
+<tr class="separator:a43eab1460b5c8ceaa526b40e56a0fb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b7b7465fbfd562e2a469f90a437ab75" id="r_a8b7b7465fbfd562e2a469f90a437ab75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a8b7b7465fbfd562e2a469f90a437ab75">findVertex</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>) <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memdesc:a8b7b7465fbfd562e2a469f90a437ab75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary function to find a vertex with a given the content.  <br /></td></tr>
 <tr class="separator:a8b7b7465fbfd562e2a469f90a437ab75"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5499e1238133d0f261cc84ae1bfc2c83" id="r_a5499e1238133d0f261cc84ae1bfc2c83"><td class="memItemLeft" align="right" valign="top"><a id="a5499e1238133d0f261cc84ae1bfc2c83" name="a5499e1238133d0f261cc84ae1bfc2c83"></a>
-<a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>findLocationId</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">int</a> &amp;id)</td></tr>
+<tr class="memitem:a5499e1238133d0f261cc84ae1bfc2c83" id="r_a5499e1238133d0f261cc84ae1bfc2c83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a5499e1238133d0f261cc84ae1bfc2c83">findLocationId</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">int</a> &amp;id)</td></tr>
+<tr class="memdesc:a5499e1238133d0f261cc84ae1bfc2c83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auxiliary function to find a vertex with a given id.  <br /></td></tr>
 <tr class="separator:a5499e1238133d0f261cc84ae1bfc2c83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00be284ea2be3b3d0f0d2e493b70245b" id="r_a00be284ea2be3b3d0f0d2e493b70245b"><td class="memItemLeft" align="right" valign="top"><a id="a00be284ea2be3b3d0f0d2e493b70245b" name="a00be284ea2be3b3d0f0d2e493b70245b"></a>
-<a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addVertex</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>)</td></tr>
+<tr class="memitem:a00be284ea2be3b3d0f0d2e493b70245b" id="r_a00be284ea2be3b3d0f0d2e493b70245b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a00be284ea2be3b3d0f0d2e493b70245b">addVertex</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>)</td></tr>
+<tr class="memdesc:a00be284ea2be3b3d0f0d2e493b70245b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a vertex with a given content or info (in) to a graph (this).  <br /></td></tr>
 <tr class="separator:a00be284ea2be3b3d0f0d2e493b70245b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af9c903104ad69a7782979fa9caedf163" id="r_af9c903104ad69a7782979fa9caedf163"><td class="memItemLeft" align="right" valign="top"><a id="af9c903104ad69a7782979fa9caedf163" name="af9c903104ad69a7782979fa9caedf163"></a>
-<a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>removeVertex</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>)</td></tr>
+<tr class="memitem:af9c903104ad69a7782979fa9caedf163" id="r_af9c903104ad69a7782979fa9caedf163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#af9c903104ad69a7782979fa9caedf163">removeVertex</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>)</td></tr>
+<tr class="memdesc:af9c903104ad69a7782979fa9caedf163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a vertex with a given content or info (in) to a graph (this).  <br /></td></tr>
 <tr class="separator:af9c903104ad69a7782979fa9caedf163"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a187a2a2aedc2a6b1274881b8937fcac6" id="r_a187a2a2aedc2a6b1274881b8937fcac6"><td class="memItemLeft" align="right" valign="top"><a id="a187a2a2aedc2a6b1274881b8937fcac6" name="a187a2a2aedc2a6b1274881b8937fcac6"></a>
-<a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addEdge</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">sourc</a>, <a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;dest, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">d</a>, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">w</a>)</td></tr>
+<tr class="memitem:a187a2a2aedc2a6b1274881b8937fcac6" id="r_a187a2a2aedc2a6b1274881b8937fcac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a187a2a2aedc2a6b1274881b8937fcac6">addEdge</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">sourc</a>, <a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;dest, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">d</a>, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">w</a>)</td></tr>
+<tr class="memdesc:a187a2a2aedc2a6b1274881b8937fcac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge to a graph (this), given the contents of the source and destination vertices and the edge weight (w).  <br /></td></tr>
 <tr class="separator:a187a2a2aedc2a6b1274881b8937fcac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8949d071d45bf93e171e275462e1007a" id="r_a8949d071d45bf93e171e275462e1007a"><td class="memItemLeft" align="right" valign="top"><a id="a8949d071d45bf93e171e275462e1007a" name="a8949d071d45bf93e171e275462e1007a"></a>
-<a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>removeEdge</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;source, <a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;dest)</td></tr>
+<tr class="memitem:a8949d071d45bf93e171e275462e1007a" id="r_a8949d071d45bf93e171e275462e1007a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a8949d071d45bf93e171e275462e1007a">removeEdge</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;source, <a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;dest)</td></tr>
+<tr class="memdesc:a8949d071d45bf93e171e275462e1007a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an edge to a graph (this), given the contents of the source and destination vertices and the edge weight (w).  <br /></td></tr>
 <tr class="separator:a8949d071d45bf93e171e275462e1007a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21d846e75a90e7c37f23618dcce9d08e" id="r_a21d846e75a90e7c37f23618dcce9d08e"><td class="memItemLeft" align="right" valign="top"><a id="a21d846e75a90e7c37f23618dcce9d08e" name="a21d846e75a90e7c37f23618dcce9d08e"></a>
-<a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>addBidirectionalEdge</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">sourc</a>, <a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;dest, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">d</a>, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">w</a>)</td></tr>
+<tr class="memitem:a21d846e75a90e7c37f23618dcce9d08e" id="r_a21d846e75a90e7c37f23618dcce9d08e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a21d846e75a90e7c37f23618dcce9d08e">addBidirectionalEdge</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">sourc</a>, <a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;dest, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">d</a>, <a class="el" href="classEdge.html">double</a> <a class="el" href="classEdge.html">w</a>)</td></tr>
+<tr class="memdesc:a21d846e75a90e7c37f23618dcce9d08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a bidirectional edge between two vertices.  <br /></td></tr>
 <tr class="separator:a21d846e75a90e7c37f23618dcce9d08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0853eac15cdf0f06d63f4b8a7820ec71" id="r_a0853eac15cdf0f06d63f4b8a7820ec71"><td class="memItemLeft" align="right" valign="top"><a id="a0853eac15cdf0f06d63f4b8a7820ec71" name="a0853eac15cdf0f06d63f4b8a7820ec71"></a>
-<a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getNumVertex</b> () <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memitem:a0853eac15cdf0f06d63f4b8a7820ec71" id="r_a0853eac15cdf0f06d63f4b8a7820ec71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a0853eac15cdf0f06d63f4b8a7820ec71">getNumVertex</a> () <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memdesc:a0853eac15cdf0f06d63f4b8a7820ec71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of vertices in the graph.  <br /></td></tr>
 <tr class="separator:a0853eac15cdf0f06d63f4b8a7820ec71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1b2f273c3c036ba9b0d1629c823443" id="r_a6f1b2f273c3c036ba9b0d1629c823443"><td class="memItemLeft" align="right" valign="top"><a id="a6f1b2f273c3c036ba9b0d1629c823443" name="a6f1b2f273c3c036ba9b0d1629c823443"></a>
-<a class="el" href="classEdge.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><b>avoidVertices</b> (std::vector&lt; <a class="el" href="classEdge.html">int</a> &gt; <a class="el" href="classEdge.html">vertices</a>)</td></tr>
+<tr class="memitem:a6f1b2f273c3c036ba9b0d1629c823443" id="r_a6f1b2f273c3c036ba9b0d1629c823443"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a6f1b2f273c3c036ba9b0d1629c823443">avoidVertices</a> (std::vector&lt; <a class="el" href="classEdge.html">int</a> &gt; <a class="el" href="classEdge.html">vertices</a>)</td></tr>
+<tr class="memdesc:a6f1b2f273c3c036ba9b0d1629c823443"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a set of vertices from the graph.  <br /></td></tr>
 <tr class="separator:a6f1b2f273c3c036ba9b0d1629c823443"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f124456c2e43a2220dc4d26c4404a73" id="r_a7f124456c2e43a2220dc4d26c4404a73"><td class="memItemLeft" align="right" valign="top"><a id="a7f124456c2e43a2220dc4d26c4404a73" name="a7f124456c2e43a2220dc4d26c4404a73"></a>
-<a class="el" href="classEdge.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><b>avoidEdges</b> (std::vector&lt; std::pair&lt; <a class="el" href="classEdge.html">int</a>, <a class="el" href="classEdge.html">int</a> &gt; &gt; <a class="el" href="classEdge.html">edges</a>)</td></tr>
+<tr class="memitem:a7f124456c2e43a2220dc4d26c4404a73" id="r_a7f124456c2e43a2220dc4d26c4404a73"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a7f124456c2e43a2220dc4d26c4404a73">avoidEdges</a> (std::vector&lt; std::pair&lt; <a class="el" href="classEdge.html">int</a>, <a class="el" href="classEdge.html">int</a> &gt; &gt; <a class="el" href="classEdge.html">edges</a>)</td></tr>
+<tr class="memdesc:a7f124456c2e43a2220dc4d26c4404a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a set of edges from the graph.  <br /></td></tr>
 <tr class="separator:a7f124456c2e43a2220dc4d26c4404a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41624b03fcb6bd29e4df574a1ec58541" id="r_a41624b03fcb6bd29e4df574a1ec58541"><td class="memItemLeft" align="right" valign="top"><a id="a41624b03fcb6bd29e4df574a1ec58541" name="a41624b03fcb6bd29e4df574a1ec58541"></a>
-std::vector&lt; <a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getVertexSet</b> () <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memitem:a41624b03fcb6bd29e4df574a1ec58541" id="r_a41624b03fcb6bd29e4df574a1ec58541"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a41624b03fcb6bd29e4df574a1ec58541">getVertexSet</a> () <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memdesc:a41624b03fcb6bd29e4df574a1ec58541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the set of vertices in the graph.  <br /></td></tr>
 <tr class="separator:a41624b03fcb6bd29e4df574a1ec58541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a676cdfb976eccfa82b631d2094c1cdac" id="r_a676cdfb976eccfa82b631d2094c1cdac"><td class="memItemLeft" align="right" valign="top"><a id="a676cdfb976eccfa82b631d2094c1cdac" name="a676cdfb976eccfa82b631d2094c1cdac"></a>
-<a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>findVertexIdx</b> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>) <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memitem:a676cdfb976eccfa82b631d2094c1cdac" id="r_a676cdfb976eccfa82b631d2094c1cdac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGraph.html#a676cdfb976eccfa82b631d2094c1cdac">findVertexIdx</a> (<a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;<a class="el" href="classEdge.html">in</a>) <a class="el" href="classEdge.html">const</a></td></tr>
+<tr class="memdesc:a676cdfb976eccfa82b631d2094c1cdac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the index of a vertex by its data.  <br /></td></tr>
 <tr class="separator:a676cdfb976eccfa82b631d2094c1cdac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a26b3a6b9c61f02f5b2cd38ad4c6a4953" id="r_a26b3a6b9c61f02f5b2cd38ad4c6a4953"><td class="memItemLeft" align="right" valign="top"><a id="a26b3a6b9c61f02f5b2cd38ad4c6a4953" name="a26b3a6b9c61f02f5b2cd38ad4c6a4953"></a>
 std::vector&lt; <a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vertexSet</b></td></tr>
+<tr class="memdesc:a26b3a6b9c61f02f5b2cd38ad4c6a4953"><td class="mdescLeft">&#160;</td><td class="mdescRight">vertex set <br /></td></tr>
 <tr class="separator:a26b3a6b9c61f02f5b2cd38ad4c6a4953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a>&gt;<br />
+class Graph&lt; T &gt;</div><p>Class representing a graph consisting of vertices and edges. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the data stored in the vertex (<a class="el" href="classEdge.html#a65bcda45fc447af2ef58b467cce63eca" title="Constructor to initialize an edge with a given source, destination, distances, and weights.">e.g</a>., <a class="el" href="classLocation.html" title="Represents a location with details such as name, ID, code, and parking availability.">Location</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a21d846e75a90e7c37f23618dcce9d08e" name="a21d846e75a90e7c37f23618dcce9d08e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21d846e75a90e7c37f23618dcce9d08e">&#9670;&#160;</a></span>addBidirectionalEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">bool</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::addBidirectionalEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>sourc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">double</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">double</a>&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a bidirectional edge between two vertices. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourc</td><td>The data of the source vertex. </td></tr>
+    <tr><td class="paramname">dest</td><td>The data of the destination vertex. </td></tr>
+    <tr><td class="paramname">d</td><td>The driving distance for the edge. </td></tr>
+    <tr><td class="paramname">w</td><td>The walking distance for the edge. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the bidirectional edge was added successfully, false if the vertices do not exist. </dd></dl>
+
+</div>
+</div>
+<a id="a187a2a2aedc2a6b1274881b8937fcac6" name="a187a2a2aedc2a6b1274881b8937fcac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a187a2a2aedc2a6b1274881b8937fcac6">&#9670;&#160;</a></span>addEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">bool</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::addEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>sourc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">double</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">double</a>&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an edge to a graph (this), given the contents of the source and destination vertices and the edge weight (w). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourc</td><td>The data of the source vertex. </td></tr>
+    <tr><td class="paramname">dest</td><td>The data of the destination vertex. </td></tr>
+    <tr><td class="paramname">d</td><td>The driving distance for the edge. </td></tr>
+    <tr><td class="paramname">w</td><td>The walking distance for the edge. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, and false if the source or destination vertex does not exist. </dd></dl>
+
+</div>
+</div>
+<a id="a00be284ea2be3b3d0f0d2e493b70245b" name="a00be284ea2be3b3d0f0d2e493b70245b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00be284ea2be3b3d0f0d2e493b70245b">&#9670;&#160;</a></span>addVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">bool</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::addVertex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds a vertex with a given content or info (in) to a graph (this). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>The data for the vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, and false if a vertex with that content already exists. </dd></dl>
+
+</div>
+</div>
+<a id="a7f124456c2e43a2220dc4d26c4404a73" name="a7f124456c2e43a2220dc4d26c4404a73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f124456c2e43a2220dc4d26c4404a73">&#9670;&#160;</a></span>avoidEdges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">void</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::avoidEdges </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; <a class="el" href="classEdge.html">int</a>, <a class="el" href="classEdge.html">int</a> &gt; &gt;&#160;</td>
+          <td class="paramname"><em>edges</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a set of edges from the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edges</td><td>A list of pairs of vertex IDs representing the edges to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6f1b2f273c3c036ba9b0d1629c823443" name="a6f1b2f273c3c036ba9b0d1629c823443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1b2f273c3c036ba9b0d1629c823443">&#9670;&#160;</a></span>avoidVertices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">void</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::avoidVertices </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classEdge.html">int</a> &gt;&#160;</td>
+          <td class="paramname"><em>vertices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a set of vertices from the graph. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertices</td><td>A list of vertex IDs to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5499e1238133d0f261cc84ae1bfc2c83" name="a5499e1238133d0f261cc84ae1bfc2c83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5499e1238133d0f261cc84ae1bfc2c83">&#9670;&#160;</a></span>findLocationId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; * <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::findLocationId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">int</a> &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auxiliary function to find a vertex with a given id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>The ID of the location to find. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the vertex, or nullptr if not found. </dd></dl>
+
+</div>
+</div>
+<a id="a8b7b7465fbfd562e2a469f90a437ab75" name="a8b7b7465fbfd562e2a469f90a437ab75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b7b7465fbfd562e2a469f90a437ab75">&#9670;&#160;</a></span>findVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; * <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::findVertex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auxiliary function to find a vertex with a given the content. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>The data of the vertex to find. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the vertex, or nullptr if not found. </dd></dl>
+
+</div>
+</div>
+<a id="a676cdfb976eccfa82b631d2094c1cdac" name="a676cdfb976eccfa82b631d2094c1cdac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676cdfb976eccfa82b631d2094c1cdac">&#9670;&#160;</a></span>findVertexIdx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">int</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::findVertexIdx </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds the index of a vertex by its data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>The data of the vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The index of the vertex, or -1 if not found. </dd></dl>
+
+</div>
+</div>
+<a id="a0853eac15cdf0f06d63f4b8a7820ec71" name="a0853eac15cdf0f06d63f4b8a7820ec71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0853eac15cdf0f06d63f4b8a7820ec71">&#9670;&#160;</a></span>getNumVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">int</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::getNumVertex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the number of vertices in the graph. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of vertices. </dd></dl>
+
+</div>
+</div>
+<a id="a41624b03fcb6bd29e4df574a1ec58541" name="a41624b03fcb6bd29e4df574a1ec58541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41624b03fcb6bd29e4df574a1ec58541">&#9670;&#160;</a></span>getVertexSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classVertex.html">Vertex</a>&lt; <a class="el" href="classEdge.html">T</a> &gt; * &gt; <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::getVertexSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the set of vertices in the graph. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of pointers to all vertices in the graph. </dd></dl>
+
+</div>
+</div>
+<a id="a8949d071d45bf93e171e275462e1007a" name="a8949d071d45bf93e171e275462e1007a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8949d071d45bf93e171e275462e1007a">&#9670;&#160;</a></span>removeEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">bool</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::removeEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>dest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an edge to a graph (this), given the contents of the source and destination vertices and the edge weight (w). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sourc</td><td>The data of the source vertex. </td></tr>
+    <tr><td class="paramname">dest</td><td>The data of the destination vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, and false if the source or destination vertex does not exist. </dd></dl>
+
+</div>
+</div>
+<a id="af9c903104ad69a7782979fa9caedf163" name="af9c903104ad69a7782979fa9caedf163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c903104ad69a7782979fa9caedf163">&#9670;&#160;</a></span>removeVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classEdge.html">class</a> <a class="el" href="classEdge.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classEdge.html">bool</a> <a class="el" href="classGraph.html">Graph</a>&lt; <a class="el" href="classEdge.html">T</a> &gt;::removeVertex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classEdge.html">const</a> <a class="el" href="classEdge.html">T</a> &amp;&#160;</td>
+          <td class="paramname"><em>in</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes a vertex with a given content or info (in) to a graph (this). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>The data for the vertex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful, and false if a vertex with that content already exists. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>data_structures/<a class="el" href="Graph_8h_source.html">Graph.h</a></li>
+<li>code/data_structures/<a class="el" href="Graph_8h_source.html">Graph.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

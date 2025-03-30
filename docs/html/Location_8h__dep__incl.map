@@ -1,0 +1,24 @@
+<map id="code/data_structures/Location.h" name="code/data_structures/Location.h">
+<area shape="rect" id="Node000001" title="Contains the definition of the Location class." alt="" coords="148,5,307,45"/>
+<area shape="rect" id="Node000002" href="$Distance_8h.html" title="Contains the definition of the Distance class." alt="" coords="5,93,164,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,55,117,96,115,91,183,50"/>
+<area shape="rect" id="Node000003" href="$loader_8h.html" title="Contains functions to load location and distance data into memory." alt="" coords="32,181,215,207"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="217,59,200,96,178,135,137,183,133,179,173,132,195,94,212,57"/>
+<area shape="rect" id="Node000005" href="$menu_8h.html" title="Contains functions for user interaction and route selection." alt="" coords="288,255,468,280"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="232,58,246,130,260,169,281,205,313,233,348,252,346,257,310,238,277,208,255,172,241,132,227,59"/>
+<area shape="rect" id="Node000006" href="$Route_8h.html" title="Defines the abstract Route class for calculating routes between a source and destination." alt="" coords="415,101,567,126"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="299,47,457,98,455,103,298,52"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="103,145,120,180,115,182,98,147"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Main function of the program." alt="" coords="193,328,310,353"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="145,216,243,326,239,330,141,219"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="347,289,273,330,271,325,344,284"/>
+<area shape="rect" id="Node000007" href="$EcoRoute_8h.html" title="Contains the definition of the EcoRoute class and the the AproxSolution structure...." alt="" coords="291,181,465,207"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="465,136,396,183,393,179,462,132"/>
+<area shape="rect" id="Node000008" href="$IndependentRoute_8h.html" title="Contains the definition of the IndependentRoute class." alt="" coords="489,181,723,207"/>
+<area shape="poly" id="edge10_Node000006_Node000008" title=" " alt="" coords="521,132,591,179,588,183,518,136"/>
+<area shape="rect" id="Node000009" href="$RestrictedRoute_8h.html" title="Contains the definition of the RestrictedRoute class." alt="" coords="747,181,966,207"/>
+<area shape="poly" id="edge12_Node000006_Node000009" title=" " alt="" coords="558,126,804,179,803,184,557,131"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="381,220,381,255,375,255,375,220"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="557,213,416,257,414,252,555,208"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="767,211,456,257,455,252,766,206"/>
+</map>

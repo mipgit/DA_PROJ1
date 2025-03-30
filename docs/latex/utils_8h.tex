@@ -1,0 +1,61 @@
+\doxysection{code/processors/utils.h File Reference}
+\hypertarget{utils_8h}{}\label{utils_8h}\index{code/processors/utils.h@{code/processors/utils.h}}
+
+
+Utility functions for file path resolution.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$filesystem$>$}\newline
+Include dependency graph for utils.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{utils_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{utils_8h_abcb18e639997269ee6f8794750ea72da}{get\+Full\+Path}} (\mbox{\hyperlink{classEdge}{const}} std\+::string \&\mbox{\hyperlink{classEdge}{relative\+Path}})
+\begin{DoxyCompactList}\small\item\em Resolves the full path of a file based on its relative path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility functions for file path resolution. 
+
+This header provides helper functions for resolving file paths. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8h_abcb18e639997269ee6f8794750ea72da}\label{utils_8h_abcb18e639997269ee6f8794750ea72da} 
+\index{utils.h@{utils.h}!getFullPath@{getFullPath}}
+\index{getFullPath@{getFullPath}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{getFullPath()}{getFullPath()}}
+{\footnotesize\ttfamily std\+::string get\+Full\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} std\+::string \&}]{relative\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resolves the full path of a file based on its relative path. 
+
+This function takes a relative file path and combines it with the parent directory of the current working directory to compute the full absolute file path.
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\+Path} & The relative file path to resolve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string containing the full absolute file path.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::filesystem\+::filesystem\+\_\+error} & If the current path cannot be retrieved. \\
+\hline
+\end{DoxyExceptions}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7eroute_0',['~Route',['../classRoute.html#aba3596ac4dc71ee199bdf1b7d962caf6',1,'Route']]]
+  ['operator_3c_0',['operator&lt;',['../classVertex.html#a5a6670b842354232bac4dad2f551d66e',1,'Vertex']]],
+  ['operator_3d_3d_1',['operator==',['../classLocation.html#a0c99c1e65cc6607121da4abdb4894b74',1,'Location']]]
 ];

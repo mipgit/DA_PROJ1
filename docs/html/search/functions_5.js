@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['independentroute_0',['independentroute',['../classIndependentRoute.html#ab6d58fe0317c7725f3fa772df77c8a43',1,'IndependentRoute::IndependentRoute(Graph&lt; Location &gt; *map)'],['../classIndependentRoute.html#a2a2b55b0d896db68a56c460d9527237e',1,'IndependentRoute::IndependentRoute(Graph&lt; Location &gt; *map, string m, const int src, const int dt)']]],
-  ['initdijkstra_1',['initDijkstra',['../dijkstra_8h.html#a3bd82c38c57ea078056a768188a6e508',1,'dijkstra.h']]]
+  ['findlocationid_0',['findLocationId',['../classGraph.html#a5499e1238133d0f261cc84ae1bfc2c83',1,'Graph']]],
+  ['findvertex_1',['findVertex',['../classGraph.html#a8b7b7465fbfd562e2a469f90a437ab75',1,'Graph']]],
+  ['findvertexidx_2',['findVertexIdx',['../classGraph.html#a676cdfb976eccfa82b631d2094c1cdac',1,'Graph']]]
 ];

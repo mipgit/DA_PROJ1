@@ -1,0 +1,44 @@
+\doxysection{code/data\+\_\+structures/\+Mutable\+Priority\+Queue.h File Reference}
+\hypertarget{MutablePriorityQueue_8h}{}\label{MutablePriorityQueue_8h}\index{code/data\_structures/MutablePriorityQueue.h@{code/data\_structures/MutablePriorityQueue.h}}
+
+
+Contains the definition of the \doxylink{classMutablePriorityQueue}{Mutable\+Priority\+Queue} class.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Mutable\+Priority\+Queue.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{MutablePriorityQueue_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{MutablePriorityQueue_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMutablePriorityQueue}{Mutable\+Priority\+Queue$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em A priority queue with mutable keys. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{MutablePriorityQueue_8h_a915a9564b15f2c25e828da2e9a05769c}\label{MutablePriorityQueue_8h_a915a9564b15f2c25e828da2e9a05769c} 
+\#\mbox{\hyperlink{classEdge}{define}} {\bfseries parent}(\mbox{\hyperlink{classEdge}{i}})~((\mbox{\hyperlink{classEdge}{i}}) / 2)
+\begin{DoxyCompactList}\small\item\em The index of the parent of the element at index {\ttfamily i}. \end{DoxyCompactList}\item 
+\Hypertarget{MutablePriorityQueue_8h_ac84ef3998ba958fd8abf03d08cc5ffcb}\label{MutablePriorityQueue_8h_ac84ef3998ba958fd8abf03d08cc5ffcb} 
+\#\mbox{\hyperlink{classEdge}{define}} {\bfseries left\+Child}(\mbox{\hyperlink{classEdge}{i}})~((\mbox{\hyperlink{classEdge}{i}}) \texorpdfstring{$\ast$}{*} 2)
+\begin{DoxyCompactList}\small\item\em The index of the left child of the element at index {\ttfamily i}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the definition of the \doxylink{classMutablePriorityQueue}{Mutable\+Priority\+Queue} class. 
+
+The code is adapted from DA 24/25
+
+This file defines the template class {\ttfamily \doxylink{classMutablePriorityQueue}{Mutable\+Priority\+Queue}}, which is a data structure that maintains a priority queue with mutable keys. The class provides methods for inserting, extracting the minimum element, and decreasing the key of an element in the priority queue. The class assumes that the elements have a field {\ttfamily queue\+Index} that tracks their position in the heap, and that elements support the {\ttfamily \texorpdfstring{$<$}{<}} operator for comparison. 

@@ -11,4 +11,204 @@ Class for handling environmentally-\/friendly route calculation, extending the \
 
 
 
-Inheritance diagram for Eco\+Route\+:
+Inheritance diagram for Eco\+Route\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classEcoRoute__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Eco\+Route\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classEcoRoute__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEcoRoute_aeacfba91164050a5bee5efaa9702642a}{Eco\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}})
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classEcoRoute}{Eco\+Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEcoRoute_ae090ce60e345e24263eb08d01dc07b43}{Eco\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{mw}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \&\mbox{\hyperlink{classEdge}{avoidN}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{pair}}$<$ \mbox{\hyperlink{classEdge}{int}}, \mbox{\hyperlink{classEdge}{int}} $>$ $>$ \&\mbox{\hyperlink{classEdge}{avoidS}})
+\begin{DoxyCompactList}\small\item\em Parameterized constructor for \doxylink{classEcoRoute}{Eco\+Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classEcoRoute_a43f3f64ffb7d9b93a8e336b2d88c44fb}{read\+From\+File}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Reads route data from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classEcoRoute_a31c815c8ad394f06887de932267ba243}{write\+To\+File}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Writes route data to an output stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classEcoRoute_a3887752cf73e516784ad58cc3810d4d6}{calculate\+Route}} ()
+\begin{DoxyCompactList}\small\item\em Calculates the eco-\/friendly route with a combination of driving and walking. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classEcoRoute_a9d76f5b8f8ea43d98e708d875f6861ae}{calculate\+Aprox\+Solution}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}})
+\begin{DoxyCompactList}\small\item\em Calculates and writes a maximum of 2 approximate solutions in case an exact route isn\textquotesingle{}t possible. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classEcoRoute_af96810a670396ba0484523e8d357c517}{process\+Route}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}}) \mbox{\hyperlink{classEdge}{override}}
+\begin{DoxyCompactList}\small\item\em Processes the route, calling {\ttfamily calculate\+Route}, {\ttfamily write\+To\+File} and {\ttfamily calculate\+Aprox\+Solution}, if {\ttfamily calculate\+Route} isn\textquotesingle{}t successful. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classRoute}{Route}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRoute_ad70fde78a61a895836c416ea0c6a2b28}{Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{map}}, \mbox{\hyperlink{classEdge}{string}} \mbox{\hyperlink{classEdge}{m}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{src}}, \mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}} \mbox{\hyperlink{classEdge}{dt}})
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classRoute}{Route}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{virtual}} {\bfseries \texorpdfstring{$\sim$}{\string~}\+Route} ()=\mbox{\hyperlink{classEdge}{default}}
+\begin{DoxyCompactList}\small\item\em Virtual destructor for the \doxylink{classRoute}{Route} class. Ensures proper cleanup of derived classes when an object is destroyed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classRoute}{Route}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*} {\bfseries city\+Map}
+\begin{DoxyCompactList}\small\item\em Pointer to the graph representing the city map with locations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{string}} {\bfseries mode}
+\begin{DoxyCompactList}\small\item\em Mode of transportation (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., "{}driving"{} or "{}driving-\/walking"{}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries source}
+\begin{DoxyCompactList}\small\item\em ID of the source location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{int}} {\bfseries dest}
+\begin{DoxyCompactList}\small\item\em ID of the destination location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for handling environmentally-\/friendly route calculation, extending the \doxylink{classRoute}{Route} class. 
+
+This class implements the best (shortest overall) route for driving and walking, ensuring that it meets user-\/defined constraints. The best route includes at least one driving segment and one walking segment, minimizing both driving and walking time. Should there be two or more feasible routes with the same overall minimum travel time, it selects the one with the longest walking section.
+
+If no suitable route is found, it displays a list of suggestions representing the best feasible alternative routes that approximate user requirements. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEcoRoute_aeacfba91164050a5bee5efaa9702642a}\label{classEcoRoute_aeacfba91164050a5bee5efaa9702642a} 
+\index{EcoRoute@{EcoRoute}!EcoRoute@{EcoRoute}}
+\index{EcoRoute@{EcoRoute}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{EcoRoute()}{EcoRoute()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Eco\+Route\+::\+Eco\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for \doxylink{classEcoRoute}{Eco\+Route}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the graph representing the city map. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classEcoRoute_ae090ce60e345e24263eb08d01dc07b43}\label{classEcoRoute_ae090ce60e345e24263eb08d01dc07b43} 
+\index{EcoRoute@{EcoRoute}!EcoRoute@{EcoRoute}}
+\index{EcoRoute@{EcoRoute}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{EcoRoute()}{EcoRoute()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Eco\+Route\+::\+Eco\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{map,  }\item[{\mbox{\hyperlink{classEdge}{string}}}]{m,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{src,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{dt,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{int}}}]{mw,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{int}} $>$ \&}]{avoidN,  }\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classEdge}{pair}}$<$ \mbox{\hyperlink{classEdge}{int}}, \mbox{\hyperlink{classEdge}{int}} $>$ $>$ \&}]{avoidS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Parameterized constructor for \doxylink{classEcoRoute}{Eco\+Route}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Pointer to the graph representing the city map. \\
+\hline
+{\em m} & \doxylink{classRoute}{Route} mode. \\
+\hline
+{\em src} & Source node ID. \\
+\hline
+{\em dt} & Destination node ID. \\
+\hline
+{\em mw} & Maximum walking time allowed. \\
+\hline
+{\em avoidN} & List of nodes to avoid. \\
+\hline
+{\em avoidS} & List of edges to avoid (represented as pairs of node IDs). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEcoRoute_a9d76f5b8f8ea43d98e708d875f6861ae}\label{classEcoRoute_a9d76f5b8f8ea43d98e708d875f6861ae} 
+\index{EcoRoute@{EcoRoute}!calculateAproxSolution@{calculateAproxSolution}}
+\index{calculateAproxSolution@{calculateAproxSolution}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{calculateAproxSolution()}{calculateAproxSolution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Eco\+Route\+::calculate\+Aprox\+Solution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})}
+
+
+
+Calculates and writes a maximum of 2 approximate solutions in case an exact route isn\textquotesingle{}t possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & Output stream to write the approximate solutions. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classEcoRoute_a3887752cf73e516784ad58cc3810d4d6}\label{classEcoRoute_a3887752cf73e516784ad58cc3810d4d6} 
+\index{EcoRoute@{EcoRoute}!calculateRoute@{calculateRoute}}
+\index{calculateRoute@{calculateRoute}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{calculateRoute()}{calculateRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Eco\+Route\+::calculate\+Route (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates the eco-\/friendly route with a combination of driving and walking. 
+
+\begin{DoxyReturn}{Returns}
+True if a valid route is found, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classEcoRoute_af96810a670396ba0484523e8d357c517}\label{classEcoRoute_af96810a670396ba0484523e8d357c517} 
+\index{EcoRoute@{EcoRoute}!processRoute@{processRoute}}
+\index{processRoute@{processRoute}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{processRoute()}{processRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Eco\+Route\+::process\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes the route, calling {\ttfamily calculate\+Route}, {\ttfamily write\+To\+File} and {\ttfamily calculate\+Aprox\+Solution}, if {\ttfamily calculate\+Route} isn\textquotesingle{}t successful. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & The output stream where the processed route results will be written. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoute_ac58074883b927ba230a9904cfc3ec07b}{Route}}.
+
+\Hypertarget{classEcoRoute_a43f3f64ffb7d9b93a8e336b2d88c44fb}\label{classEcoRoute_a43f3f64ffb7d9b93a8e336b2d88c44fb} 
+\index{EcoRoute@{EcoRoute}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{bool}} Eco\+Route\+::read\+From\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reads route data from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if reading was successful, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRoute_a66c1e494b5b10315f9a08d68283e2185}{Route}}.
+
+\Hypertarget{classEcoRoute_a31c815c8ad394f06887de932267ba243}\label{classEcoRoute_a31c815c8ad394f06887de932267ba243} 
+\index{EcoRoute@{EcoRoute}!writeToFile@{writeToFile}}
+\index{writeToFile@{writeToFile}!EcoRoute@{EcoRoute}}
+\doxysubsubsection{\texorpdfstring{writeToFile()}{writeToFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} Eco\+Route\+::write\+To\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{ostream}} \&}]{out\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Writes route data to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out\+File} & Output stream to write the route data. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classRoute_a77325f40d3efd4aeb74158ebb550c08e}{Route}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+code/routes/\mbox{\hyperlink{EcoRoute_8h}{Eco\+Route.\+h}}\item 
+code/routes/Eco\+Route.\+cpp\end{DoxyCompactItemize}

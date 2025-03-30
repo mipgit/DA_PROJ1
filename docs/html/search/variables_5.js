@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_0',['time',['../structAproxSolution.html#a0daaf444ed81353cbf843062c7e05276',1,'AproxSolution']]]
+  ['mode_0',['mode',['../classRoute.html#a82c09142f8fc459c0c2f148026d89ec4',1,'Route']]]
 ];

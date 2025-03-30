@@ -1,45 +1,45 @@
 \doxysection{Restricted\+Route.\+h}
-\hypertarget{RestrictedRoute_8h_source}{}\label{RestrictedRoute_8h_source}\index{routes/RestrictedRoute.h@{routes/RestrictedRoute.h}}
-
+\hypertarget{RestrictedRoute_8h_source}{}\label{RestrictedRoute_8h_source}\index{code/routes/RestrictedRoute.h@{code/routes/RestrictedRoute.h}}
+\mbox{\hyperlink{RestrictedRoute_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RESROUTE\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RESROUTE\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Route.h"{}}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRestrictedRoute}{RestrictedRoute}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoute}{Route}}\ \{}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRestrictedRoute_a37ba036f58577acbd3444985ea836951}{RestrictedRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}})\ :\ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\textcolor{stringliteral}{"{}"{}},-\/1,-\/1),\ avoidNodes(),\ avoidSegs(),\ node(-\/1),\ time(0),\ route()\ \{\}}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRestrictedRoute_aa97a5b08e7243cfe747037286f888c1c}{RestrictedRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{m}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{src}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{dt}},\ \mbox{\hyperlink{classEdge}{vector<int>}}\ \mbox{\hyperlink{classEdge}{avoidN}},\ \mbox{\hyperlink{classEdge}{vector}}<\mbox{\hyperlink{classEdge}{pair<int,\ int>}}>\ \mbox{\hyperlink{classEdge}{avoidS}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{inc}})\ }
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\mbox{\hyperlink{classEdge}{m}},\mbox{\hyperlink{classEdge}{src}},\mbox{\hyperlink{classEdge}{dt}}),\ avoidNodes(\mbox{\hyperlink{classEdge}{avoidN}}),\ avoidSegs(\mbox{\hyperlink{classEdge}{avoidS}}),\ node(\mbox{\hyperlink{classEdge}{inc}}),\ time(0),\ route()\ \{\}}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRestrictedRoute_a809896bef1eb29c89862a7f89938303e}{readFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}})\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestrictedRoute_a4727074c0e690c1d09524151bf31e0b0}{writeToFile}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestrictedRoute_a076ac9bbf74d8c340d8ce1fa7e13c51e}{calculateRoute}}();}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestrictedRoute_a182cb551a679ec85f6e568e7d7ccbebe}{processRoute}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ RESTRICTEDROUTE\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ RESTRICTEDROUTE\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Route_8h}{Route.h}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRestrictedRoute}{RestrictedRoute}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classRoute}{Route}}\ \{}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRestrictedRoute_a37ba036f58577acbd3444985ea836951}{RestrictedRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}})\ :\ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\textcolor{stringliteral}{"{}"{}},-\/1,-\/1),\ avoidNodes(),\ avoidSegs(),\ node(-\/1),\ time(0),\ route()\ \{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRestrictedRoute_aa97a5b08e7243cfe747037286f888c1c}{RestrictedRoute}}(\mbox{\hyperlink{classEdge}{Graph<Location>}}*\ \mbox{\hyperlink{classEdge}{map}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{classEdge}{m}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{src}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{dt}},\ \mbox{\hyperlink{classEdge}{vector<int>}}\ \mbox{\hyperlink{classEdge}{avoidN}},\ \mbox{\hyperlink{classEdge}{vector}}<\mbox{\hyperlink{classEdge}{pair<int,\ int>}}>\ \mbox{\hyperlink{classEdge}{avoidS}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classEdge}{inc}})\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \ \mbox{\hyperlink{classRoute}{Route}}(\mbox{\hyperlink{classEdge}{map}},\mbox{\hyperlink{classEdge}{m}},\mbox{\hyperlink{classEdge}{src}},\mbox{\hyperlink{classEdge}{dt}}),\ avoidNodes(\mbox{\hyperlink{classEdge}{avoidN}}),\ avoidSegs(\mbox{\hyperlink{classEdge}{avoidS}}),\ node(\mbox{\hyperlink{classEdge}{inc}}),\ time(0),\ route()\ \{\}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRestrictedRoute_a809896bef1eb29c89862a7f89938303e}{readFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ \&\mbox{\hyperlink{classEdge}{filename}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestrictedRoute_a4727074c0e690c1d09524151bf31e0b0}{writeToFile}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestrictedRoute_a076ac9bbf74d8c340d8ce1fa7e13c51e}{calculateRoute}}();}
 \DoxyCodeLine{00077\ }
 \DoxyCodeLine{00078\ }
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ avoidNodes;\ \ }
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<pair<int,\ int>}}>\ avoidSegs;\ \ }
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ node;\ \ }
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ time;\ \ }
-\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ route;\ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRestrictedRoute_a182cb551a679ec85f6e568e7d7ccbebe}{processRoute}}(\mbox{\hyperlink{classEdge}{ostream}}\ \&\mbox{\hyperlink{classEdge}{outFile}})\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ }
 \DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ avoidNodes;\ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<pair<int,\ int>}}>\ avoidSegs;\ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ node;\ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ time;\ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classEdge}{vector<int>}}\ route;\ \ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

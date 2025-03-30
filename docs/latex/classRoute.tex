@@ -11,12 +11,22 @@ Abstract class representing a route between a source and destination.
 
 
 
-Inheritance diagram for Route\+:
-% FIG 0
+Inheritance diagram for Route\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRoute__inherit__graph}
+\end{center}
+\end{figure}
 
 
-Collaboration diagram for Route\+:
-% FIG 1
+Collaboration diagram for Route\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classRoute__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,7 +38,7 @@ Collaboration diagram for Route\+:
 \mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{bool}} \mbox{\hyperlink{classRoute_a66c1e494b5b10315f9a08d68283e2185}{read\+From\+File}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}})=0
 \begin{DoxyCompactList}\small\item\em Reads the route data from a file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRoute_a77325f40d3efd4aeb74158ebb550c08e}{write\+To\+File}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}})=0
-\begin{DoxyCompactList}\small\item\em Writes the route data to an output stream (e.\+g., a file or console). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Writes the route data to an output stream (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., a file or console). \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classEdge}{virtual}} \mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{classRoute_ac58074883b927ba230a9904cfc3ec07b}{process\+Route}} (\mbox{\hyperlink{classEdge}{ostream}} \&\mbox{\hyperlink{classEdge}{out\+File}})=0
 \begin{DoxyCompactList}\small\item\em Processes the route, which may involve calculations, optimizations, or other actions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
@@ -39,7 +49,7 @@ Collaboration diagram for Route\+:
 \begin{DoxyCompactList}\small\item\em Pointer to the graph representing the city map with locations. \end{DoxyCompactList}\item 
 \Hypertarget{classRoute_a82c09142f8fc459c0c2f148026d89ec4}\label{classRoute_a82c09142f8fc459c0c2f148026d89ec4} 
 \mbox{\hyperlink{classEdge}{string}} {\bfseries mode}
-\begin{DoxyCompactList}\small\item\em Mode of transportation (e.\+g., "{}driving"{} or "{}driving-\/walking"{}). \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Mode of transportation (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., "{}driving"{} or "{}driving-\/walking"{}). \end{DoxyCompactList}\item 
 \Hypertarget{classRoute_adbff3395b424b39ffb03c8c1a2a56c56}\label{classRoute_adbff3395b424b39ffb03c8c1a2a56c56} 
 \mbox{\hyperlink{classEdge}{int}} {\bfseries source}
 \begin{DoxyCompactList}\small\item\em ID of the source location. \end{DoxyCompactList}\item 
@@ -133,7 +143,7 @@ Implemented in \mbox{\hyperlink{classEcoRoute_a43f3f64ffb7d9b93a8e336b2d88c44fb}
 
 
 
-Writes the route data to an output stream (e.\+g., a file or console). 
+Writes the route data to an output stream (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., a file or console). 
 
 This is a pure virtual function, which must be implemented in derived classes to handle writing the route information to an output stream.
 
@@ -150,4 +160,4 @@ Implemented in \mbox{\hyperlink{classEcoRoute_a31c815c8ad394f06887de932267ba243}
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-routes/Route.\+h\end{DoxyCompactItemize}
+code/routes/\mbox{\hyperlink{Route_8h}{Route.\+h}}\end{DoxyCompactItemize}

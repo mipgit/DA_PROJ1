@@ -1,0 +1,111 @@
+\doxysection{code/processors/loader.h File Reference}
+\hypertarget{loader_8h}{}\label{loader_8h}\index{code/processors/loader.h@{code/processors/loader.h}}
+
+
+Contains functions to load location and distance data into memory.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Location.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Distance.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Graph.\+h"{}}\newline
+Include dependency graph for loader.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{loader_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{loader_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{loader_8h_a2df107102bc706649258164f50d74cac}{load\+Locations}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}})
+\begin{DoxyCompactList}\small\item\em Loads location data from a CSV file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{loader_8h_acc03a3a29c523c9c644ab9fad6415b58}{load\+Distances}} (\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&\mbox{\hyperlink{classEdge}{filename}})
+\begin{DoxyCompactList}\small\item\em Loads distance data from a CSV file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{loader_8h_aed8a5f87ea3122e814cd5f3906c45d36}{initialize\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the main graph using loaded location and distance data. \end{DoxyCompactList}\item 
+\Hypertarget{loader_8h_a97dda738560006901454d5e901a79d7d}\label{loader_8h_a97dda738560006901454d5e901a79d7d} 
+\mbox{\hyperlink{classEdge}{void}} {\bfseries display\+Locations} ()
+\begin{DoxyCompactList}\small\item\em Displays all loaded locations. \end{DoxyCompactList}\item 
+\Hypertarget{loader_8h_a28bc363e41e3487c951c5ba37c17ccb5}\label{loader_8h_a28bc363e41e3487c951c5ba37c17ccb5} 
+\mbox{\hyperlink{classEdge}{void}} {\bfseries display\+Distances} ()
+\begin{DoxyCompactList}\small\item\em Displays all loaded distances. \end{DoxyCompactList}\item 
+\Hypertarget{loader_8h_a47c7acaf4e3236e6a5a6e897c7c3f335}\label{loader_8h_a47c7acaf4e3236e6a5a6e897c7c3f335} 
+\mbox{\hyperlink{classEdge}{void}} {\bfseries display\+Vertices} ()
+\begin{DoxyCompactList}\small\item\em Displays all vertices in the graph. \end{DoxyCompactList}\item 
+\Hypertarget{loader_8h_ac93821e4f19325ecfa2b50d34a4fe984}\label{loader_8h_ac93821e4f19325ecfa2b50d34a4fe984} 
+\mbox{\hyperlink{classEdge}{void}} {\bfseries display\+Edges} ()
+\begin{DoxyCompactList}\small\item\em Displays all edges in the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{loader_8h_ab9246989faf489b4ef576af7f6c51b96}\label{loader_8h_ab9246989faf489b4ef576af7f6c51b96} 
+\mbox{\hyperlink{classEdge}{map}}$<$ \mbox{\hyperlink{classEdge}{string}}, \mbox{\hyperlink{classLocation}{Location}} $>$ {\bfseries locations}
+\begin{DoxyCompactList}\small\item\em Stores locations indexed by their codes. \end{DoxyCompactList}\item 
+\Hypertarget{loader_8h_a8ce8d527a031302a5d55dd4c38f35655}\label{loader_8h_a8ce8d527a031302a5d55dd4c38f35655} 
+\mbox{\hyperlink{classEdge}{vector}}$<$ \mbox{\hyperlink{classDistance}{Distance}} $>$ {\bfseries distances}
+\begin{DoxyCompactList}\small\item\em Stores distances between locations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions to load location and distance data into memory. 
+
+This file implements functions to read location and distance data from CSV files and initialize the main graph structure. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{loader_8h_aed8a5f87ea3122e814cd5f3906c45d36}\label{loader_8h_aed8a5f87ea3122e814cd5f3906c45d36} 
+\index{loader.h@{loader.h}!initializeGraph@{initializeGraph}}
+\index{initializeGraph@{initializeGraph}!loader.h@{loader.h}}
+\doxysubsubsection{\texorpdfstring{initializeGraph()}{initializeGraph()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*} initialize\+Graph (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the main graph using loaded location and distance data. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the initialized graph. 
+\end{DoxyReturn}
+\Hypertarget{loader_8h_acc03a3a29c523c9c644ab9fad6415b58}\label{loader_8h_acc03a3a29c523c9c644ab9fad6415b58} 
+\index{loader.h@{loader.h}!loadDistances@{loadDistances}}
+\index{loadDistances@{loadDistances}!loader.h@{loader.h}}
+\doxysubsubsection{\texorpdfstring{loadDistances()}{loadDistances()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} load\+Distances (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads distance data from a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file containing distance data. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{loader_8h_a2df107102bc706649258164f50d74cac}\label{loader_8h_a2df107102bc706649258164f50d74cac} 
+\index{loader.h@{loader.h}!loadLocations@{loadLocations}}
+\index{loadLocations@{loadLocations}!loader.h@{loader.h}}
+\doxysubsubsection{\texorpdfstring{loadLocations()}{loadLocations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} load\+Locations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEdge}{const}} \mbox{\hyperlink{classEdge}{string}} \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Loads location data from a CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the CSV file containing location data. \\
+\hline
+\end{DoxyParams}

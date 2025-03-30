@@ -1,0 +1,7 @@
+<map id="code/data_structures/Distance.h" name="code/data_structures/Distance.h">
+<area shape="rect" id="Node000001" title="Contains the definition of the Distance class." alt="" coords="17,5,176,45"/>
+<area shape="rect" id="Node000002" href="$loader_8h.html" title="Contains functions to load location and distance data into memory." alt="" coords="5,93,188,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,59,99,93,94,93,94,59"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html" title="Main function of the program." alt="" coords="38,167,155,192"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,132,99,167,94,167,94,132"/>
+</map>

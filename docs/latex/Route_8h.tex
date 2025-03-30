@@ -1,0 +1,45 @@
+\doxysection{code/routes/\+Route.h File Reference}
+\hypertarget{Route_8h}{}\label{Route_8h}\index{code/routes/Route.h@{code/routes/Route.h}}
+
+
+Defines the abstract \doxylink{classRoute}{Route} class for calculating routes between a source and destination.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Graph.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Location.\+h"{}}\newline
+{\ttfamily \#include "{}dijkstra.\+h"{}}\newline
+Include dependency graph for Route.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Route_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Route_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classRoute}{Route}}
+\begin{DoxyCompactList}\small\item\em Abstract class representing a route between a source and destination. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the abstract \doxylink{classRoute}{Route} class for calculating routes between a source and destination. 
+
+This file defines the abstract class {\ttfamily \doxylink{classRoute}{Route}}, which serves as a base class for different types of route calculations (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., independent, restricted, eco-\/friendly). It provides a common interface for handling the calculation and processing of routes based on a source and destination on a city map. Derived classes are expected to implement specific route processing and data handling (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., reading and writing routes from/to files).
+
+The \doxylink{classRoute}{Route} class relies on a graph representation of locations ({\ttfamily \doxylink{classGraph}{Graph}\texorpdfstring{$<$}{<}\doxylink{classLocation}{Location}\texorpdfstring{$>$}{>}}) and supports different modes of transportation (\doxylink{classEdge_a65bcda45fc447af2ef58b467cce63eca}{e.\+g}., driving, driving-\/walking). 

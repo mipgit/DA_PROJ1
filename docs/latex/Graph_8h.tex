@@ -1,0 +1,77 @@
+\doxysection{code/data\+\_\+structures/\+Graph.h File Reference}
+\hypertarget{Graph_8h}{}\label{Graph_8h}\index{code/data\_structures/Graph.h@{code/data\_structures/Graph.h}}
+
+
+Contains the declaration of the \doxylink{classGraph}{Graph}, \doxylink{classVertex}{Vertex}, and \doxylink{classEdge}{Edge} classes.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include "{}Mutable\+Priority\+Queue.\+h"{}}\newline
+Include dependency graph for Graph.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Graph_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Graph_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classVertex}{Vertex$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing a vertex in the graph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEdge}{Edge$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing an edge between two vertices in the graph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGraph}{Graph$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Class representing a graph consisting of vertices and edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6}\label{Graph_8h_a12c2040f25d8e3a7b9e1c2024c618cb6} 
+\#\mbox{\hyperlink{classEdge}{define}} {\bfseries INF}~std\+::numeric\+\_\+limits$<$\mbox{\hyperlink{classEdge}{int}}$>$\mbox{\hyperlink{classEdge}{\+::max}}()
+\begin{DoxyCompactList}\small\item\em Defines an infinite value for edge weights. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ }\\\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{Graph_8h_a0e1d40895b676f5231ceac5b72cca197}{copy\+Graph}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classEdge}{g}})
+\begin{DoxyCompactList}\small\item\em Creates a copy of a given graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains the declaration of the \doxylink{classGraph}{Graph}, \doxylink{classVertex}{Vertex}, and \doxylink{classEdge}{Edge} classes. 
+
+The code is adapted from DA 24/25
+
+This file implements a graph structure, including vertices and edges, and provides methods to manipulate and query the graph. It supports operations such as adding/removing vertices and edges, finding vertices, and handling bidirectional edges. It also provides functionality for graph traversal and manipulation, including avoiding certain vertices or edges. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Graph_8h_a0e1d40895b676f5231ceac5b72cca197}\label{Graph_8h_a0e1d40895b676f5231ceac5b72cca197} 
+\index{Graph.h@{Graph.h}!copyGraph@{copyGraph}}
+\index{copyGraph@{copyGraph}!Graph.h@{Graph.h}}
+\doxysubsubsection{\texorpdfstring{copyGraph()}{copyGraph()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{classEdge}{class}} \mbox{\hyperlink{classEdge}{T}} $>$ \\
+\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*} copy\+Graph (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classEdge}{T}} $>$ \texorpdfstring{$\ast$}{*}}]{g }\end{DoxyParamCaption})}
+
+
+
+Creates a copy of a given graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & The graph to copy. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new copied graph. 
+\end{DoxyReturn}

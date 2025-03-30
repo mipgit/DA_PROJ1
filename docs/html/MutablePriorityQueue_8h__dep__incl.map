@@ -1,0 +1,27 @@
+<map id="code/data_structures/MutablePriorityQueue.h" name="code/data_structures/MutablePriorityQueue.h">
+<area shape="rect" id="Node000001" title="Contains the definition of the MutablePriorityQueue class." alt="" coords="245,5,425,45"/>
+<area shape="rect" id="Node000002" href="$Graph_8h.html" title="Contains the declaration of the Graph, Vertex, and Edge classes." alt="" coords="197,93,356,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="317,58,292,95,287,92,313,55"/>
+<area shape="rect" id="Node000010" href="$dijkstra_8h.html" title="Contains the implementation of Dijkstra&#39;s algorithm." alt="" coords="314,181,477,207"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="354,57,370,92,395,180,390,182,365,94,349,59"/>
+<area shape="rect" id="Node000003" href="$loader_8h.html" title="Contains functions to load location and distance data into memory." alt="" coords="5,255,188,280"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,144,112,256,109,252,242,140"/>
+<area shape="rect" id="Node000005" href="$menu_8h.html" title="Contains functions for user interaction and route selection." alt="" coords="261,401,441,427"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="265,147,250,190,238,243,237,299,243,327,254,352,266,368,281,381,316,399,313,404,278,385,262,371,249,355,238,328,232,300,233,242,244,188,260,145"/>
+<area shape="rect" id="Node000006" href="$Route_8h.html" title="Defines the abstract Route class for calculating routes between a source and destination." alt="" coords="319,255,471,280"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="282,146,290,177,304,205,334,233,368,252,365,257,331,237,300,208,285,178,277,148"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="319,139,379,179,376,183,316,143"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html" title="Main function of the program." alt="" coords="166,475,283,500"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="113,291,220,473,215,476,108,294"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="320,436,247,477,244,472,318,431"/>
+<area shape="rect" id="Node000007" href="$EcoRoute_8h.html" title="Contains the definition of the EcoRoute class and the the AproxSolution structure...." alt="" coords="264,328,439,353"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="383,293,361,329,356,326,379,290"/>
+<area shape="rect" id="Node000008" href="$IndependentRoute_8h.html" title="Contains the definition of the IndependentRoute class." alt="" coords="463,328,696,353"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="439,282,550,325,548,330,437,287"/>
+<area shape="rect" id="Node000009" href="$RestrictedRoute_8h.html" title="Contains the definition of the RestrictedRoute class." alt="" coords="721,328,939,353"/>
+<area shape="poly" id="edge11_Node000006_Node000009" title=" " alt="" coords="479,280,760,325,760,331,478,285"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="354,367,354,401,349,401,349,367"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="530,360,389,404,387,399,529,355"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="740,358,429,404,428,399,739,353"/>
+<area shape="poly" id="edge14_Node000010_Node000006" title=" " alt="" coords="398,220,398,255,393,255,393,220"/>
+</map>

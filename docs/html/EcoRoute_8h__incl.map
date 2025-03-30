@@ -1,0 +1,41 @@
+<map id="code/routes/EcoRoute.h" name="code/routes/EcoRoute.h">
+<area shape="rect" id="Node000001" title="Contains the definition of the EcoRoute class and the the AproxSolution structure...." alt="" coords="352,5,527,31"/>
+<area shape="rect" id="Node000002" href="$Route_8h.html" title="Defines the abstract Route class for calculating routes between a source and destination." alt="" coords="403,79,475,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="442,31,442,65,437,65,437,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="22,328,102,353"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="404,100,323,117,277,133,234,154,184,193,140,237,104,282,79,318,74,315,100,278,136,234,180,189,231,150,275,128,321,112,403,94"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="477,159,551,185"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="452,102,495,148,492,151,448,106"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="575,159,650,185"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="465,102,576,151,574,156,463,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="675,159,751,185"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="476,99,562,120,663,149,670,152,669,157,661,155,560,125,475,104"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="127,328,187,353"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="404,104,345,123,314,137,285,154,258,174,240,192,205,241,184,280,168,316,163,314,179,278,201,239,236,189,255,170,282,150,312,132,344,118,402,99"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="633,328,718,353"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="442,104,448,145,455,168,467,190,505,234,550,270,596,299,636,320,634,324,593,303,547,274,501,238,462,194,450,170,443,146,437,105"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="865,247,923,273"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="475,92,728,110,855,127,899,138,924,150,934,171,932,195,924,217,913,237,908,235,919,215,927,193,928,172,920,154,898,143,854,132,727,115,475,97"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="193,401,256,427"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="403,97,356,102,298,112,236,128,178,154,118,190,75,224,42,267,12,329,9,351,17,369,34,382,59,393,120,406,180,410,179,415,119,411,57,398,31,387,13,372,4,352,7,327,37,264,71,221,115,186,175,150,234,123,297,106,355,96,403,92"/>
+<area shape="rect" id="Node000011" href="$Graph_8h.html" title="Contains the declaration of the Graph, Vertex, and Edge classes." alt="" coords="216,240,351,280"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="404,102,354,120,330,135,309,154,299,170,292,189,286,226,280,226,287,187,294,168,305,150,326,130,352,115,402,97"/>
+<area shape="rect" id="Node000015" href="$Location_8h.html" title="Contains the definition of the Location class." alt="" coords="775,152,909,192"/>
+<area shape="poly" id="edge19_Node000002_Node000015" title=" " alt="" coords="476,96,761,149,760,155,475,101"/>
+<area shape="rect" id="Node000016" href="$dijkstra_8h.html" title="Contains the implementation of Dijkstra&#39;s algorithm." alt="" coords="319,159,402,185"/>
+<area shape="poly" id="edge21_Node000002_Node000016" title=" " alt="" coords="429,106,384,151,380,148,426,102"/>
+<area shape="poly" id="edge11_Node000011_Node000003" title=" " alt="" coords="231,283,108,326,107,321,229,278"/>
+<area shape="poly" id="edge16_Node000011_Node000007" title=" " alt="" coords="254,282,188,323,185,319,251,278"/>
+<area shape="poly" id="edge15_Node000011_Node000008" title=" " alt="" coords="352,272,619,325,618,330,351,277"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="275,281,252,329,233,389,228,387,247,327,270,279"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="345,328,408,353"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="307,278,354,317,350,321,304,282"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="262,328,321,353"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="288,280,291,314,286,314,282,280"/>
+<area shape="rect" id="Node000014" href="$MutablePriorityQueue_8h.html" title="Contains the definition of the MutablePriorityQueue class." alt="" coords="433,328,609,353"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="341,277,474,321,472,326,339,283"/>
+<area shape="poly" id="edge18_Node000014_Node000010" title=" " alt="" coords="474,356,270,405,268,399,472,351"/>
+<area shape="poly" id="edge20_Node000015_Node000009" title=" " alt="" coords="856,191,882,234,877,237,851,194"/>
+<area shape="poly" id="edge22_Node000016_Node000011" title=" " alt="" coords="352,187,312,231,308,228,348,183"/>
+<area shape="poly" id="edge23_Node000016_Node000014" title=" " alt="" coords="367,184,387,228,403,254,422,278,451,302,482,320,480,324,448,306,419,282,399,257,383,231,362,186"/>
+</map>

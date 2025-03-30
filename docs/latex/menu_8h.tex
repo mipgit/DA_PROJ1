@@ -1,0 +1,120 @@
+\doxysection{code/processors/menu.h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{code/processors/menu.h@{code/processors/menu.h}}
+
+
+Contains functions for user interaction and route selection.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+{\ttfamily \#include "{}../routes/\+Independent\+Route.\+h"{}}\newline
+{\ttfamily \#include "{}../routes/\+Restricted\+Route.\+h"{}}\newline
+{\ttfamily \#include "{}../routes/\+Eco\+Route.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Graph.\+h"{}}\newline
+{\ttfamily \#include "{}../data\+\_\+structures/\+Location.\+h"{}}\newline
+Include dependency graph for menu.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{menu_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{menu_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_a7b66e0ab5c49c6323766a8ecdb7c1cf9}{interact\+Mode}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}city\+Map, \mbox{\hyperlink{classEdge}{char}} \mbox{\hyperlink{classEdge}{choice}})
+\begin{DoxyCompactList}\small\item\em Handles the interactive mode for route selection and processing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_a61a4ed8ae00f5ea84570aa195989e45b}{batch\+Mode}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}city\+Map, \mbox{\hyperlink{classEdge}{char}} \mbox{\hyperlink{classEdge}{choice}})
+\begin{DoxyCompactList}\small\item\em Handles the batch mode for processing routes from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_a71ad054e94bf5f97b4abef820daafa92}{choose\+Mode}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}city\+Map, \mbox{\hyperlink{classEdge}{char}} \mbox{\hyperlink{classEdge}{choice}})
+\begin{DoxyCompactList}\small\item\em Allows the user to choose between interactive and batch modes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classEdge}{void}} \mbox{\hyperlink{menu_8h_a1c3bb71f1674190f89e4f59e1d508666}{choose\+Route}} (\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}city\+Map)
+\begin{DoxyCompactList}\small\item\em Presents the user with different route planning options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions for user interaction and route selection. 
+
+This file defines functions that handle user input for selecting routes and modes and initiates the processing of selected routes in either interactive or batch mode. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_a61a4ed8ae00f5ea84570aa195989e45b}\label{menu_8h_a61a4ed8ae00f5ea84570aa195989e45b} 
+\index{menu.h@{menu.h}!batchMode@{batchMode}}
+\index{batchMode@{batchMode}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{batchMode()}{batchMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} batch\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{city\+Map,  }\item[{\mbox{\hyperlink{classEdge}{char}}}]{choice }\end{DoxyParamCaption})}
+
+
+
+Handles the batch mode for processing routes from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Map} & Pointer to the graph representing the city. \\
+\hline
+{\em choice} & User\textquotesingle{}s selected route type. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8h_a71ad054e94bf5f97b4abef820daafa92}\label{menu_8h_a71ad054e94bf5f97b4abef820daafa92} 
+\index{menu.h@{menu.h}!chooseMode@{chooseMode}}
+\index{chooseMode@{chooseMode}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{chooseMode()}{chooseMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} choose\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{city\+Map,  }\item[{\mbox{\hyperlink{classEdge}{char}}}]{choice }\end{DoxyParamCaption})}
+
+
+
+Allows the user to choose between interactive and batch modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Map} & Pointer to the graph representing the city. \\
+\hline
+{\em choice} & User\textquotesingle{}s selected route type. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8h_a1c3bb71f1674190f89e4f59e1d508666}\label{menu_8h_a1c3bb71f1674190f89e4f59e1d508666} 
+\index{menu.h@{menu.h}!chooseRoute@{chooseRoute}}
+\index{chooseRoute@{chooseRoute}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{chooseRoute()}{chooseRoute()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} choose\+Route (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{city\+Map }\end{DoxyParamCaption})}
+
+
+
+Presents the user with different route planning options. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Map} & Pointer to the graph representing the city. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{menu_8h_a7b66e0ab5c49c6323766a8ecdb7c1cf9}\label{menu_8h_a7b66e0ab5c49c6323766a8ecdb7c1cf9} 
+\index{menu.h@{menu.h}!interactMode@{interactMode}}
+\index{interactMode@{interactMode}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{interactMode()}{interactMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classEdge}{void}} interact\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGraph}{Graph}}$<$ \mbox{\hyperlink{classLocation}{Location}} $>$ \texorpdfstring{$\ast$}{*}}]{city\+Map,  }\item[{\mbox{\hyperlink{classEdge}{char}}}]{choice }\end{DoxyParamCaption})}
+
+
+
+Handles the interactive mode for route selection and processing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em city\+Map} & Pointer to the graph representing the city. \\
+\hline
+{\em choice} & User\textquotesingle{}s selected route type. \\
+\hline
+\end{DoxyParams}
+!! falta validar se escreveu \textquotesingle{}driving\textquotesingle{}

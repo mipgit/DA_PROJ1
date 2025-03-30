@@ -85,12 +85,26 @@ $(function() {
 Inheritance diagram for Route:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRoute__inherit__graph.png" border="0" usemap="#aRoute_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<map name="aRoute_inherit__map" id="aRoute_inherit__map">
+<area shape="rect" title="Abstract class representing a route between a source and destination." alt="" coords="249,5,454,299"/>
+<area shape="rect" href="classEcoRoute.html" title="Class for handling environmentally&#45;friendly route calculation, extending the Route class." alt="" coords="5,347,223,679"/>
+<area shape="poly" title=" " alt="" coords="250,312,225,349,221,346,245,309"/>
+<area shape="rect" href="classIndependentRoute.html" title="Class for handling independent route calculation, extending the Route class." alt="" coords="247,369,455,657"/>
+<area shape="poly" title=" " alt="" coords="354,312,354,368,349,368,349,312"/>
+<area shape="rect" href="classRestrictedRoute.html" title="Class for handling route calculation with restrictions, extending the Route class." alt="" coords="480,371,697,654"/>
+<area shape="poly" title=" " alt="" coords="458,309,498,370,493,373,453,312"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for Route:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRoute__coll__graph.png" border="0" usemap="#aRoute_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<map name="aRoute_coll__map" id="aRoute_coll__map">
+<area shape="rect" title="Abstract class representing a route between a source and destination." alt="" coords="13,711,219,969"/>
+<area shape="rect" href="classGraph.html" title=" " alt="" coords="5,5,227,648"/>
+<area shape="poly" title=" " alt="" coords="119,648,119,694,113,694,113,648"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,7 +119,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a66c1e494b5b10315f9a08d68283e2185"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the route data from a file.  <br /></td></tr>
 <tr class="separator:a66c1e494b5b10315f9a08d68283e2185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77325f40d3efd4aeb74158ebb550c08e" id="r_a77325f40d3efd4aeb74158ebb550c08e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">virtual</a> <a class="el" href="classEdge.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoute.html#a77325f40d3efd4aeb74158ebb550c08e">writeToFile</a> (<a class="el" href="classEdge.html">ostream</a> &amp;<a class="el" href="classEdge.html">outFile</a>)=0</td></tr>
-<tr class="memdesc:a77325f40d3efd4aeb74158ebb550c08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the route data to an output stream (e.g., a file or console).  <br /></td></tr>
+<tr class="memdesc:a77325f40d3efd4aeb74158ebb550c08e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the route data to an output stream (<a class="el" href="classEdge.html#a65bcda45fc447af2ef58b467cce63eca" title="Constructor to initialize an edge with a given source, destination, distances, and weights.">e.g</a>., a file or console).  <br /></td></tr>
 <tr class="separator:a77325f40d3efd4aeb74158ebb550c08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac58074883b927ba230a9904cfc3ec07b" id="r_ac58074883b927ba230a9904cfc3ec07b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEdge.html">virtual</a> <a class="el" href="classEdge.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRoute.html#ac58074883b927ba230a9904cfc3ec07b">processRoute</a> (<a class="el" href="classEdge.html">ostream</a> &amp;<a class="el" href="classEdge.html">outFile</a>)=0</td></tr>
 <tr class="memdesc:ac58074883b927ba230a9904cfc3ec07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes the route, which may involve calculations, optimizations, or other actions.  <br /></td></tr>
@@ -119,7 +133,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:ad3fc27ccb071d7be3ad0584f9b9732df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c09142f8fc459c0c2f148026d89ec4" id="r_a82c09142f8fc459c0c2f148026d89ec4"><td class="memItemLeft" align="right" valign="top"><a id="a82c09142f8fc459c0c2f148026d89ec4" name="a82c09142f8fc459c0c2f148026d89ec4"></a>
 <a class="el" href="classEdge.html">string</a>&#160;</td><td class="memItemRight" valign="bottom"><b>mode</b></td></tr>
-<tr class="memdesc:a82c09142f8fc459c0c2f148026d89ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of transportation (e.g., "driving" or "driving-walking"). <br /></td></tr>
+<tr class="memdesc:a82c09142f8fc459c0c2f148026d89ec4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of transportation (<a class="el" href="classEdge.html#a65bcda45fc447af2ef58b467cce63eca" title="Constructor to initialize an edge with a given source, destination, distances, and weights.">e.g</a>., "driving" or "driving-walking"). <br /></td></tr>
 <tr class="separator:a82c09142f8fc459c0c2f148026d89ec4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbff3395b424b39ffb03c8c1a2a56c56" id="r_adbff3395b424b39ffb03c8c1a2a56c56"><td class="memItemLeft" align="right" valign="top"><a id="adbff3395b424b39ffb03c8c1a2a56c56" name="adbff3395b424b39ffb03c8c1a2a56c56"></a>
 <a class="el" href="classEdge.html">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>source</b></td></tr>
@@ -184,7 +198,7 @@ Protected Attributes</h2></td></tr>
 <p>Initializes a <a class="el" href="classRoute.html" title="Abstract class representing a route between a source and destination.">Route</a> object with the given parameters: a map, mode, source, and destination.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">map</td><td>A pointer to the <a class="el" href="classGraph.html">Graph</a> representing the map with locations. </td></tr>
+    <tr><td class="paramname">map</td><td>A pointer to the <a class="el" href="classGraph.html" title="Class representing a graph consisting of vertices and edges.">Graph</a> representing the map with locations. </td></tr>
     <tr><td class="paramname">m</td><td>A string representing the mode of transportation (driving, driving-walking). </td></tr>
     <tr><td class="paramname">src</td><td>The ID of the source location. </td></tr>
     <tr><td class="paramname">dt</td><td>The ID of the destination location. </td></tr>
@@ -294,7 +308,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Writes the route data to an output stream (e.g., a file or console). </p>
+<p>Writes the route data to an output stream (<a class="el" href="classEdge.html#a65bcda45fc447af2ef58b467cce63eca" title="Constructor to initialize an edge with a given source, destination, distances, and weights.">e.g</a>., a file or console). </p>
 <p>This is a pure virtual function, which must be implemented in derived classes to handle writing the route information to an output stream.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -308,7 +322,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>routes/<a class="el" href="Route_8h_source.html">Route.h</a></li>
+<li>code/routes/<a class="el" href="Route_8h_source.html">Route.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

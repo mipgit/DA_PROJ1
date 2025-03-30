@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['readfromfile_0',['readfromfile',['../classEcoRoute.html#a43f3f64ffb7d9b93a8e336b2d88c44fb',1,'EcoRoute::readFromFile()'],['../classIndependentRoute.html#a32f9062ece3da4ba4f148dd05ffef675',1,'IndependentRoute::readFromFile()'],['../classRestrictedRoute.html#a809896bef1eb29c89862a7f89938303e',1,'RestrictedRoute::readFromFile()'],['../classRoute.html#a66c1e494b5b10315f9a08d68283e2185',1,'Route::readFromFile()']]],
-  ['relax_1',['relax',['../dijkstra_8h.html#aa098c007af9de5337b83f8d039918cad',1,'dijkstra.h']]],
-  ['restrictedroute_2',['restrictedroute',['../classRestrictedRoute.html#a37ba036f58577acbd3444985ea836951',1,'RestrictedRoute::RestrictedRoute(Graph&lt; Location &gt; *map)'],['../classRestrictedRoute.html#aa97a5b08e7243cfe747037286f888c1c',1,'RestrictedRoute::RestrictedRoute(Graph&lt; Location &gt; *map, string m, int src, int dt, vector&lt; int &gt; avoidN, vector&lt; pair&lt; int, int &gt; &gt; avoidS, int inc)']]],
-  ['route_3',['Route',['../classRoute.html#ad70fde78a61a895836c416ea0c6a2b28',1,'Route']]]
+  ['loaddistances_0',['loadDistances',['../loader_8h.html#acc03a3a29c523c9c644ab9fad6415b58',1,'loader.cpp']]],
+  ['loadlocations_1',['loadLocations',['../loader_8h.html#a2df107102bc706649258164f50d74cac',1,'loader.cpp']]],
+  ['location_2',['location',['../classLocation.html#a87790c14997fd8cdd12080c78c9794bb',1,'Location::Location()'],['../classLocation.html#af7d95991f21669f8672416a9342d50dd',1,'Location::Location(string l, int id, string code, bool p)']]]
 ];
