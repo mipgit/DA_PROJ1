@@ -104,11 +104,23 @@ void interactMode(Graph<Location>* cityMap, char choice) {
 
         cout << "======== ENTER INFO ========\n";
 
+        
         while (true) {
-            cout << "Mode (driving/walking): ";
+            cout << "Mode: ";
             cin >> mode;
-            if (mode == "driving" || mode == "driving-walking") break;
-            cout << "Invalid mode! Please enter 'driving' or 'driving-walking'.\n";
+
+            if (choice == '1' || choice == '2') {
+                if (mode == "driving") break;
+                else {cout << "Invalid mode! Please enter 'driving'.\n";}
+
+            } else if (choice == '3') {
+                if (mode == "driving-walking") break;
+                else {cout << "Invalid mode! Please enter 'driving-walking'.\n";}
+
+            } else {
+                cout << "Invalid mode! Try again.\n";
+            }
+            
         }
 
         while (true) {
@@ -131,10 +143,9 @@ void interactMode(Graph<Location>* cityMap, char choice) {
         Route* route = nullptr;
 
 
-   		// depending on the choice made on Route Panel , we proceed
+   		// depending on the choice made on Route Panel, we proceed
         switch(choice) {
             case '1':
-                //!!! falta validar se escreveu 'driving'
                 route = new IndependentRoute(cityMap, mode, source, dest);
                 break;
 
@@ -355,8 +366,8 @@ void batchMode(Graph<Location>* cityMap, char choice) {       // falta fazer o c
     }
 
     if (route) {
+        ofstream file(outputFilePath);
         if (route->readFromFile(inputFilePath)) {
-            ofstream file(outputFilePath);
             route->processRoute(file);
             cout << "Route calculation completed. Results saved to " << outputFileName << '\n';
         } else {

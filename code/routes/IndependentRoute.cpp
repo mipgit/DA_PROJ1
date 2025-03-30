@@ -33,6 +33,7 @@ bool IndependentRoute::readFromFile(const string &filename) {
         }
     }
 
+
     inFile.close();
     return true;
 }

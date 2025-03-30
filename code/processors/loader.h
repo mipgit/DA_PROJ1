@@ -49,27 +49,4 @@ void loadDistances(const string &filename);
 Graph<Location>* initializeGraph();
 
 
-//testers
-
-/**
- * @brief Displays all loaded locations.
- */
-void displayLocations();
-
-/**
- * @brief Displays all loaded distances.
- */
-void displayDistances();
-
-/**
- * @brief Displays all vertices in the graph.
- */
-void displayVertices();
-
-/**
- * @brief Displays all edges in the graph.
- */
-void displayEdges();
-
-
 #endif 
