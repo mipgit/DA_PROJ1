@@ -27,18 +27,54 @@ bool RestrictedRoute::readFromFile(const string &filename) {
         }
 
         if (key == "Mode" && value == "driving") mode = value;
-        else if (key == "Source" && stoi(value) > 0) source = stoi(value);
-        else if (key == "Destination" && stoi(value) > 0) dest = stoi(value);
+        
+        else if (key == "Source") {
+            try {
+                int tempSource = stoi(value);
+                if (tempSource > 0) {
+                    source = tempSource;
+                } else {
+                    cout << "Invalid source ID! Must be a positive integer.\n";
+                    return false;
+                }
+            } catch (const invalid_argument& e) {
+                cout << "Invalid source ID! Please enter a valid integer.\n";
+                return false;
+            } 
+        }
+        
+        else if (key == "Destination") {
+            try {
+                int tempDest = stoi(value);
+                if (tempDest > 0) {
+                    dest = tempDest;
+                } else {
+                    cout << "Invalid destination ID! Must be a positive integer.\n";
+                    return false;
+                }
+            } catch (const invalid_argument& e) {
+                cout << "Invalid destination ID! Please enter a valid integer.\n";
+                return false;
+            } 
+        } 
 
         else if (key == "AvoidNodes") {
             if (!value.empty()) {
                 stringstream nodes(value);
                 string node;
                 while (getline(nodes, node, ',')) {
-                    if(!node.empty()) {
-                        int id = stoi(node);
-                        if (id == source || id == dest) cout << "Can't avoid source/dest nodes!\n";
-                        else avoidNodes.push_back(id);
+                    if (!node.empty()) {
+                        try {
+                            int id = stoi(node);  
+                            if (id == source || id == dest) {
+                                cout << "Can't avoid source/dest nodes! Node " << id << " is either the source or destination.\n";
+                            } else {
+                                avoidNodes.push_back(id);
+                            }
+                        } catch (const invalid_argument& e) {
+                            cout << "Invalid node ID in 'AvoidNodes' field! Please enter a valid integer for each node.\n";
+                            return false;
+                        }
                     }
                 }
             }
@@ -51,28 +87,31 @@ bool RestrictedRoute::readFromFile(const string &filename) {
 
                 while (getline(segs, seg, ')')) { 
 
-                    //the segment itself
+                    // The segment itself
                     if (!seg.empty()) {
-
+        
                         // "(src,dest" -> "src,dest"
                         seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
-
+        
                         stringstream pairNodes(seg);
                         int src, dst;
                         char comma;
-            
-                        // we extract src and dest
+                
+                        // We extract src and dest
                         if (pairNodes >> src >> comma >> dst && comma == ',') {
-                            if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                            avoidSegs.push_back(make_pair(src, dst));
+                        } else {
+                            cout << "Invalid segment format.\n";
+                            return false; 
                         }
                     }
-
-
-                    //the comma separating segments
+        
+                    // The comma separating segments
                     char separator;
                     segs >> separator; 
                 }
-            }
+            }    
+
         }
         
         else if (key == "IncludeNode") {  

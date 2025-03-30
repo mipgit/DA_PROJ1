@@ -124,17 +124,38 @@ void interactMode(Graph<Location>* cityMap, char choice) {
         }
 
         while (true) {
+            string tempSource;
+
             cout << "Source: ";
-            cin >> source;
-            if (cityMap->findLocationId(source) != nullptr) break;
-            cout << "Invalid source id! Please enter a node id present in the graph.\n";
+            cin >> tempSource;
+            try {
+                int s = stoi(tempSource);
+                if (cityMap->findLocationId(s) != nullptr) {
+                    source = s;
+                    break;
+                } else {
+                    cout << "Invalid source id! Please enter a node id present in the graph.\n";
+                }
+            } catch (const invalid_argument& e) {
+                cout << "Invalid source ID! Please enter a valid integer.\n";
+            } 
         }
 
         while (true) {
+            string tempDest;
             cout << "Destination: ";
-            cin >> dest;
-            if (cityMap->findLocationId(dest) != nullptr) break;
-            cout << "Invalid destination id! Please enter a node id present in the graph.\n";
+            cin >> tempDest;
+            try {
+                int d = stoi(tempDest);
+                if (cityMap->findLocationId(d) != nullptr) {
+                    dest = d;
+                    break;
+                } else {
+                    cout << "Invalid dest id! Please enter a node id present in the graph.\n";
+                }
+            } catch (const invalid_argument& e) {
+                cout << "Invalid dest ID! Please enter a valid integer.\n";
+            } 
         }
 
         
@@ -152,61 +173,126 @@ void interactMode(Graph<Location>* cityMap, char choice) {
             case '2': {
                 vector<int> avoidNodes;
                 vector<pair<int, int>> avoidSegs;
-                string n, node, s, seg, mandatoryNode;
+                string n, node, s, seg, includeNode;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-
-                cout << "AvoidNodes: ";
-                getline(cin, n);
-                stringstream nodes(n);
-
-                while (getline(nodes, node, ',')) {
-                    if(!node.empty()) {
-                        int id = stoi(node);
-                        if (id == source || id == dest) cout << "Can't avoid source/dest nodes!\n";
-                        else avoidNodes.push_back(id);
-                    }
-                }
-
-                cout << "AvoidSegments: ";
-                getline(cin, s);
-                stringstream segs(s);
+                bool flag = false;
                 
-                while (getline(segs, seg, ')')) { 
+                while(!flag) {
 
-                    //the segment itself
-                    if (!seg.empty()) {
+                    cout << "AvoidNodes: ";
+                    getline(cin, n);
+                    stringstream nodes(n);
 
-                        // "(src,dest" -> "src,dest"
-                        seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
-
-                        stringstream pairNodes(seg);
-                        int src, dst;
-                        char comma;
-            
-                        // we extract src and dest
-                        if (pairNodes >> src >> comma >> dst && comma == ',') {
-                            if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                    if (n.empty()) {  
+                        flag = true;
+                        break;
+                    }
+                
+                    while (getline(nodes, node, ',')) {
+                        if (!node.empty()){
+                            try {
+                                int id = stoi(node);
+                                if (id == source || id == dest) {
+                                    cout << "Can't avoid source/dest nodes!\n";
+                                    flag = false;
+                                    break;
+                                } else {
+                                    avoidNodes.push_back(id);
+                                    flag = true;
+                                }
+                            } catch (const invalid_argument& e) {
+                                cout << "Invalid node ID to avoid.\n";
+                                flag = false;
+                            } 
                         }
                     }
-
-
-                    //the comma separating segments
-                    char separator;
-                    segs >> separator; 
                 }
 
-          
-                int mn;
-                cout << "IncludeNode: ";
-                getline(cin, mandatoryNode);
+                flag = false;
+                
+                while(!flag) {
+
+                    cout << "AvoidSegments: ";
+                    getline(cin, s);
+                    stringstream segs(s);
+
+                    if (s.empty()) {
+                        flag = true; 
+                        break;
+                    }
+                    
+                    while (getline(segs, seg, ')')) {
+                        
+                        if (!seg.empty()) {
+                        
+                            // "(src,dest" -> "src,dest"
+                            seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
+                    
+                            stringstream pairNodes(seg);
+                            int src, dst;
+                            char comma;
+                        
+                            // we extract src and dest
+                            if (pairNodes >> src >> comma >> dst && comma == ',') {
+
+                                if (cityMap->findLocationId(src) != nullptr && cityMap->findLocationId(dst) != nullptr) {
+                                    avoidSegs.push_back(make_pair(src, dst));
+                                    flag = true;
+                                    break;
+                                } else {
+                                    cout << "Invalid ID(s)! Please enter ID(s) present in the graph.\n";
+                                    flag = false;
+                                }
+
+                            } else {
+                                cout << "Invalid segment format.\n";
+                                flag = false;
+                            }
+                        
+                        }
+                    
+                    
+                        //the comma separating segments
+                        char separator;
+                        segs >> separator; 
+                    }
+
+                }
+
+                int inNode;
+                flag = false;
+
+                while (!flag) {
+                    cout << "IncludeNode: ";
+                    getline(cin, includeNode);
         
-                if (!mandatoryNode.empty()) mn = stoi(mandatoryNode);
-                else mn = -1; // default value when user inputs nothing
+                    if (!includeNode.empty()) {
+                    
+                        try {
+                            int n = stoi(includeNode);
+                            if (cityMap->findLocationId(n) != nullptr) {
+                                inNode = n;
+                                flag = true;
+                                break;
+                            } else {
+                                cout << "Invalid node ID! Please enter a node ID present in the graph.\n";
+                                flag = false;
+                            }
+                        } catch (const invalid_argument& e) {
+                            cout << "Invalid node ID! Please enter a valid integer.\n";
+                            flag = false;
+                        }
+
+                    } else {
+                        inNode = -1;    // default value when user inputs nothing
+                        flag = true;
+                    }
+                }
                 
 
                 // finally...
-                route = new RestrictedRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs, mn);
+                route = new RestrictedRoute(cityMap, mode, source, dest, avoidNodes, avoidSegs, inNode);
                 break;
             }
 
@@ -224,52 +310,104 @@ void interactMode(Graph<Location>* cityMap, char choice) {
                     getline(cin, maxWalk);
 
                     if (!maxWalk.empty()) {
-                        maxWalkTime = stoi(maxWalk);
-                        break;
-                    }
-                    cout << "MaxWalkTime is mandatory! Please enter a time.\n"; 
-                }
-
-
-                cout << "AvoidNodes: ";
-                getline(cin, n);
-                stringstream nodes(n);
-
-                while (getline(nodes, node, ',')) {
-                    if(!node.empty()) {
-                        int id = stoi(node);
-                        if (id == source || id == dest) cout << "Can't avoid source/dest nodes!\n";
-                        else avoidNodes.push_back(id);
-                    }
-                }
-
-
-                cout << "AvoidSegments: ";
-                getline(cin, s);
-                stringstream segs(s);
+                        try {
+                            maxWalkTime = stoi(maxWalk);
+                            if (maxWalkTime <= 0) {  
+                                cout << "MaxWalkTime must be a positive integer!\n";
+                                continue;
+                            }
+                            break;  
                 
-                while (getline(segs, seg, ')')) { 
-
-                    //the segment itself
-                    if (!seg.empty()) {
-
-                        // "(src,dest" -> "src,dest"
-                        seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
-
-                        stringstream pairNodes(seg);
-                        int src, dst;
-                        char comma;
-            
-                        // we extract src and dest
-                        if (pairNodes >> src >> comma >> dst && comma == ',') {
-                            if (src > 0 && dst > 0) avoidSegs.push_back(make_pair(src, dst));
+                        } catch (const invalid_argument&) {
+                            cout << "Invalid input! Please enter a valid integer.\n";
                         }
                     }
+                    
+                    else cout << "MaxWalkTime is mandatory! Please enter a time.\n"; 
+                }
 
 
-                    //the comma separating segments
-                    char separator;
-                    segs >> separator; 
+                bool flag = false;
+                
+                while(!flag) {
+
+                    cout << "AvoidNodes: ";
+                    getline(cin, n);
+                    stringstream nodes(n);
+
+                    if (n.empty()) {  
+                        flag = true;
+                        break;
+                    }
+                
+                    while (getline(nodes, node, ',')) {
+                        if (!node.empty()){
+                            try {
+                                int id = stoi(node);
+                                if (id == source || id == dest) {
+                                    cout << "Can't avoid source/dest nodes!\n";
+                                    flag = false;
+                                    break;
+                                } else {
+                                    avoidNodes.push_back(id);
+                                    flag = true;
+                                }
+                            } catch (const invalid_argument& e) {
+                                cout << "Invalid node ID to avoid.\n";
+                                flag = false;
+                            } 
+                        }
+                    }
+                }
+
+                flag = false;
+                
+                while(!flag) {
+
+                    cout << "AvoidSegments: ";
+                    getline(cin, s);
+                    stringstream segs(s);
+
+                    if (s.empty()) {
+                        flag = true; 
+                        break;
+                    }
+                    
+                    while (getline(segs, seg, ')')) {
+                        
+                        if (!seg.empty()) {
+                        
+                            // "(src,dest" -> "src,dest"
+                            seg.erase(remove(seg.begin(), seg.end(), '('), seg.end());
+                    
+                            stringstream pairNodes(seg);
+                            int src, dst;
+                            char comma;
+                        
+                            // we extract src and dest
+                            if (pairNodes >> src >> comma >> dst && comma == ',') {
+
+                                if (cityMap->findLocationId(src) != nullptr && cityMap->findLocationId(dst) != nullptr) {
+                                    avoidSegs.push_back(make_pair(src, dst));
+                                    flag = true;
+                                    break;
+                                } else {
+                                    cout << "Invalid ID(s)! Please enter ID(s) present in the graph.\n";
+                                    flag = false;
+                                }
+
+                            } else {
+                                cout << "Invalid segment format.\n";
+                                flag = false;
+                            }
+                        
+                        }
+                    
+                        //the comma separating segments
+                        char separator;
+                        segs >> separator; 
+                    }
+
                 }
 
                                 

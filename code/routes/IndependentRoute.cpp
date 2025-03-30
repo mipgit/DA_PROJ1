@@ -25,8 +25,37 @@ bool IndependentRoute::readFromFile(const string &filename) {
         }
 
         if (key == "Mode" && value == "driving") mode = value;
-        else if (key == "Source" && stoi(value) > 0) source = stoi(value);
-        else if (key == "Destination" && stoi(value) > 0) dest = stoi(value);
+
+        else if (key == "Source") {
+            try {
+                int tempSource = stoi(value);
+                if (tempSource > 0) {
+                    source = tempSource;
+                } else {
+                    cout << "Invalid source ID! Must be a positive integer.\n";
+                    return false;
+                }
+            } catch (const invalid_argument& e) {
+                cout << "Invalid source ID! Please enter a valid integer.\n";
+                return false;
+            } 
+        }
+        
+        else if (key == "Destination") {
+            try {
+                int tempDest = stoi(value);
+                if (tempDest > 0) {
+                    dest = tempDest;
+                } else {
+                    cout << "Invalid destination ID! Must be a positive integer.\n";
+                    return false;
+                }
+            } catch (const invalid_argument& e) {
+                cout << "Invalid destination ID! Please enter a valid integer.\n";
+                return false;
+            } 
+        } 
+        
         else {
             cout << "Invalid input format in " << filename << "\n\n";
             return false;
