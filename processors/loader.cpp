@@ -1,6 +1,6 @@
 #include "loader.h"
-using namespace std;
 
+using namespace std;
 
 map<string, Location> locations;
 vector<Distance> distances;
@@ -8,7 +8,6 @@ vector<Distance> distances;
 
 // ===== LOADING FUNCTIONS =====
 
-// load Locations.csv
 void loadLocations(const string &filename){
     locations.clear();
 
@@ -40,7 +39,7 @@ void loadLocations(const string &filename){
     cout << "\nLoaded " << locations.size() << " locations successfully.";
 }
 
-// load Distances.csv
+
 void loadDistances(const string &filename){
     
     distances.clear();
@@ -83,6 +82,7 @@ void loadDistances(const string &filename){
     cout << "\nLoaded " << distances.size() << " distances successfully.\n\n";
 }
 
+
 // ===== GRAPH FUNCTIONS =====
 
 Graph<Location> *initializeGraph() {
@@ -106,22 +106,22 @@ Graph<Location> *initializeGraph() {
     return cityMap;
 }
 
+
 /*
 
-// MISSPLACED DISPLAYS -> TESTERS
+// DISPLAYS FUNCTIONS -> TESTERS
 
 // Show Locations
-void displayLocations()
-{
-    if (locations.empty())
-    {
+void displayLocations() {
+
+    if (locations.empty()) {
         cout << "\nNo locations loaded.\n";
         return;
     }
 
     cout << "\nAvailable Locations:\n";
-    for (auto l : locations)
-    {
+
+    for (auto l : locations) {
         cout << l.second.getLocation() << " (" << l.second.getCode() << ")"
              << "\nID: " << l.second.getId()
              << "\nParking: " << (l.second.hasParking() ? "Yes" : "No") << "\n"
@@ -129,24 +129,23 @@ void displayLocations()
     }
 }
 
+
 // Show Distances
-void displayDistances()
-{
-    if (distances.empty())
-    {
+void displayDistances() {
+
+    if (distances.empty()) {
         cout << "\nNo distances loaded.\n";
         return;
     }
 
     cout << "\nAvailable Distances:\n";
-    for (auto d : distances)
-    {
+
+    for (auto d : distances) {
 
         Location l1 = d.getSource();
         Location l2 = d.getDestination();
         int driv = d.getDriving();
         double walk = d.getWalking();
-
 
         cout << l1.getLocation() << " -> " << l2.getLocation()
              << "\nDriving: " << driv << " min"
@@ -157,17 +156,21 @@ void displayDistances()
 
 // Show Vertices
 void displayVertices() {
+
     for (auto vertex : cityMap->getVertexSet()) {
         auto loc = vertex->getInfo();
         cout << loc.getLocation() << '\n';
     }
 }
 
+
 // Show Edges
 void displayEdges() {
+
     for (auto vertex : cityMap->getVertexSet()) {
         auto loc = vertex->getInfo();
         cout << "Vertex " << loc.getLocation() << " -> \n";
+
         for (auto edge : vertex->getAdj()) {
             auto loc2 = edge->getDest()->getInfo();
             cout << "(" << loc2.getLocation() << ", Driving: " << edge->getDriving()
@@ -176,7 +179,6 @@ void displayEdges() {
         cout << '\n';
     }
 }
-
 
 
 */

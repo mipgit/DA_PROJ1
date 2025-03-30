@@ -5,6 +5,13 @@
 #include <filesystem>
 
 /**
+ * @file utils.h
+ * @brief Utility functions for file path resolution.
+ *
+ * This header provides helper functions for resolving file paths.
+ */
+
+/**
  * @brief Resolves the full path of a file based on its relative path.
  *
  * This function takes a relative file path and combines it with the parent directory 
@@ -12,6 +19,8 @@
  *
  * @param relativePath The relative file path to resolve.
  * @return A string containing the full absolute file path.
+ *
+ * @throws std::filesystem::filesystem_error If the current path cannot be retrieved.
  */
 inline std::string getFullPath(const std::string& relativePath) {
     std::filesystem::path currentPath = std::filesystem::current_path();

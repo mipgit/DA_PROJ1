@@ -368,10 +368,3 @@ void batchMode(Graph<Location>* cityMap, char choice) {       // falta fazer o c
     
     
 }
-
-
-
-
-
-
-
